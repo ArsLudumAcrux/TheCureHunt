@@ -30,7 +30,8 @@ public class Sword : MonoBehaviour {
     [Tooltip("Borda espada atual")]
     public Image[] BordaEspada;
 
-
+    [Space]
+    Animator anim;
 
     // Use this for initialization
     void Start () {
@@ -47,6 +48,7 @@ public class Sword : MonoBehaviour {
         {
             BordaEspada[i].gameObject.SetActive(false);
         }
+        anim = GameObject.FindGameObjectWithTag("Slime").GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame

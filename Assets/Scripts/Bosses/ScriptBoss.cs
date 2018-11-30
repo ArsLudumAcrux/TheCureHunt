@@ -9,8 +9,9 @@ public class ScriptBoss : MonoBehaviour {
     public bool AttackBool;
     public bool SpellBool;
     public bool IdleBool2;
+    public bool Teleporte;
 
-
+    public Transform tp;
 
     public float Damage;
     public float Life;
@@ -106,7 +107,7 @@ public class ScriptBoss : MonoBehaviour {
         IdleBool2 = false;
         AttackBool = true;
         SpellBool = false;
-        StartCoroutine(ComecarCoroutine());
+        StartCoroutine(ComecarCoroutine(4.5f));
     }
     public void IddleBoss()
     {
@@ -115,7 +116,7 @@ public class ScriptBoss : MonoBehaviour {
         IdleBool2 = false;
         AttackBool = false;
         SpellBool = true;
-        StartCoroutine(ComecarCoroutine());
+        StartCoroutine(ComecarCoroutine(4.5f));
     }
     public void AttackingBoss()
     {
@@ -125,7 +126,7 @@ public class ScriptBoss : MonoBehaviour {
         AttackBool = false;
         SpellBool = false;
        // attacking = !attacking;
-        StartCoroutine(ComecarCoroutine());
+        StartCoroutine(ComecarCoroutine(4.5f));
     }
     public void SpellBoss()
     {
@@ -139,10 +140,16 @@ public class ScriptBoss : MonoBehaviour {
         IdleBool2 = true;
         AttackBool = false;
         SpellBool = false;
-        StartCoroutine(ComecarCoroutine());
+        StartCoroutine(ComecarCoroutine(4.5f));
     }
 
+    public void Teletransporte()
+    {
+        transform.position = tp.transform.position;
+        Teleporte = true;
+        StartCoroutine(ComecarCoroutine(2f));
 
+    }
     public void FindPlayer(Vector3 pos)
     {
         
@@ -157,12 +164,12 @@ public class ScriptBoss : MonoBehaviour {
         Destroy(gameObject);
     }
 
-   public IEnumerator ComecarCoroutine()
+   public IEnumerator ComecarCoroutine(float tempo)
     {
-        yield return new WaitForSeconds(4.5f);
+        yield return new WaitForSeconds(tempo);
         if(AttackBool == true)
         {
-            player.BossPosition();
+            anim.SetTrigger("Teleporte");
         }
         else if(IdleBool == true)
         {
@@ -175,6 +182,9 @@ public class ScriptBoss : MonoBehaviour {
         else if(SpellBool == true)
         {
             SpellBoss();
+        }else if(Teleporte == true)
+        {
+            anim.SetTrigger("TeleporteReverso");
         }
                    
     }
