@@ -109,7 +109,7 @@ public class EnemySlime : MonoBehaviour {
 
 
         if(distance <= attackRadius && !stopAttack)
-        {    
+        {
             StartCoroutine(Attack_CR()); 
         }
 
@@ -231,7 +231,7 @@ public class EnemySlime : MonoBehaviour {
 
     IEnumerator Attack_CR()
     {
-        anim.SetTrigger("Hit");
+        anim.SetTrigger("Attacking");
         speed = 0;
         PlayerScript player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>();
         HB.HP_Current -= Mathf.RoundToInt(damage * player.ShieldPotionMult);

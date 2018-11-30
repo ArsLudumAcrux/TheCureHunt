@@ -136,7 +136,7 @@ public class PlayerScript : MonoBehaviour {
 
         if(Vidas <= 0)
         {
-
+//GameOver tela//
         }
 
        
@@ -346,7 +346,7 @@ public class PlayerScript : MonoBehaviour {
                 mapa4 = true;
                 UltimoMapa = "mapa4";
             }
-            StartCoroutine(boss.ComecarCoroutine());
+            StartCoroutine(boss.ComecarCoroutine(4.5f));
         }
     }
 
