@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!--Tiled2Unity generated xml data-->
+<!--Do not modify by hand-->
+<!--Last exported: 24/08/2018 17:18:29-->
+<Tiled2Unity version="1.0.12.4">
+  <Prefab name="Level01-C" orientation="Orthogonal" staggerAxis="Y" staggerIndex="Odd" hexSideLength="0" numLayers="14" numTilesWide="64" numTilesHigh="64" tileWidth="24" tileHeight="24" exportScale="0.0416666679" mapWidthInPixels="1536" mapHeightInPixels="1536" backgroundColor="#808080">
+    <GameObject name="Solo" x="0" y="0" z="0">
+      <TileLayer offsetX="0" offsetY="0" />
+    </GameObject>
+    <GameObject name="Terra" x="0" y="0" z="0">
+      <TileLayer offsetX="0" offsetY="0" />
+    </GameObject>
+    <GameObject name="Agua" x="0" y="0" z="0">
+      <TileLayer offsetX="0" offsetY="0" />
+    </GameObject>
+    <GameObject name="Grama" x="0" y="0" z="0">
+      <TileLayer offsetX="0" offsetY="0" />
+    </GameObject>
+    <GameObject name="FloresPedrasTroncos" x="0" y="0" z="0">
+      <TileLayer offsetX="0" offsetY="0" />
+    </GameObject>
+    <GameObject name="Paredes" x="0" y="0" z="0">
+      <TileLayer offsetX="0" offsetY="0" />
+    </GameObject>
+    <GameObject name="EnfeitesDeParede" x="0" y="0" z="0">
+      <TileLayer offsetX="0" offsetY="0" />
+    </GameObject>
+    <GameObject name="Teto" x="0" y="0" z="0">
+      <TileLayer offsetX="0" offsetY="0" />
+    </GameObject>
+    <GameObject name="EnfeitesDeTeto" x="0" y="0" z="0">
+      <TileLayer offsetX="0" offsetY="0" />
+    </GameObject>
+    <GameObject name="Cercas" x="0" y="0" z="0">
+      <TileLayer offsetX="0" offsetY="0" />
+    </GameObject>
+    <GameObject name="ArvoresGdn" x="0" y="0" z="0">
+      <TileLayer offsetX="0" offsetY="0" />
+    </GameObject>
+    <GameObject name="ArvoresPdn" x="0" y="0" z="0">
+      <TileLayer offsetX="0" offsetY="0" />
+    </GameObject>
+    <GameObject name="ArvoresGup" x="0" y="0" z="0">
+      <TileLayer offsetX="0" offsetY="0" />
+    </GameObject>
+    <GameObject name="ArvoresPup" x="0" y="0" z="0">
+      <TileLayer offsetX="0" offsetY="0" />
+    </GameObject>
+  </Prefab>
+</Tiled2Unity>

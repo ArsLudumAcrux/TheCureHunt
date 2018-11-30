@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a33474da8d8130b49b8fc6f25e94c064, type: 3}
+  m_Name: LuckPotion
+  m_EditorClassIdentifier: 
+  id: 6
+  healthGain: 0
+  potionFunction: 4
+  potionName: "Po\xE7\xE3o da Sorte"
+  potionDescription: "Essa po\xE7\xE3o \xE9 uma roleta russa, literalmente, ela pode
+    te dar 2x mais velocidade ou tira-la, vai da sua sorte. Dura\xE7\xE3o: 75 Segundos "
+  artwork: {fileID: 21300000, guid: d7390b137f57692428c494f85356542e, type: 3}
+  Duration: 75
