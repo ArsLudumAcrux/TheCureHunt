@@ -120,6 +120,11 @@ public class PlayerScript : MonoBehaviour {
 
 	void Update () {
 
+        if (Input.GetKey(KeyCode.L))
+        {
+            transform.position = new Vector3(-16.12f, 142.1f, -0.042225f);
+        }
+
         if (RunTimePotion <= Time.time && UsingPotion == true)
         {
             PotionShieldEnd();
@@ -246,7 +251,7 @@ public class PlayerScript : MonoBehaviour {
     }
     public void BossPosition()
     {
-        FindObjectOfType<ScriptBoss>().FindPlayer(transform.position);
+        FindObjectOfType<ScriptBoss>().TeletransporteReverso(transform.position);
     }
 
     void Magia()
@@ -261,8 +266,6 @@ public class PlayerScript : MonoBehaviour {
             FindObjectOfType<MainCamera>().MapaAtual = "Caverna";
         if (collision.tag == "TriggerBosque2")
             FindObjectOfType<MainCamera>().MapaAtual = "Bosque2";
-        if (collision.tag == "TriggerChefe")
-            FindObjectOfType<MainCamera>().MapaAtual = "Chefe";
 
         if (collision.tag == "TriggerBosque")
             FindObjectOfType<MiniMapCamera>().MapaAtual = "Bosque";
@@ -346,7 +349,7 @@ public class PlayerScript : MonoBehaviour {
                 mapa4 = true;
                 UltimoMapa = "mapa4";
             }
-            StartCoroutine(boss.ComecarCoroutine(4.5f));
+            StartCoroutine(boss.ComecarCoroutine(2f));
         }
     }
 
@@ -375,7 +378,6 @@ public class PlayerScript : MonoBehaviour {
                 {
 
                     CurrentPotion = potionUsed;
-                    print(CurrentPotion.name + ": " + CurrentPotion.Duration);
 
                     if (potionUsed.potionFunction == 1 && !UsingPotion)
                     {
