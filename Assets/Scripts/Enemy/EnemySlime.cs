@@ -235,7 +235,6 @@ public class EnemySlime : MonoBehaviour {
         speed = 0;
         PlayerScript player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>();
         HB.HP_Current -= Mathf.RoundToInt(damage * player.ShieldPotionMult);
-        print(Mathf.RoundToInt(damage * player.ShieldPotionMult));
         stopAttack = true;
 
         yield return new WaitForSeconds(2f);

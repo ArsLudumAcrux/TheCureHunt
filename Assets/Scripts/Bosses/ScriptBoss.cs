@@ -5,14 +5,10 @@ using UnityEngine.UI;
 
 public class ScriptBoss : MonoBehaviour {
 
-    public bool IdleBool;
-    public bool AttackBool;
-    public bool SpellBool;
-    public bool IdleBool2;
-    public bool Teleporte;
-
-    public Transform tp;
-
+    public int count;
+    public Transform TP;
+    public Transform TPAltar;
+    [Header("Status do boss")]
     public float Damage;
     public float Life;
 
@@ -28,24 +24,24 @@ public class ScriptBoss : MonoBehaviour {
     HealthBar HB;
     Magic magic;
 
-
+    public Transform OrbeEmitor;
+    public GameObject OrbePrefab;
+    public float OrbeSpeed;
+    public Transform OrbeRotator;
 
     public GameObject PrefabSlime;
     public GameObject[] PosicoesSlime;
     public int countslime;
 
-
+    bool verdadeiro;
     Animator anim;
 
 	// Use this for initialization
 	void Start () {
-        IdleBool = false;
-        IdleBool2 = false;
-        AttackBool = true;
-        SpellBool = false;
+        count = 0;
 
         countslime = 2;
-       
+        verdadeiro = true;
 
         offset = new Vector3(0, 3f);
         anim = gameObject.GetComponent<Animator>();
@@ -66,7 +62,6 @@ public class ScriptBoss : MonoBehaviour {
     {
         AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
         bool attacking = stateInfo.IsName("Attack");
-
        //if (attacking == true)
        //{
        //
@@ -82,6 +77,10 @@ public class ScriptBoss : MonoBehaviour {
        //
        //    }
        //}
+       if(count > 8)
+        {
+            count = 0;
+        }
         if (Life >= 0)
         {
             sliderlife.value = Life;
@@ -99,34 +98,22 @@ public class ScriptBoss : MonoBehaviour {
             HB.HP_Current -= Mathf.RoundToInt(Damage * player.ShieldPotionMult);
         }
     }
-
-    public void IddleBoss2()
+    public void iddle1()
     {
-        anim.SetTrigger("idle");
-        IdleBool = false;
-        IdleBool2 = false;
-        AttackBool = true;
-        SpellBool = false;
-        StartCoroutine(ComecarCoroutine(4.5f));
+        anim.SetTrigger("idle1");
     }
-    public void IddleBoss()
+    public void IdleBoss()
     {
         anim.SetTrigger("idle");
-        IdleBool = false;
-        IdleBool2 = false;
-        AttackBool = false;
-        SpellBool = true;
+        count = count + 1;
         StartCoroutine(ComecarCoroutine(4.5f));
     }
     public void AttackingBoss()
     {
         anim.SetTrigger("attack");
-        IdleBool = true;
-        IdleBool2 = false;
-        AttackBool = false;
-        SpellBool = false;
-       // attacking = !attacking;
-        StartCoroutine(ComecarCoroutine(4.5f));
+        count = count + 1;
+        // attacking = !attacking;
+        StartCoroutine(ComecarCoroutine(2f));
     }
     public void SpellBoss()
     {
@@ -136,57 +123,105 @@ public class ScriptBoss : MonoBehaviour {
             int intposicao = i;
             Instantiate(PrefabSlime, PosicoesSlime[intposicao].transform.position, Quaternion.identity);
         }
-        IdleBool = false;
-        IdleBool2 = true;
-        AttackBool = false;
-        SpellBool = false;
-        StartCoroutine(ComecarCoroutine(4.5f));
+        count = count + 1;
+        StartCoroutine(ComecarCoroutine(2f));
     }
 
     public void Teletransporte()
     {
-        transform.position = tp.transform.position;
-        Teleporte = true;
+        transform.position = TP.transform.position;
+        count = count + 1;
         StartCoroutine(ComecarCoroutine(2f));
-
     }
-    public void FindPlayer(Vector3 pos)
+    public void TeletransporteReverso(Vector3 pos)
     {
-        
+        anim.SetTrigger("TeleporteReverso");
+        //Invoke("InvocarBool", 0.1f);
         pos += offset;
         transform.position = pos;
-        AttackingBoss();
+
+        count = count + 1;
+        StartCoroutine(ComecarCoroutine(2f));
     }
+    public void TeletransporteReversoAltar()
+    {
+        transform.position = TPAltar.transform.position;
+        anim.SetTrigger("TeleporteReversoAltar");
+        count = count + 1;
+        StartCoroutine(ComecarCoroutine(2f));
+    }
+    public void Vinhas()
+    {
+        count = count + 1;
+        StartCoroutine(ComecarCoroutine(2f));
+    }
+    public void ORBE()
+    {
+        count = count + 1;
+
+        GameObject tempOrbe = Instantiate(OrbePrefab, OrbeEmitor.position, OrbeRotator.rotation);
+        Rigidbody2D tempRB2D = tempOrbe.GetComponent<Rigidbody2D>();
+        tempRB2D.AddForce(OrbeEmitor.forward * OrbeSpeed);
+        tempOrbe.GetComponent<Orbe>().Damage = Damage;
+        StartCoroutine(ComecarCoroutine(2f));
+    }
+   //public void FindPlayer(Vector3 pos)
+   //{
+   //    
+   //    pos += offset;
+   //    transform.position = pos;
+   //    AttackingBoss();
+   //}
    
     public void DeadBoss()
     {
         magic.DisableGemaBloq();
         Destroy(gameObject);
     }
+    public void InvocarBool()
+    {
+        verdadeiro = false;
+    }
 
    public IEnumerator ComecarCoroutine(float tempo)
     {
         yield return new WaitForSeconds(tempo);
-        if(AttackBool == true)
+        if(count == 0)
+        {
+            ORBE();
+        }else if(count == 1)
+        {
+            SpellBoss();
+        }
+        else if (count == 2)
         {
             anim.SetTrigger("Teleporte");
         }
-        else if(IdleBool == true)
+        else if(count == 3)
         {
-            IddleBoss();
+            player.BossPosition();
         }
-        else if (IdleBool2 == true)
+        else if (count == 4)
         {
-            IddleBoss2();
+            AttackingBoss();
         }
-        else if(SpellBool == true)
+        else if (count == 5)
         {
-            SpellBoss();
-        }else if(Teleporte == true)
-        {
-            anim.SetTrigger("TeleporteReverso");
+            IdleBoss();
         }
-                   
+        else if (count == 6)
+        {
+            anim.SetTrigger("Teleporte");
+        }
+        else if (count == 7)
+        {
+            TeletransporteReversoAltar();
+        }
+        else if (count == 8)
+        {
+            Vinhas();
+        }
+
     }
 
 }
