@@ -52,6 +52,13 @@ public class PlayerScript : MonoBehaviour {
     public GameObject player;
     public int Vidas;
     public AudioListener audiolistener;
+    [Header("Fire ball config")]
+    public Transform FireballEmitor;
+    public GameObject FireballPrefab;
+    public float FireballSpeed;
+    public Transform FireballRotator;
+    public float DamageFireball;
+
 
     [Space]
 
@@ -144,6 +151,10 @@ public class PlayerScript : MonoBehaviour {
 //GameOver tela//
         }
 
+        if (Input.GetKeyDown(KeyCode.Mouse1) && magic.GemaDesbloq == true)
+        {
+            Magia();
+        }
        
 
         
@@ -254,9 +265,12 @@ public class PlayerScript : MonoBehaviour {
         FindObjectOfType<ScriptBoss>().TeletransporteReverso(transform.position);
     }
 
-    void Magia()
+   public void Magia()
     {
-     
+        GameObject tempFireball = Instantiate(FireballPrefab, FireballEmitor.position, FireballRotator.rotation);
+        Rigidbody2D tempRB2D = tempFireball.GetComponent<Rigidbody2D>();
+        tempRB2D.AddForce(FireballEmitor.forward * FireballSpeed);
+        tempFireball.GetComponent<FireBall>().Damage = DamageFireball;
     }
     private void OnTriggerStay2D(Collider2D collision)
     {

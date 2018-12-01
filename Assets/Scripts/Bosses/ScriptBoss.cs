@@ -12,6 +12,10 @@ public class ScriptBoss : MonoBehaviour {
     public float Damage;
     public float Life;
 
+    public GameObject disablecollider;
+    public GameObject Escada;
+    public GameObject simbolo;
+
 
     public bool attacking;
 
@@ -33,7 +37,8 @@ public class ScriptBoss : MonoBehaviour {
     public GameObject[] PosicoesSlime;
     public int countslime;
 
-    bool verdadeiro;
+    bool reverso;
+    bool morreu;
     Animator anim;
 
 	// Use this for initialization
@@ -41,7 +46,9 @@ public class ScriptBoss : MonoBehaviour {
         count = 0;
 
         countslime = 2;
-        verdadeiro = true;
+
+        Escada.gameObject.SetActive(false);
+        simbolo.gameObject.SetActive(false);
 
         offset = new Vector3(0, 3f);
         anim = gameObject.GetComponent<Animator>();
@@ -88,6 +95,7 @@ public class ScriptBoss : MonoBehaviour {
 
         if(Life <= 0)
         {
+            morreu = true;
             anim.SetTrigger("die");
         }
     }
@@ -124,7 +132,7 @@ public class ScriptBoss : MonoBehaviour {
             Instantiate(PrefabSlime, PosicoesSlime[intposicao].transform.position, Quaternion.identity);
         }
         count = count + 1;
-        StartCoroutine(ComecarCoroutine(2f));
+        StartCoroutine(ComecarCoroutine(1.5f));
     }
 
     public void Teletransporte()
@@ -136,17 +144,18 @@ public class ScriptBoss : MonoBehaviour {
     public void TeletransporteReverso(Vector3 pos)
     {
         anim.SetTrigger("TeleporteReverso");
-        //Invoke("InvocarBool", 0.1f);
-        pos += offset;
-        transform.position = pos;
+        reverso = true;
+        StartCoroutine(TPReverso(pos));
 
         count = count + 1;
         StartCoroutine(ComecarCoroutine(2f));
     }
     public void TeletransporteReversoAltar()
     {
-        transform.position = TPAltar.transform.position;
         anim.SetTrigger("TeleporteReversoAltar");
+        reverso = false;
+        StartCoroutine(TPReversoAltar());
+
         count = count + 1;
         StartCoroutine(ComecarCoroutine(2f));
     }
@@ -176,52 +185,86 @@ public class ScriptBoss : MonoBehaviour {
     public void DeadBoss()
     {
         magic.DisableGemaBloq();
+        disablecollider.gameObject.SetActive(false);
+        Escada.gameObject.SetActive(true);
+
+        StartCoroutine(SimboloAltar());
+
         Destroy(gameObject);
     }
-    public void InvocarBool()
+
+    public IEnumerator SimboloAltar()
     {
-        verdadeiro = false;
+        yield return new WaitForSeconds(0.5f);
+        simbolo.gameObject.SetActive(true);
     }
 
+    public IEnumerator TPReversoAltar()
+    {
+        yield return new WaitForSeconds(0.5f);
+    
+        if (reverso == false)
+        {
+            transform.position = TPAltar.transform.position;
+        }
+
+    }
+
+    public IEnumerator TPReverso(Vector3 position)
+    {
+        yield return new WaitForSeconds(0.5f);
+        if (reverso == true)
+        {
+            position += offset;
+            transform.position = position;
+        }else if(reverso == false)
+        {
+            transform.position = TPAltar.transform.position;
+        }
+    
+    }
    public IEnumerator ComecarCoroutine(float tempo)
     {
         yield return new WaitForSeconds(tempo);
-        if(count == 0)
+        if (morreu == false)
         {
-            ORBE();
-        }else if(count == 1)
-        {
-            SpellBoss();
+            if (count == 0)
+            {
+                ORBE();
+            }
+            else if (count == 1)
+            {
+                SpellBoss();
+            }
+            else if (count == 2)
+            {
+                anim.SetTrigger("Teleporte");
+            }
+            else if (count == 3)
+            {
+                player.BossPosition();
+            }
+            else if (count == 4)
+            {
+                AttackingBoss();
+            }
+            else if (count == 5)
+            {
+                IdleBoss();
+            }
+            else if (count == 6)
+            {
+                anim.SetTrigger("Teleporte");
+            }
+            else if (count == 7)
+            {
+                TeletransporteReversoAltar();
+            }
+            else if (count == 8)
+            {
+                Vinhas();
+            }
         }
-        else if (count == 2)
-        {
-            anim.SetTrigger("Teleporte");
-        }
-        else if(count == 3)
-        {
-            player.BossPosition();
-        }
-        else if (count == 4)
-        {
-            AttackingBoss();
-        }
-        else if (count == 5)
-        {
-            IdleBoss();
-        }
-        else if (count == 6)
-        {
-            anim.SetTrigger("Teleporte");
-        }
-        else if (count == 7)
-        {
-            TeletransporteReversoAltar();
-        }
-        else if (count == 8)
-        {
-            Vinhas();
-        }
-
     }
 
 }

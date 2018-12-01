@@ -23,6 +23,7 @@ public class Magic : MonoBehaviour {
     public Sprite BordaMagia;
     public Image BordaAtual;
 
+    public bool GemaDesbloq;
 
     // Use this for initialization
 
@@ -32,6 +33,8 @@ public class Magic : MonoBehaviour {
 
     public void Start()
     {
+        GemaDesbloq = false;
+
         GemaFloresta.gameObject.SetActive(false);
         GemaFogo.gameObject.SetActive(false);
 
@@ -95,7 +98,10 @@ public class Magic : MonoBehaviour {
     //}
     public void DisableGemaBloq()
     {
-        GemasBloqueadas[0].gameObject.SetActive(true);
+        GemaFogo.gameObject.SetActive(true);
+        GemaDesbloq = true;
+        PlayerScript player = GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<PlayerScript>();
+        player.Magia();
     }
     public void Gema(string name)
     {

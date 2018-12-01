@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Slime_Stats : MonoBehaviour {
 
-    public int Life_Slime;
+    public float Life_Slime;
     public int Atk_Slime;
      Animator anim;
     public bool morreu;

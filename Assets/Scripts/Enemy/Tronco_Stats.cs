@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Tronco_Stats : MonoBehaviour {
 
-    public int Life_Tronco;
+    public float Life_Tronco;
     Animator anim;
     public bool morreu;
     public int xpMin, xpMax;
