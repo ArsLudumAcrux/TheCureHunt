@@ -1,26 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Video;
+using UnityEngine.Animations;
 
-public class PlayerVideo : MonoBehaviour {
+public class AnimationCutscene : MonoBehaviour {
 
-    Animation cutScene;
+    public Animation _cutScene;
 
     private void Awake()
     {
-        cutScene = GetComponent<Animation>();
+        _cutScene =this.gameObject.GetComponent<Animation>();
+        
     }
-    public void _Play()
+    public void PlayAnimation()
     {
-        cutScene.Play();
+        _cutScene.Play("Cutscene Test 2");
     }
-    public void _Stop()
+    public void Stop()
     {
-        cutScene.Stop();
+        _cutScene.Stop("Cutscene Test 2");
     }
     public void Button()
     {
-        _Play();
+        PlayAnimation();
     }
 }

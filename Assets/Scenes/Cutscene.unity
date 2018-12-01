@@ -549,6 +549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0457930f4592fe34799bda3a7124ce06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _cutScene: {fileID: 0}
 --- !u!114 &782151929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -635,6 +636,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0457930f4592fe34799bda3a7124ce06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _cutScene: {fileID: 0}
 --- !u!224 &803526285
 RectTransform:
   m_ObjectHideFlags: 0
@@ -979,10 +981,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2038366487}
-  - component: {fileID: 2038366490}
   - component: {fileID: 2038366489}
   - component: {fileID: 2038366488}
   - component: {fileID: 2038366491}
+  - component: {fileID: 2038366490}
   m_Layer: 5
   m_Name: Video Player
   m_TagString: Untagged
@@ -1072,39 +1074,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!328 &2038366490
-VideoPlayer:
+--- !u!111 &2038366490
+Animation:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2038366486}
-  m_Enabled: 0
-  m_VideoClip: {fileID: 0}
-  m_TargetCameraAlpha: 1
-  m_TargetCamera3DLayout: 0
-  m_TargetCamera: {fileID: 1820473222}
-  m_TargetTexture: {fileID: 0}
-  m_TimeReference: 0
-  m_TargetMaterialRenderer: {fileID: 0}
-  m_TargetMaterialProperty: _MainTex
-  m_RenderMode: 1
-  m_AspectRatio: 2
-  m_DataSource: 0
-  m_PlaybackSpeed: 1
-  m_AudioOutputMode: 2
-  m_TargetAudioSources:
-  - {fileID: 0}
-  m_DirectAudioVolumes:
-  - 1
-  m_Url: https://www.youtube.com/watch?v=xVive-kQt_A
-  m_EnabledAudioTracks: 01
-  m_DirectAudioMutes: 00
-  m_ControlledAudioTrackCount: 1
-  m_PlayOnAwake: 1
-  m_SkipOnDrop: 1
-  m_Looping: 0
-  m_WaitForFirstFrame: 1
-  m_FrameReadyEventEnabled: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: e478fd051f199814898b4ea9dbe7b171, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!114 &2038366491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1116,3 +1099,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0457930f4592fe34799bda3a7124ce06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _cutScene: {fileID: 2038366490}
