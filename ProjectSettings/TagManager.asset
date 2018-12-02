@@ -73,6 +73,9 @@ TagManager:
   - name: Player
     uniqueID: 16464409
     locked: 0
+  - name: CanvasConjuracao
+    uniqueID: 2441885705
+    locked: 0
   - name: CanvasBoss
     uniqueID: 290815905
     locked: 0
