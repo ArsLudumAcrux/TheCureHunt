@@ -101,7 +101,6 @@ public class Magic : MonoBehaviour {
         GemaFogo.gameObject.SetActive(true);
         GemaDesbloq = true;
         PlayerScript player = GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<PlayerScript>();
-        player.Magia();
     }
     public void Gema(string name)
     {

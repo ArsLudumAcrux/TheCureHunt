@@ -187,17 +187,11 @@ public class ScriptBoss : MonoBehaviour {
         magic.DisableGemaBloq();
         disablecollider.gameObject.SetActive(false);
         Escada.gameObject.SetActive(true);
-
-        StartCoroutine(SimboloAltar());
+        simbolo.gameObject.SetActive(true);
 
         Destroy(gameObject);
     }
 
-    public IEnumerator SimboloAltar()
-    {
-        yield return new WaitForSeconds(0.5f);
-        simbolo.gameObject.SetActive(true);
-    }
 
     public IEnumerator TPReversoAltar()
     {

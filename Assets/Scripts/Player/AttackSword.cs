@@ -101,9 +101,13 @@ public class AttackSword : MonoBehaviour {
             if (critico <= sword.SwordCurrentCriticoChance)
             {
                 boss.Life -= sword.Sword_CurrentDamage * 2;
+                boss.gameObject.GetComponent<Animator>().SetTrigger("hit");
             }
             else
+            {
                 boss.Life -= sword.Sword_CurrentDamage;
+                boss.gameObject.GetComponent<Animator>().SetTrigger("hit");
+            }
 
         }
 

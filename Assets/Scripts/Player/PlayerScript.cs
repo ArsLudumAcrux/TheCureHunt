@@ -52,12 +52,7 @@ public class PlayerScript : MonoBehaviour {
     public GameObject player;
     public int Vidas;
     public AudioListener audiolistener;
-    [Header("Fire ball config")]
-    public Transform FireballEmitor;
-    public GameObject FireballPrefab;
-    public float FireballSpeed;
-    public Transform FireballRotator;
-    public float DamageFireball;
+ 
 
 
     [Space]
@@ -151,10 +146,6 @@ public class PlayerScript : MonoBehaviour {
 //GameOver tela//
         }
 
-        if (Input.GetKeyDown(KeyCode.Mouse1) && magic.GemaDesbloq == true)
-        {
-            Magia();
-        }
        
 
         
@@ -241,15 +232,15 @@ public class PlayerScript : MonoBehaviour {
             
 
         }
-        if (Input.GetKeyDown(KeyCode.R) && magic.MagiaAtual != "")
+        if (Input.GetKeyDown(KeyCode.R) && magic.MagiaAtual != "" && cooldown.PodeUsar == true|| Input.GetKeyDown(KeyCode.Mouse1) && magic.MagiaAtual != "" && cooldown.PodeUsar == true)
         {
-            //   if (magic.MagiaAtual == "Fogo")
-            //   {
-            //
-            //       cooldown.CoolDownMagia();
-            //       print("a");
-            //
-            //   }
+            if (magic.MagiaAtual == "Fogo")
+            {
+                
+                cooldown.CoolDownMagia("Fogo");
+                
+
+            }
             //   else if (magic.MagiaAtual == "Floresta")
             //   {
             //       cooldown.CoolDownMagia();
@@ -265,13 +256,6 @@ public class PlayerScript : MonoBehaviour {
         FindObjectOfType<ScriptBoss>().TeletransporteReverso(transform.position);
     }
 
-   public void Magia()
-    {
-        GameObject tempFireball = Instantiate(FireballPrefab, FireballEmitor.position, FireballRotator.rotation);
-        Rigidbody2D tempRB2D = tempFireball.GetComponent<Rigidbody2D>();
-        tempRB2D.AddForce(FireballEmitor.forward * FireballSpeed);
-        tempFireball.GetComponent<FireBall>().Damage = DamageFireball;
-    }
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.tag == "TriggerBosque")

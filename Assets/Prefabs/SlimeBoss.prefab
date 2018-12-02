@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57fbf5aba80935642b8015dd6bd6b39f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Life_Slime: 20
+  Life_Slime: 35
   Atk_Slime: 0
   morreu: 0
   xpMin: 2

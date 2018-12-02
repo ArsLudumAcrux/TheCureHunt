@@ -12,13 +12,21 @@ public class CoolDown : MonoBehaviour {
     public bool PodeUsar;
     public float fillValueTest;
 
+    [Header("Fire ball config")]
+    public Transform FireballEmitor;
+    public GameObject FireballPrefab;
+    public float FireballSpeed;
+    public Transform FireballRotator;
+    public float DamageFireball;
+
+    [Space(30)]
     PlayerScript playerscript;
 
 	// Use this for initialization
 	void Start () {
 
         playerscript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>();
-        TempoCoolDown = 7.0f;
+        TempoCoolDown = 1.0f;
         PodeUsar = true;
         cooldown.fillAmount = 0.0f;
 
@@ -48,7 +56,10 @@ public class CoolDown : MonoBehaviour {
     {
         if (magiaAtual == "Fogo")
         {
-            //lógica de fogo;
+            GameObject tempFireball = Instantiate(FireballPrefab, FireballEmitor.position, FireballRotator.rotation);
+            Rigidbody2D tempRB2D = tempFireball.GetComponent<Rigidbody2D>();
+            tempRB2D.AddForce(FireballEmitor.forward * FireballSpeed);
+            tempFireball.GetComponent<FireBall>().Damage = DamageFireball;
 
         } else if (magiaAtual == "Floresta")
         {
