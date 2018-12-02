@@ -27,6 +27,7 @@ TagManager:
   - CoolDown
   - Boss
   - Warp
+  - TriggerFogo
   layers:
   - Default
   - TransparentFX

@@ -12,6 +12,7 @@ public class Portal : MonoBehaviour {
     public Image Conjuracao;
     Warp warp;
     public GameObject Canvas;
+    public GameObject Teleporte;
 
 	// Use this for initialization
 	void Start () {
@@ -48,6 +49,9 @@ public class Portal : MonoBehaviour {
     IEnumerator Comecartransicao()
     {
         yield return new WaitForSeconds(5f);
-        SceneManager.LoadScene(2);
+        PlayerScript player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>();
+        player.transform.position = Teleporte.transform.position;
+        GameObject.FindGameObjectWithTag("Content").GetComponent<HealthBar>().HPFull();
+        warp.FadeOut();
     }
 }

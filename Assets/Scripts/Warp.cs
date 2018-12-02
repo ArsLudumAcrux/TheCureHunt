@@ -135,7 +135,7 @@ public class Warp : MonoBehaviour
         if (player.UltimoMapa == "mapa1")
         {
             player.player.transform.position = player.Respawn1.transform.position;
-            player.player.SetActive(true);
+            player.playersprite.enabled = true;
             player.audiolistener.enabled = true;
             FadeOut();
         }
@@ -159,9 +159,14 @@ public class Warp : MonoBehaviour
             player.player.SetActive(true);
             player.audiolistener.enabled = true;
             FadeOut();
-
-
         }
+       else if (player.UltimoMapa == "mapa5")
+       {
+           player.transform.position = player.Respawn5.transform.position;
+           player.player.SetActive(true);
+           player.audiolistener.enabled = true;
+           FadeOut();
+       }
     }
 	//método para ativar a transição de entrada.
 	public void FadeIn () {

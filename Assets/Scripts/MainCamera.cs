@@ -21,9 +21,11 @@ public class MainCamera : MonoBehaviour {
     [Space(10)]
     [Header("Sala Chefe")]
     public float xMin4, xMax4, yMin4, yMax4;
-    [Space(10)]
+    [Header("FOGO")]
+    public float xMin5, xMax5, yMin5, yMax5;
+    [Space(50)]
 
-    public GameObject Bosque, Caverna, Bosque2, Chefe;
+    public GameObject Bosque, Caverna, Bosque2, Chefe, Fogo;
 
     public string MapaAtual;
 
@@ -124,6 +126,12 @@ public class MainCamera : MonoBehaviour {
 
             transform.position = new Vector3(Mathf.Clamp(target.position.x, xMin4, xMax4), Mathf.Clamp(target.position.y, yMin4, yMax4), transform.position.z);
         }
+        if (MapaAtual == ("Fogo"))
+        {
+
+            transform.position = new Vector3(Mathf.Clamp(target.position.x, xMin5, xMax5), Mathf.Clamp(target.position.y, yMin5, yMax5), transform.position.z);
+        }
+
     }
 
 }

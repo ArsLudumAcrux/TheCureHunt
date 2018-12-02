@@ -44,12 +44,15 @@ public class PlayerScript : MonoBehaviour {
     public bool mapa2;
     public bool mapa3;
     public bool mapa4;
+    public bool mapa5;
     Warp warp;
     public GameObject Respawn1;
     public GameObject Respawn2;
     public GameObject Respawn3;
     public GameObject Respawn4;
+    public GameObject Respawn5;
     public GameObject player;
+    public SpriteRenderer playersprite;
     public int Vidas;
     public AudioListener audiolistener;
  
@@ -89,6 +92,8 @@ public class PlayerScript : MonoBehaviour {
         mapa1 = false;
         mapa2 = false;
         mapa3 = false;
+        mapa4 = false;
+        mapa5 = false;
 
 
 
@@ -264,6 +269,10 @@ public class PlayerScript : MonoBehaviour {
             FindObjectOfType<MainCamera>().MapaAtual = "Caverna";
         if (collision.tag == "TriggerBosque2")
             FindObjectOfType<MainCamera>().MapaAtual = "Bosque2";
+        if (collision.tag == "TriggerFogo")
+            FindObjectOfType<MainCamera>().MapaAtual = "Fogo";
+
+
 
         if (collision.tag == "TriggerBosque")
             FindObjectOfType<MiniMapCamera>().MapaAtual = "Bosque";
@@ -272,10 +281,12 @@ public class PlayerScript : MonoBehaviour {
         if (collision.tag == "TriggerBosque2")
             FindObjectOfType<MiniMapCamera>().MapaAtual = "Bosque2";
         if (collision.tag == "TriggerChefe")
-            FindObjectOfType<MiniMapCamera>().MapaAtual = "Chefe";  
-        
+            FindObjectOfType<MiniMapCamera>().MapaAtual = "Chefe";
+        if (collision.tag == "TriggerFogo")
+            FindObjectOfType<MiniMapCamera>().MapaAtual = "Fogo";
 
-        if(collision.tag == "TriggerChefe")
+
+        if (collision.tag == "TriggerChefe")
         {
             maincamera.gameObject.SetActive(false);
             bosscamera.gameObject.SetActive(true);
@@ -291,6 +302,11 @@ public class PlayerScript : MonoBehaviour {
             bosscamera.gameObject.SetActive(false);
         }
         if (collision.tag == "TriggerBosque2")
+        {
+            maincamera.gameObject.SetActive(true);
+            bosscamera.gameObject.SetActive(false);
+        }
+        if (collision.tag == "TriggerFogo")
         {
             maincamera.gameObject.SetActive(true);
             bosscamera.gameObject.SetActive(false);
@@ -348,6 +364,17 @@ public class PlayerScript : MonoBehaviour {
                 UltimoMapa = "mapa4";
             }
             StartCoroutine(boss.ComecarCoroutine(2f));
+        }
+        if (collision.tag == "TriggerFogo")
+        {
+            FindObjectOfType<AreaScript>().ChamarCoroutine("Vale da Morte");
+            GameManager gamemanager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+            gamemanager.monstrosMortos = 0;
+            if (mapa5 == false)
+            {
+                mapa5 = true;
+                UltimoMapa = "mapa5";
+            }
         }
     }
 
@@ -479,8 +506,8 @@ public class PlayerScript : MonoBehaviour {
     public void Morreu()
     {
         Vidas--;
-        audiolistener.enabled = false;
-        player.SetActive(false);
+        //audiolistener.enabled = false;
+        playersprite.enabled = false;
         warp.StartCoroutine(warp.FadeMorreu());
     }
 }

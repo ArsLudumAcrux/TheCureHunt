@@ -7,10 +7,13 @@ public class SpawnMonsters : MonoBehaviour {
     public GameObject[] waypoints1;
     public GameObject[] waypoints2;
     public GameObject[] waypoints3;
+    public GameObject[] waypoints4;
     public Transform[] monstros;
     public int maxMonstros;
     public int maxMonstros2;
     public int maxMonstros3;
+    public int maxMonstros4;
+
 
 
     void Start()
@@ -33,8 +36,13 @@ public class SpawnMonsters : MonoBehaviour {
         for (int i = 0; i < maxMonstros3; i++)
         {
             int intWayPoint = i;
-            int intMonsterToSpawn = Random.Range(0, monstros.Length);
+            int intMonsterToSpawn = Random.Range(0, 2);
             Instantiate(monstros[intMonsterToSpawn], waypoints3[intWayPoint].transform.position, Quaternion.identity);
+        }
+        for (int i = 0; i < maxMonstros4; i++)
+        {
+            int intWayPoint = i;
+            Instantiate(monstros[2], waypoints4[intWayPoint].transform.position, Quaternion.identity);
         }
 
 

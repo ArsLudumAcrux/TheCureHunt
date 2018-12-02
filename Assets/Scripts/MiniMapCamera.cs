@@ -15,8 +15,11 @@ public class MiniMapCamera : MonoBehaviour
     public float xMin2, xMax2, yMin2, yMax2;
     [Header("BOSQUE 2")]
     public float xMin3, xMax3, yMin3, yMax3;
-
-    public GameObject Bosque, Caverna, Bosque2;
+    [Header("Sala do Chefe")]
+    public float xMin4, xMax4, yMin4, yMax4;
+    [Header("Fogo")]
+    public float xMin5, xMax5, yMin5, yMax5;
+    public GameObject Bosque, Caverna, Bosque2, Chefe, Fogo;
 
     public string MapaAtual;
 
@@ -65,6 +68,14 @@ public class MiniMapCamera : MonoBehaviour
         if (MapaAtual == ("Bosque2"))
         {
             transform.position = new Vector3(Mathf.Clamp(target.position.x, xMin3, xMax3), Mathf.Clamp(target.position.y, yMin3, yMax3), transform.position.z);
+        }
+        if (MapaAtual == ("Chefe"))
+        {
+            transform.position = new Vector3(Mathf.Clamp(target.position.x, xMin4, xMax4), Mathf.Clamp(target.position.y, yMin4, yMax4), transform.position.z);
+        }
+        if (MapaAtual == ("Fogo"))
+        {
+            transform.position = new Vector3(Mathf.Clamp(target.position.x, xMin5, xMax5), Mathf.Clamp(target.position.y, yMin5, yMax5), transform.position.z);
         }
     }
 
