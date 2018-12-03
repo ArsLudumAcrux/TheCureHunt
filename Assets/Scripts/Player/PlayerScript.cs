@@ -54,7 +54,7 @@ public class PlayerScript : MonoBehaviour {
     public GameObject player;
     public SpriteRenderer playersprite;
     public int Vidas;
-    public AudioListener audiolistener;
+
  
 
 
@@ -65,6 +65,8 @@ public class PlayerScript : MonoBehaviour {
     public SpriteRenderer shadow;
 
     public GameObject InitialMap;
+
+    float test;
 
 	void Awake () {
 	    Assert.IsNotNull(InitialMap);
@@ -151,7 +153,7 @@ public class PlayerScript : MonoBehaviour {
 //GameOver tela//
         }
 
-       
+    
 
         
 
@@ -331,6 +333,8 @@ public class PlayerScript : MonoBehaviour {
             {
                 mapa1 = true;
                 UltimoMapa = "mapa1";
+                maincamera.gameObject.SetActive(true);
+                bosscamera.gameObject.SetActive(false);
             }
         }
         if (collision.tag == "TriggerCaverna")
@@ -342,6 +346,8 @@ public class PlayerScript : MonoBehaviour {
             {
                 mapa2 = true;
                 UltimoMapa = "mapa2";
+                maincamera.gameObject.SetActive(true);
+                bosscamera.gameObject.SetActive(false);
             }
         }
         if (collision.tag == "TriggerBosque2")
@@ -353,6 +359,8 @@ public class PlayerScript : MonoBehaviour {
             {
                 mapa3 = true;
                 UltimoMapa = "mapa3";
+                maincamera.gameObject.SetActive(true);
+                bosscamera.gameObject.SetActive(false);
             }
         }
         if (collision.tag == "TriggerChefe")
@@ -362,6 +370,8 @@ public class PlayerScript : MonoBehaviour {
             {
                 mapa4 = true;
                 UltimoMapa = "mapa4";
+                maincamera.gameObject.SetActive(false);
+                bosscamera.gameObject.SetActive(true);
             }
             StartCoroutine(boss.ComecarCoroutine(2f));
         }
@@ -374,6 +384,8 @@ public class PlayerScript : MonoBehaviour {
             {
                 mapa5 = true;
                 UltimoMapa = "mapa5";
+                maincamera.gameObject.SetActive(true);
+                bosscamera.gameObject.SetActive(false);
             }
         }
     }
@@ -505,9 +517,10 @@ public class PlayerScript : MonoBehaviour {
 
     public void Morreu()
     {
-        Vidas--;
-        //audiolistener.enabled = false;
+        print("QUANTAS VEZES");
         playersprite.enabled = false;
         warp.StartCoroutine(warp.FadeMorreu());
+        Vidas--;
+        GameObject.FindGameObjectWithTag("Content").GetComponent<HealthBar>().DeadFalse();
     }
 }
