@@ -13,6 +13,7 @@ public class Portal : MonoBehaviour {
     Warp warp;
     public GameObject Canvas;
     public GameObject Teleporte;
+    public bool playerishere;
 
 	// Use this for initialization
 	void Start () {
@@ -25,26 +26,40 @@ public class Portal : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-       // if(RunTime >= Time.time)
-       // {
-       //     warp.FadeIn();
-       //     StartCoroutine(Comecartransicao());
-       // }
+        if (RunTime >= Time.time && playerishere)
+        {
+            warp.FadeIn();
+            StartCoroutine(Comecartransicao());
+        }
+        fillvaluetest = Mathf.Clamp(RunTime - Time.time, 0, Tempo);
+        if (playerishere)
+        {
+            Conjuracao.fillAmount = 1 - (fillvaluetest / Tempo);
+       
+        }
+        else
+        {
+            Conjuracao.fillAmount = fillvaluetest / Tempo;
+        }
+    }
 
-
-        fillvaluetest = Mathf.Clamp(RunTime - Time.time, Tempo, 0);
-        Conjuracao.fillAmount = fillvaluetest / Tempo;
-	}
-
-    public void OnTriggerStay2D(Collider2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
+            playerishere = true;
+
             Canvas.gameObject.SetActive(true);
             RunTime = Tempo + Time.time;
         }
-        else
-            RunTime = Tempo - Time.time;
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerishere = false;
+            Canvas.gameObject.SetActive(false);
+        }
     }
     IEnumerator Comecartransicao()
     {

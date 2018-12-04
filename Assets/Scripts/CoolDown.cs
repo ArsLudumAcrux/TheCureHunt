@@ -18,6 +18,9 @@ public class CoolDown : MonoBehaviour {
     public float FireballSpeed;
     public Transform FireballRotator;
     public float DamageFireball;
+    [Header("Escudo Config")]
+    public Image[] EscudoImage;
+    public int EscudosRestante;
 
     [Space(30)]
     PlayerScript playerscript;
@@ -26,19 +29,31 @@ public class CoolDown : MonoBehaviour {
 	void Start () {
 
         playerscript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>();
-        TempoCoolDown = 1.0f;
+        TempoCoolDown = 15.0f;
         PodeUsar = true;
         cooldown.fillAmount = 0.0f;
+
+        for (int i = 0; i < EscudoImage.Length; i++)
+        {
+            EscudoImage[i].enabled = false;
+        }
 
 	}
     public void Update()
     {
-       // if (cooldown.fillAmount <= 0.0f)
-       // {
-       //     PodeUsar = true;
-       // }
-       // else
-       //     PodeUsar = false;
+        // if (cooldown.fillAmount <= 0.0f)
+        // {
+        //     PodeUsar = true;
+        // }
+        // else
+        //     PodeUsar = false;
+        for (int i = 0; i < EscudoImage.Length; i++)
+        {
+            if(i > EscudosRestante - 1)
+            {
+                EscudoImage[i].enabled = false;
+            }
+        }
 
         if (runtimeCoolDown <= Time.time)
         {
@@ -63,7 +78,12 @@ public class CoolDown : MonoBehaviour {
 
         } else if (magiaAtual == "Floresta")
         {
-            //logica de mato
+            EscudosRestante = 3;
+
+            for (int i = 0; i < EscudoImage.Length; i++)
+            {
+                EscudoImage[i].enabled = true;
+            }
 
         }
 
@@ -76,5 +96,9 @@ public class CoolDown : MonoBehaviour {
        // cooldown.fillAmount = TempoCoolDown; 
        // print("c");
 
+    }
+    public void Escudo()
+    {
+        EscudosRestante--;
     }
 }

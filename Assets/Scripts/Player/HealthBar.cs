@@ -25,7 +25,7 @@ public class HealthBar : MonoBehaviour
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 
         if (HP_Current > stats.HP_Max)
         {
@@ -33,22 +33,21 @@ public class HealthBar : MonoBehaviour
         }
 
         HP_Bar.fillAmount = HP_Current / stats.HP_Max;
-        print(podemorrer);
+
         if (HP_Current <= 0 && podemorrer == true)
         {
-            print("Morreu:");
             podemorrer = false;
             anim.SetBool("Dead", true);
+        }
+        else
+        {
+            anim.SetBool("Dead", false);
+            podemorrer = true;
         }
        
     }
     public void HPFull()
     {
         HP_Current = stats.HP_Max;
-    }
-    public void DeadFalse()
-    {
-        anim.SetBool("Dead", false);
-        podemorrer = true;
     }
 }

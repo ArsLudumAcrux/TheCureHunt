@@ -29,6 +29,8 @@ public class EnemyTronco : MonoBehaviour {
 
     Vector2 mov;
 
+    CoolDown cooldown;
+
     public bool DropaMoeda;
     public int MaxDropChance;
     private int DropChance;
@@ -51,6 +53,7 @@ public class EnemyTronco : MonoBehaviour {
 
         ObjectPlayer = GameObject.FindGameObjectWithTag("Player");
         statstronco = FindObjectOfType<Tronco_Stats>();
+        cooldown = GameObject.FindGameObjectWithTag("CoolDown").GetComponent<CoolDown>();
     }
 	
 	// Update is called once per frame

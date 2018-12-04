@@ -40,9 +40,13 @@ public class ScriptBoss : MonoBehaviour {
     bool reverso;
     bool morreu;
     Animator anim;
+    CoolDown cooldown;
 
 	// Use this for initialization
 	void Start () {
+        cooldown = GameObject.FindGameObjectWithTag("CoolDown").GetComponent<CoolDown>();
+
+
         count = 0;
 
         countslime = 2;
@@ -101,7 +105,11 @@ public class ScriptBoss : MonoBehaviour {
     }
      void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && cooldown.EscudosRestante > 0) 
+        {
+            cooldown.Escudo();
+        }
+        else if(collision.CompareTag("Player"))
         {
             HB.HP_Current -= Mathf.RoundToInt(Damage * player.ShieldPotionMult);
         }

@@ -148,7 +148,7 @@ public class PlayerScript : MonoBehaviour {
         }
 
 
-        if(Vidas <= 0)
+        if(Vidas < 0)
         {
 //GameOver tela//
         }
@@ -248,11 +248,11 @@ public class PlayerScript : MonoBehaviour {
                 
 
             }
-            //   else if (magic.MagiaAtual == "Floresta")
-            //   {
-            //       cooldown.CoolDownMagia();
-            //       print("b");
-            //   }
+            else if (magic.MagiaAtual == "Floresta" && cooldown.EscudosRestante <= 0)
+            {
+                cooldown.CoolDownMagia("Floresta");
+
+            }
 
             cooldown.CoolDownMagia(magic.MagiaAtual);
         }
@@ -517,10 +517,8 @@ public class PlayerScript : MonoBehaviour {
 
     public void Morreu()
     {
-        print("QUANTAS VEZES");
         playersprite.enabled = false;
         warp.StartCoroutine(warp.FadeMorreu());
         Vidas--;
-        GameObject.FindGameObjectWithTag("Content").GetComponent<HealthBar>().DeadFalse();
     }
 }

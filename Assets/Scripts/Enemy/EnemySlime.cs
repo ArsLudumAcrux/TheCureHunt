@@ -23,6 +23,7 @@ public class EnemySlime : MonoBehaviour {
     Animator anim;
     Rigidbody2D rb2d;
 
+    CoolDown cooldown;
    
 
     
@@ -99,9 +100,10 @@ public class EnemySlime : MonoBehaviour {
 
         //DanoSound = ObjectPlayer.GetComponent<Statistics>().DmgSound;
         HB = GameObject.FindGameObjectWithTag("Content").GetComponent<HealthBar>();
-		
+        cooldown = GameObject.FindGameObjectWithTag("CoolDown").GetComponent<CoolDown>();
 
-	}
+
+    }
 
     void Update()
     {
@@ -234,7 +236,16 @@ public class EnemySlime : MonoBehaviour {
         anim.SetTrigger("Attacking");
         speed = 0;
         PlayerScript player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>();
-        HB.HP_Current -= Mathf.RoundToInt(damage * player.ShieldPotionMult);
+        if (cooldown.EscudosRestante > 0)
+        {
+            cooldown.Escudo();
+            stopAttack = true;
+        }
+        else
+        {
+            HB.HP_Current -= Mathf.RoundToInt(damage * player.ShieldPotionMult);
+            stopAttack = true;
+        }
         stopAttack = true;
 
         yield return new WaitForSeconds(2f);
