@@ -26,7 +26,7 @@ public class Portal : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (RunTime >= Time.time && playerishere)
+        if (Conjuracao.fillAmount == 1 && playerishere)
         {
             warp.FadeIn();
             StartCoroutine(Comecartransicao());
