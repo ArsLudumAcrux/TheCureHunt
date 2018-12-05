@@ -5174,6 +5174,7 @@ GameObject:
   - component: {fileID: 152919915}
   - component: {fileID: 152919914}
   - component: {fileID: 457170987}
+  - component: {fileID: 152919916}
   m_Layer: 5
   m_Name: "Espada_Cap\xE3o"
   m_TagString: Untagged
@@ -5236,6 +5237,36 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 152919912}
   m_CullTransparentMesh: 0
+--- !u!114 &152919916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 152919912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 15355994}
+          m_MethodName: UpdateDescriptionImage
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!1 &155149053
 GameObject:
   m_ObjectHideFlags: 0
@@ -7492,9 +7523,10 @@ GameObject:
   - component: {fileID: 224913747}
   - component: {fileID: 736101184}
   - component: {fileID: 224913746}
+  - component: {fileID: 224913749}
   m_Layer: 5
   m_Name: Arma - Espada 1 Borrada
-  m_TagString: Untagged
+  m_TagString: Borrada
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7573,6 +7605,108 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 224913744}
   m_CullTransparentMesh: 0
+--- !u!114 &224913749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 224913744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eed4320c7f4393c479b7739cc2c167e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  borracha: 
+  nomeSwrd: 
+  EspadasBorradas:
+  - {fileID: 224913746}
+  - {fileID: 872649063}
+  - {fileID: 1085452642}
+  - {fileID: 1654264384}
+--- !u!1 &225200958
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 225200959}
+  - component: {fileID: 225200961}
+  - component: {fileID: 225200960}
+  - component: {fileID: 225200962}
+  m_Layer: 5
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &225200959
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 225200958}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 290884047}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -271.9}
+  m_SizeDelta: {x: 585, y: 123.4}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &225200960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 225200958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.4811321, g: 0.42236423, b: 0.20198469, a: 0.15294118}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 3c2830d83d49fb24faac67d55e1def85, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &225200961
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 225200958}
+  m_CullTransparentMesh: 0
+--- !u!114 &225200962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 225200958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 2, y: -2}
+  m_UseGraphicAlpha: 1
 --- !u!1 &225931870
 GameObject:
   m_ObjectHideFlags: 0
@@ -9239,12 +9373,13 @@ RectTransform:
   m_Children:
   - {fileID: 546459329}
   - {fileID: 1697315847}
+  - {fileID: 225200959}
   m_Father: {fileID: 1063581135}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 24}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &291637096
@@ -11349,7 +11484,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4, y: 11.200012}
+  m_AnchoredPosition: {x: 4, y: 35.200012}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &340377614
@@ -13697,7 +13832,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Descricao espada
+  m_Text: "Espada do nome lend\xE1rio, singularidade no dano e com uns dos assobios
+    mais bonitos no seu corte."
 --- !u!222 &406497913
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14554,17 +14690,6 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Sword1
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 15355994}
-        m_MethodName: DescricaoEspada
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Descricao1
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -15724,6 +15849,7 @@ MonoBehaviour:
   player: {fileID: 15355997}
   descriptiontext: {fileID: 287700569}
   naopodeusar: {fileID: 939774946}
+  descriptionsword: {fileID: 0}
   audiosourceplayer: {fileID: 0}
   pausemusic: 0
 --- !u!95 &491133151
@@ -16248,17 +16374,6 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Sword3
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 15355994}
-        m_MethodName: DescricaoEspada
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Descricao3
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -17210,17 +17325,6 @@ MonoBehaviour:
           m_StringArgument: Sword2
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 15355994}
-        m_MethodName: DescricaoEspada
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Descricao2
-          m_BoolArgument: 0
-        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &545860262
@@ -17323,6 +17427,7 @@ GameObject:
   - component: {fileID: 546459332}
   - component: {fileID: 546459331}
   - component: {fileID: 546459330}
+  - component: {fileID: 546459333}
   m_Layer: 5
   m_Name: FlorestaGema
   m_TagString: Untagged
@@ -17434,6 +17539,36 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 546459328}
   m_CullTransparentMesh: 0
+--- !u!114 &546459333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 546459328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1658227006}
+          m_MethodName: GemaDescription
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!1 &547016227
 GameObject:
   m_ObjectHideFlags: 0
@@ -19358,7 +19493,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &606739967
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20316,7 +20451,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &650298044
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22482,7 +22617,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &731596051
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22705,18 +22840,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 872649064}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 872649066}
-        m_MethodName: BtnSword
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Sword2
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &736101184
@@ -22758,18 +22882,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 224913747}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: BtnSword
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Sword1
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &737294283
@@ -27122,7 +27235,7 @@ GameObject:
   - component: {fileID: 872649066}
   m_Layer: 5
   m_Name: Arma - Espada 2 Borrada
-  m_TagString: Untagged
+  m_TagString: Borrada
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27214,6 +27327,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   borracha: 
   nomeSwrd: 
+  EspadasBorradas:
+  - {fileID: 224913746}
+  - {fileID: 872649063}
+  - {fileID: 1085452642}
+  - {fileID: 1654264384}
 --- !u!1 &873976248
 GameObject:
   m_ObjectHideFlags: 0
@@ -29001,7 +29119,7 @@ GameObject:
   m_Layer: 0
   m_Name: Target
   m_TagString: Untagged
-  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -31862,7 +31980,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1025766713
 RectTransform:
   m_ObjectHideFlags: 0
@@ -33393,6 +33511,7 @@ RectTransform:
   - {fileID: 1742940650}
   - {fileID: 340377613}
   - {fileID: 290884047}
+  - {fileID: 1108731994}
   m_Father: {fileID: 398583020}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -34481,7 +34600,7 @@ GameObject:
   - component: {fileID: 1085452645}
   m_Layer: 5
   m_Name: Arma - Espada 3 Borrada
-  m_TagString: Untagged
+  m_TagString: Borrada
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34573,6 +34692,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   borracha: 
   nomeSwrd: 
+  EspadasBorradas:
+  - {fileID: 224913746}
+  - {fileID: 872649063}
+  - {fileID: 1085452642}
+  - {fileID: 1654264384}
 --- !u!1 &1087466028
 GameObject:
   m_ObjectHideFlags: 0
@@ -34973,6 +35097,7 @@ GameObject:
   - component: {fileID: 1093217664}
   - component: {fileID: 1093217663}
   - component: {fileID: 544576471}
+  - component: {fileID: 1093217665}
   m_Layer: 5
   m_Name: "Lamento_Tuiui\xFA"
   m_TagString: Untagged
@@ -35035,6 +35160,36 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1093217661}
   m_CullTransparentMesh: 0
+--- !u!114 &1093217665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1093217661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 15355994}
+          m_MethodName: UpdateDescriptionImage
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 2
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!1 &1094766172
 GameObject:
   m_ObjectHideFlags: 0
@@ -35695,6 +35850,96 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -207.4}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1108731993
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1108731994}
+  - component: {fileID: 1108731997}
+  - component: {fileID: 1108731996}
+  - component: {fileID: 1108731995}
+  m_Layer: 5
+  m_Name: "Descri\xE7\xE3oMagia"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1108731994
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1108731993}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1063581135}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -247.9}
+  m_SizeDelta: {x: 530, y: 71.5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1108731995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1108731993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 1.2, y: -1.2}
+  m_UseGraphicAlpha: 1
+--- !u!114 &1108731996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1108731993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 1f2d7925fa5b15e4ca0cc87c1287714f, type: 3}
+    m_FontSize: 16
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 16
+    m_MaxSize: 35
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &1108731997
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1108731993}
+  m_CullTransparentMesh: 0
 --- !u!1 &1109810158
 GameObject:
   m_ObjectHideFlags: 0
@@ -41293,18 +41538,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1654264385}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1654264387}
-        m_MethodName: BtnSword
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Sword4
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &1295568566
@@ -52565,7 +52799,7 @@ GameObject:
   - component: {fileID: 1654264387}
   m_Layer: 5
   m_Name: Arma - Espada 4 Borrada
-  m_TagString: Untagged
+  m_TagString: Borrada
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52657,6 +52891,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   borracha: 
   nomeSwrd: 
+  EspadasBorradas:
+  - {fileID: 224913746}
+  - {fileID: 872649063}
+  - {fileID: 1085452642}
+  - {fileID: 1654264384}
 --- !u!1 &1658227003
 GameObject:
   m_ObjectHideFlags: 0
@@ -52746,6 +52985,7 @@ MonoBehaviour:
   BordaMagia: {fileID: 21300000, guid: 5d60ea1dc41644c43a9339046b26f50a, type: 3}
   BordaAtual: {fileID: 71180008}
   GemaDesbloq: 0
+  MagiaDescription: {fileID: 1108731996}
 --- !u!1 &1658490748
 GameObject:
   m_ObjectHideFlags: 0
@@ -53986,6 +54226,7 @@ GameObject:
   - component: {fileID: 1697315850}
   - component: {fileID: 1697315849}
   - component: {fileID: 1697315848}
+  - component: {fileID: 1697315851}
   m_Layer: 5
   m_Name: FogoGema
   m_TagString: Untagged
@@ -54097,6 +54338,36 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1697315846}
   m_CullTransparentMesh: 0
+--- !u!114 &1697315851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1697315846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1658227006}
+          m_MethodName: GemaDescription
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 2
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!1 &1698326501
 GameObject:
   m_ObjectHideFlags: 0
@@ -54144,7 +54415,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1698601118
 RectTransform:
   m_ObjectHideFlags: 0
@@ -55635,7 +55906,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 67, y: -50}
+  m_AnchoredPosition: {x: 67, y: -26}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1744143069
@@ -57027,6 +57298,7 @@ GameObject:
   - component: {fileID: 1790086685}
   - component: {fileID: 1790086684}
   - component: {fileID: 2120309976}
+  - component: {fileID: 1790086686}
   m_Layer: 5
   m_Name: Espada_Cerimonial
   m_TagString: Untagged
@@ -57089,6 +57361,36 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1790086682}
   m_CullTransparentMesh: 0
+--- !u!114 &1790086686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1790086682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 15355994}
+          m_MethodName: UpdateDescriptionImage
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 4
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!1 &1793877057
 GameObject:
   m_ObjectHideFlags: 0
@@ -61268,6 +61570,7 @@ GameObject:
   - component: {fileID: 1879965422}
   - component: {fileID: 1879965421}
   - component: {fileID: 518696016}
+  - component: {fileID: 1879965423}
   m_Layer: 5
   m_Name: "Espada_Ex\xEDmia"
   m_TagString: Untagged
@@ -61330,6 +61633,36 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1879965419}
   m_CullTransparentMesh: 0
+--- !u!114 &1879965423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1879965419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 15355994}
+          m_MethodName: UpdateDescriptionImage
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 3
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!1 &1880184790
 GameObject:
   m_ObjectHideFlags: 0
@@ -61511,7 +61844,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1897190172
 RectTransform:
   m_ObjectHideFlags: 0
@@ -73082,17 +73415,6 @@ MonoBehaviour:
           m_StringArgument: Sword4
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 15355994}
-        m_MethodName: DescricaoEspada
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Descricao4
-          m_BoolArgument: 0
-        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &2123708826
@@ -73366,18 +73688,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1085452643}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1085452645}
-        m_MethodName: BtnSword
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Sword3
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &2131593396

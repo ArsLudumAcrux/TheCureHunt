@@ -36,6 +36,8 @@ public class Hud_Menu : MonoBehaviour
     public PlayerScript player;
     public Text descriptiontext;
     public Text naopodeusar;
+    [Header("Espadas")]
+    public Image descriptionsword;
 
     [Space(50)]
     public AudioSource audiosourceplayer;
@@ -143,6 +145,9 @@ public class Hud_Menu : MonoBehaviour
         }
         if(name == "Espadas")
         {
+            StartCoroutine(TimeEspada());
+            
+
             BordaConfig.SetActive(false);
             BordaEspadas.SetActive(true);
             BordaInv.SetActive(false);
@@ -152,6 +157,8 @@ public class Hud_Menu : MonoBehaviour
             PanelEspadas.SetActive(true);
             PanelInv.SetActive(false);
             PanelMagia.SetActive(false);
+
+            StartCoroutine(TimeMagia());
 
             descriptiontext.text = "";
             ClearItemList();
@@ -168,6 +175,12 @@ public class Hud_Menu : MonoBehaviour
             PanelInv.SetActive(false);
             PanelMagia.SetActive(false);
 
+            for (int i = 0; i < sword.DescricaoEspadaImg.Length; i++)
+            {
+                sword.DescricaoEspadaImg[i].enabled = false;
+            }
+            StartCoroutine(TimeMagia());
+
             descriptiontext.text = "";
             ClearItemList();
         }
@@ -182,6 +195,12 @@ public class Hud_Menu : MonoBehaviour
             PanelEspadas.SetActive(false);
             PanelInv.SetActive(true);
             PanelMagia.SetActive(false);
+
+            for (int i = 0; i < sword.DescricaoEspadaImg.Length; i++)
+            {
+                sword.DescricaoEspadaImg[i].enabled = false;
+            }
+            StartCoroutine(TimeMagia());
 
             descriptiontext.text = "";
             UpdateListItens();
@@ -199,10 +218,15 @@ public class Hud_Menu : MonoBehaviour
             PanelInv.SetActive(false);
             PanelMagia.SetActive(true);
 
+            for (int i = 0; i < sword.DescricaoEspadaImg.Length; i++)
+            {
+                sword.DescricaoEspadaImg[i].enabled = false;
+            }
+
             descriptiontext.text = "";
             ClearItemList();
         }
-    } 
+    }
     void AbrirFecharMenu()
     {
         PanelMenu.SetActive(!PanelMenu.activeInHierarchy);
@@ -212,6 +236,8 @@ public class Hud_Menu : MonoBehaviour
         pausemusic = !pausemusic;
         if (pausemusic == true) {
             audiosourceplayer.Pause();
+            AnimatorEspadaBorrada espadaborrada = GameObject.FindGameObjectWithTag("Borrada").GetComponent<AnimatorEspadaBorrada>();
+            espadaborrada.BtnSword();
         }
         else if(pausemusic == false){
             audiosourceplayer.UnPause();
@@ -254,6 +280,18 @@ public class Hud_Menu : MonoBehaviour
         yield return new WaitForSecondsRealtime(2f);
         naopodeusar.text = "";
         descriptiontext.gameObject.SetActive(true);
+    }
+    IEnumerator TimeMagia()
+    {
+        yield return new WaitForSecondsRealtime(0.5f);
+        Magic magic = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Magic>();
+        magic.StartCoroutine(magic.Desativardescription());
+    }
+    IEnumerator TimeEspada()
+    {
+        yield return new WaitForSecondsRealtime(0.5f);
+        AnimatorEspadaBorrada espadaborrada = GameObject.FindGameObjectWithTag("Borrada").GetComponent<AnimatorEspadaBorrada>();
+        espadaborrada.BtnSword();
     }
 
     IEnumerator Animacao()

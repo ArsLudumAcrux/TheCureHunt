@@ -7,48 +7,66 @@ public class AnimatorEspadaBorrada : MonoBehaviour {
     public string borracha;
     public string nomeSwrd;
 
+    Statistics playerstats;
     Animator anim;
     string Borrada;
-    public void BtnSword(string borracha)
+
+    public Animator[] EspadasBorradas;
+
+
+    public void Start()
     {
-        borracha = nomeSwrd;
-        StartCoroutine(Animacao(nomeSwrd));
+        playerstats = GameObject.FindGameObjectWithTag("Player").GetComponent<Statistics>();
+        anim = GetComponent<Animator>();
+        for (int i = 0; i < EspadasBorradas.Length; i++)
+        {
+            EspadasBorradas[i] = GetComponent<Animator>();
+        }
     }
-    IEnumerator Animacao(string nomeSwrd)
+
+
+    public void BtnSword()
     {
-
-
-        //yield return new WaitForSecondsRealtime(0.1f);
-        //anim.SetBool("EspadaBorrada_FadeOut", true);
-        //anim.SetBool("EspadaBorrada_Esconder", false);
-
-        //yield return new WaitForSecondsRealtime(2f);
-        //anim.SetBool("EspadaBorrada_FadeOut", false);
-        //anim.SetBool("EspadaBorrada_Esconder", true);
-        if (nomeSwrd == "Sword1")
+        StartCoroutine(EspadaBorradaAnim());
+    }
+    IEnumerator EspadaBorradaAnim()
+    {
+        if (playerstats.Level == 1)
         {
-            anim.Play("Espada_Borrada1_FadeOut");
+            print("LEVEL1 BORRADA");
+            EspadasBorradas[0].Play("Espada_Borrada1_FadeOut");
             yield return new WaitForSecondsRealtime(2f);
-            anim.Play("Espada_Borrada1_Esconder");
-        }
-
-        if (nomeSwrd == "Sword2")
+            EspadasBorradas[0].Play("Espada_Borrada1_Esconder");
+        }else if (playerstats.Level == 2)
         {
-            anim.Play("Espada_Borrada2_FadeOut");
+            print("LEVEL2 BORRADA");
+            EspadasBorradas[0].Play("Espada_Borrada1_FadeOut");
+            EspadasBorradas[1].Play("Espada_Borrada2_FadeOut");
             yield return new WaitForSecondsRealtime(2f);
-            anim.Play("Espada_Borrada2_Esconder");
-        }
-        if (nomeSwrd == "Sword3")
+            EspadasBorradas[0].Play("Espada_Borrada1_Esconder");
+            EspadasBorradas[1].Play("Espada_Borrada2_Esconder");
+        }else if (playerstats.Level == 3)
         {
-            anim.Play("Espada_Borrada3_FadeOut");
+            print("LEVEL3 BORRADA");
+            EspadasBorradas[0].Play("Espada_Borrada1_FadeOut");
+            EspadasBorradas[1].Play("Espada_Borrada2_FadeOut");
+            EspadasBorradas[2].Play("Espada_Borrada3_FadeOut");
             yield return new WaitForSecondsRealtime(2f);
-            anim.Play("Espada_Borrada3_Esconder");
-        }
-        if (nomeSwrd == "Sword4")
+            EspadasBorradas[0].Play("Espada_Borrada1_Esconder");
+            EspadasBorradas[1].Play("Espada_Borrada2_Esconder");
+            EspadasBorradas[2].Play("Espada_Borrada3_Esconder");
+        }else if (playerstats.Level == 4)
         {
-            anim.Play("Espada_Borrada4_FadeOut");
+            print("LEVEL4 BORRADA");
+            EspadasBorradas[0].Play("Espada_Borrada1_FadeOut");
+            EspadasBorradas[1].Play("Espada_Borrada2_FadeOut");
+            EspadasBorradas[2].Play("Espada_Borrada3_FadeOut");
+            EspadasBorradas[3].Play("Espada_Borrada4_FadeOut");
             yield return new WaitForSecondsRealtime(2f);
-            anim.Play("Espada_Borrada4_Esconder");
+            EspadasBorradas[0].Play("Espada_Borrada1_Esconder");
+            EspadasBorradas[1].Play("Espada_Borrada2_Esconder");
+            EspadasBorradas[2].Play("Espada_Borrada3_Esconder");
+            EspadasBorradas[3].Play("Espada_Borrada4_Esconder");
         }
     }
 }

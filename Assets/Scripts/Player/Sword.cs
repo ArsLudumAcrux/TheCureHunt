@@ -96,13 +96,9 @@ public class Sword : MonoBehaviour {
             SwordCurrentCriticoChance = SwordCriticoChance[3];
         }
     }
-    public void SwordBorrada(string Borrada)
+    public void UpdateDescriptionImage(int numero)
     {
-
-    }
-    public void DescricaoEspada(string descricao)
-    {
-        if (descricao == "Descricao1")
+        if (numero == 1)
         {
             DescricaoEspadaImg[0].gameObject.SetActive(true);
             DescricaoEspadaImg[1].gameObject.SetActive(false);
@@ -114,7 +110,7 @@ public class Sword : MonoBehaviour {
             TxtDescricaoEspada[2].gameObject.SetActive(false);
             TxtDescricaoEspada[3].gameObject.SetActive(false);
         }
-        else if (descricao == "Descricao2")
+        else if (numero == 2)
         {
             DescricaoEspadaImg[0].gameObject.SetActive(false);
             DescricaoEspadaImg[1].gameObject.SetActive(true);
@@ -126,7 +122,7 @@ public class Sword : MonoBehaviour {
             TxtDescricaoEspada[2].gameObject.SetActive(false);
             TxtDescricaoEspada[3].gameObject.SetActive(false);
         }
-        else if (descricao == "Descricao3")
+        else if (numero == 3)
         {
             DescricaoEspadaImg[0].gameObject.SetActive(false);
             DescricaoEspadaImg[1].gameObject.SetActive(false);
@@ -138,7 +134,7 @@ public class Sword : MonoBehaviour {
             TxtDescricaoEspada[2].gameObject.SetActive(true);
             TxtDescricaoEspada[3].gameObject.SetActive(false);
         }
-        else if (descricao == "Descricao4")
+        else if (numero == 4)
         {
             DescricaoEspadaImg[0].gameObject.SetActive(false);
             DescricaoEspadaImg[1].gameObject.SetActive(false);
@@ -151,4 +147,55 @@ public class Sword : MonoBehaviour {
             TxtDescricaoEspada[3].gameObject.SetActive(true);
         }
     }
+    //public void DescricaoEspada(string descricao)
+    //{
+    //    if (descricao == "Descricao1")
+    //    {
+    //        DescricaoEspadaImg[0].gameObject.SetActive(true);
+    //        DescricaoEspadaImg[1].gameObject.SetActive(false);
+    //        DescricaoEspadaImg[2].gameObject.SetActive(false);
+    //        DescricaoEspadaImg[3].gameObject.SetActive(false);
+
+    //        TxtDescricaoEspada[0].gameObject.SetActive(true);
+    //        TxtDescricaoEspada[1].gameObject.SetActive(false);
+    //        TxtDescricaoEspada[2].gameObject.SetActive(false);
+    //        TxtDescricaoEspada[3].gameObject.SetActive(false);
+    //    }
+    //    else if (descricao == "Descricao2")
+    //    {
+    //        DescricaoEspadaImg[0].gameObject.SetActive(false);
+    //        DescricaoEspadaImg[1].gameObject.SetActive(true);
+    //        DescricaoEspadaImg[2].gameObject.SetActive(false);
+    //        DescricaoEspadaImg[3].gameObject.SetActive(false);
+
+    //        TxtDescricaoEspada[0].gameObject.SetActive(false);
+    //        TxtDescricaoEspada[1].gameObject.SetActive(true);
+    //        TxtDescricaoEspada[2].gameObject.SetActive(false);
+    //        TxtDescricaoEspada[3].gameObject.SetActive(false);
+    //    }
+    //    else if (descricao == "Descricao3")
+    //    {
+    //        DescricaoEspadaImg[0].gameObject.SetActive(false);
+    //        DescricaoEspadaImg[1].gameObject.SetActive(false);
+    //        DescricaoEspadaImg[2].gameObject.SetActive(true);
+    //        DescricaoEspadaImg[3].gameObject.SetActive(false);
+
+    //        TxtDescricaoEspada[0].gameObject.SetActive(false);
+    //        TxtDescricaoEspada[1].gameObject.SetActive(false);
+    //        TxtDescricaoEspada[2].gameObject.SetActive(true);
+    //        TxtDescricaoEspada[3].gameObject.SetActive(false);
+    //    }
+    //    else if (descricao == "Descricao4")
+    //    {
+    //        DescricaoEspadaImg[0].gameObject.SetActive(false);
+    //        DescricaoEspadaImg[1].gameObject.SetActive(false);
+    //        DescricaoEspadaImg[2].gameObject.SetActive(false);
+    //        DescricaoEspadaImg[3].gameObject.SetActive(true);
+
+    //        TxtDescricaoEspada[0].gameObject.SetActive(false);
+    //        TxtDescricaoEspada[1].gameObject.SetActive(false);
+    //        TxtDescricaoEspada[2].gameObject.SetActive(false);
+    //        TxtDescricaoEspada[3].gameObject.SetActive(true);
+    //    }
+    //}
 }

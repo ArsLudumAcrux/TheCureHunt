@@ -25,6 +25,8 @@ public class Magic : MonoBehaviour {
 
     public bool GemaDesbloq;
 
+    public Text MagiaDescription;
+
     // Use this for initialization
 
 
@@ -54,6 +56,20 @@ public class Magic : MonoBehaviour {
     {
 
     }
+
+
+    public void GemaDescription(int numero)
+    {
+        if (numero == 1)
+        {
+            MagiaDescription.text = "Essa magia lhe concede um escudo, que absorve 3 ataques de inimigos, ela tem um tempo de recarga de 20 segundos.";
+        }else if(numero == 2)
+        {
+            MagiaDescription.text = "Essa magia lhe concede uma bola de fogo, que da 20 de dano se colidir com um inimigo, ela tem um tempo de recarga de 20 segundos.";
+        }
+    }
+
+
     //Função de clique para o botão, para que mostre o texto //
     public void GemasBloqText(string name)
     {
@@ -130,5 +146,10 @@ public class Magic : MonoBehaviour {
         {
             Text[i].gameObject.SetActive(false);
         }
+    }
+   public IEnumerator Desativardescription()
+    {
+        yield return new WaitForSecondsRealtime(1f);
+        MagiaDescription.text = "";
     }
 }

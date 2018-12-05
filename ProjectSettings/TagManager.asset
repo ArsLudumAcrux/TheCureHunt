@@ -28,6 +28,7 @@ TagManager:
   - Boss
   - Warp
   - TriggerFogo
+  - Borrada
   layers:
   - Default
   - TransparentFX
