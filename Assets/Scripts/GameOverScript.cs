@@ -9,6 +9,7 @@ public class GameOverScript : MonoBehaviour {
     bool podeirmenu;
     public Text continuar;
     public Image continuarimg;
+    public AudioSource risada;
 
 
     // Para controlar se começa ou não a transição
@@ -27,6 +28,7 @@ public class GameOverScript : MonoBehaviour {
         continuarimg.enabled = false;
         podeirmenu = false;
         StartCoroutine(ContarTempo());
+        Invoke("ComecarRisada", 1f);
 	}
 	
 	// Update is called once per frame
@@ -36,6 +38,17 @@ public class GameOverScript : MonoBehaviour {
             FadeIn();
         }
 	}
+    void ComecarRisada()
+    {
+        risada.Play();
+        Invoke("LoopRisada", 14f);
+    }
+    void LoopRisada()
+    {
+        risada.Play();
+        Invoke("ComecarRisada", 14f);
+    }
+
 
     void OnGUI()
     {
@@ -89,7 +102,7 @@ public class GameOverScript : MonoBehaviour {
 
     IEnumerator FadeTime()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
         FadeOut();
     }
     IEnumerator ContarTempo()
