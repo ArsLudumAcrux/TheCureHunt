@@ -28,7 +28,7 @@ public class GameOverScript : MonoBehaviour {
         continuarimg.enabled = false;
         podeirmenu = false;
         StartCoroutine(ContarTempo());
-        Invoke("ComecarRisada", 1f);
+        Invoke("ComecarRisada", 2f);
 	}
 	
 	// Update is called once per frame
@@ -41,12 +41,12 @@ public class GameOverScript : MonoBehaviour {
     void ComecarRisada()
     {
         risada.Play();
-        Invoke("LoopRisada", 14f);
+        Invoke("LoopRisada", 16f);
     }
     void LoopRisada()
     {
         risada.Play();
-        Invoke("ComecarRisada", 14f);
+        Invoke("ComecarRisada", 16f);
     }
 
 
