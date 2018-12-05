@@ -16,6 +16,6 @@ MonoBehaviour:
   potionFunction: 2
   potionName: "Po\xE7\xE3o de Recupera\xE7\xE3o"
   potionDescription: "Essa po\xE7\xE3o serve para tirar efeitos negativos, fora isso
-    ela \xE9 inutil."
+    ela \xE9 inutil, ou n\xE3o..."
   artwork: {fileID: 21300000, guid: 95bda6f2dd9486d4cb7ccd9d9f206451, type: 3}
   Duration: 1

@@ -84,8 +84,8 @@ public class EnemySlime : MonoBehaviour {
 
     void Start () {
 
-        /////////////////////////////////////////////  "CATARINA" /////////////////////////////////////////////////////////////
-        // Guardamos nuestra posición inicial
+
+        // Guarda a posicao inicial da slime
         initialPosition = transform.position;
 
         anim = GetComponent<Animator>();
@@ -93,7 +93,7 @@ public class EnemySlime : MonoBehaviour {
 
         //velocidaderb = GetComponent<Rigidbody2D>().velocity.normalized.x;
 
-        // Recuperamos al jugador gracias al Tag
+        // Encontrar o jogador pela tag
         ObjectPlayer = GameObject.FindGameObjectWithTag("Player");
         //DestroyCollider = GetComponent<CircleCollider2D>();
 
@@ -112,55 +112,47 @@ public class EnemySlime : MonoBehaviour {
 
         if(distance <= attackRadius && !stopAttack)
         {
-            StartCoroutine(Attack_CR()); 
+            StartCoroutine(Attack_CR());
         }
 
 
         if (stats.morreu == false)
         {
-            /////////////////////////////////////////////  "CATARINA SÓ A PRIMEIRA LINHA" /////////////////////////////////////////////////////////////
-            // Por defecto nuestro objetivo siempre será nuestra posición actual
+            //Target inicial, é sempre a posicao que a slime comeca
             Vector3 target = initialPosition;
             //DestroyCollider.transform.position = transform.position;
 
-            /////////////////////////////////////////////  "CATARINA" /////////////////////////////////////////////////////////////
-            // Pero si la distancia hasta el jugador es menor que el radio de visión el objetivo será él
+            // Se a distancia do player for menor que a variavel visionradius, o target mudara para o player, e ele sera o alvo
             float dist = Vector3.Distance(ObjectPlayer.transform.position, transform.position);
             if (dist < visionRadius) target = ObjectPlayer.transform.position;
 
-            /////////////////////////////////////////////  "CATARINA" /////////////////////////////////////////////////////////////
-            // Finalmente movemos al enemigo en dirección a su target
+            // Assim que o target for o player, a slime se movera ate ele
 
             float fixedSpeed = speed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, target, fixedSpeed);
 
-            // Y podemos debugearlo con una línea
+            // Aqui podemos ver o target com uma linha 
             Debug.DrawLine(transform.position, target, Color.green);
-            /////////////////////////////////////////////  "CATARINA SÓ A PRIMEIRA LINHA" /////////////////////////////////////////////////////////////
-            //// Por defecto nuestro target siempre será nuestra posición inicial
+
             //Vector3 target = initialPosition;
 
-            /////////////////////////////////////////////  "CATARINA" /////////////////////////////////////////////////////////////
-            // Comprobamos un Raycast del enemigo hasta el jugador
+
             RaycastHit2D hit = Physics2D.Raycast(
                 transform.position,
                 ObjectPlayer.transform.position - transform.position,
                 visionRadius,
                 1 << LayerMask.NameToLayer("Default")
 
-            /////////////////////////////////////////////  "CATARINA AS 3 LINHAS" /////////////////////////////////////////////////////////////
-            // Poner el propio Enemy en una layer distinta a Default para evitar el raycast
-            // También poner al objeto Attack y al Prefab Slash una Layer Attack 
-            // Sino los detectará como entorno y se mueve trás al hacer ataques
+            // Colocar o inimigo em uma camada diferente do padrão para evitar o raycast
             );
 
-            /////////////////////////////////////////////  "CATARINA" /////////////////////////////////////////////////////////////
-            // Aquí podemos debugear el Raycast
+
+            // Aqui vemos a linha vermelha na Scene na unity, que é o target, que é o player
             Vector3 forward = transform.TransformDirection(ObjectPlayer.transform.position - transform.position);
             Debug.DrawRay(transform.position, forward, Color.red);
 
-            /////////////////////////////////////////////  "CATARINA" /////////////////////////////////////////////////////////////
-            // Si el Raycast encuentra al jugador lo ponemos de target
+
+            // Se o raycast encontrar o jogador, colocamos ele na variavel Target
             if (hit.collider != null)
             {
                 if (hit.collider.tag == "Player")
@@ -168,49 +160,45 @@ public class EnemySlime : MonoBehaviour {
                     target = ObjectPlayer.transform.position;
                 }
             }
-            /////////////////////////////////////////////  "CATARINA" /////////////////////////////////////////////////////////////
-            // Calculamos la distancia y dirección actual hasta el target
+
+            // Calculo para ver a distancia atual do player
             float distance = Vector3.Distance(target, transform.position);
             Vector3 dir = (target - transform.position).normalized;
 
-            /////////////////////////////////////////////  "CATARINA" /////////////////////////////////////////////////////////////
-            // Si es el enemigo y está en rango de ataque nos paramos y le atacamos
+
+            // Se o player estiver no alcance, a slime para e ataca
             if (target != initialPosition && distance < attackRadius)
             {
-                /////////////////////////////////////////////  "CATARINA" /////////////////////////////////////////////////////////////
-                // Aquí le atacaríamos, pero por ahora simplemente cambiamos la animación
+
+                // Aqui seria para atacar, mas por hora movimentamos a slime
                 anim.SetFloat("MovX", dir.x);
-                anim.SetFloat("MovY", dir.y); /////////////////////////////////////////////  "CATARINA" /////////////////////////////////////////////////////////////
-                anim.Play("Enemy_Walk", -1, 0);  // Congela la animación de andar
+                anim.SetFloat("MovY", dir.y); 
+                //anim.Play("Enemy_Walk", -1, 0);  // Congela a animacao de andar
             }
-            /////////////////////////////////////////////  "CATARINA" /////////////////////////////////////////////////////////////
-            // En caso contrario nos movemos hacia él
+
+            //Caso nao seja o if, vai para o else para ele se mover
             else
             {
                 rb2d.MovePosition(transform.position + dir * speed * Time.deltaTime);
-                /////////////////////////////////////////////  "CATARINA" /////////////////////////////////////////////////////////////
-                // Al movernos establecemos la animación de movimiento
+
+                // Ao se mover, começa a animacao de andar
                 anim.speed = 1;
                 anim.SetFloat("MovX", dir.x);
                 anim.SetFloat("MovY", dir.y);
                 anim.SetBool("Walking", true);
             }
-            /////////////////////////////////////////////  "CATARINA" /////////////////////////////////////////////////////////////
-            // Una última comprobación para evitar bugs forzando la posición inicial
+
             if (target == initialPosition && distance < 0.02f)
             {
                 transform.position = initialPosition;
-                /////////////////////////////////////////////  "CATARINA" /////////////////////////////////////////////////////////////
-                // Y cambiamos la animación de nuevo a Idle
+
+                // Deixar a animação andar falsa, e voltar ao idle
                 anim.SetBool("Walking", false);
             }
-            /////////////////////////////////////////////  "CATARINA" /////////////////////////////////////////////////////////////
-            // Y un debug optativo con una línea hasta el target
             Debug.DrawLine(transform.position, target, Color.green);
         }
     }
-    /////////////////////////////////////////////  "CATARINA" /////////////////////////////////////////////////////////////
-    // Podemos dibujar el radio de visión sobre la escena dibujando una esfera
+
     void OnDrawGizmos() {
 
         Gizmos.color = Color.yellow;

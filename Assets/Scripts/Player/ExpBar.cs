@@ -11,6 +11,7 @@ public class ExpBar : MonoBehaviour {
     public int danoplayer;
     Slime_Stats slime_stats;
     PlayerScript playerScript;
+    HealthBar HB;
 
     [Header("Text Status Atualizados")]
     public Text danoTxt;
@@ -24,6 +25,7 @@ public class ExpBar : MonoBehaviour {
         stat = FindObjectOfType<Statistics>();//pegando o script Statistics
         playerScript = FindObjectOfType<PlayerScript>();
         experiencia_img = GetComponent<Image>();// Pegando a imagem pra utilizar o fillAmount   
+        HB = FindObjectOfType<HealthBar>();
     }
     public void Update()
     {
@@ -42,10 +44,15 @@ public class ExpBar : MonoBehaviour {
 
             stat.strongh = Mathf.Round(stat.strongh * 1.02f);
 
-            danoplayer += 2;
+            danoplayer += 2; // Adiciona +2 de dano ao player
+
+            playerScript.speed = (playerScript.speed * 1.02f); // Adiciona 2% de velocidade ao player
+
+            HB.HPFull(); // Assim que aumentar a vida maxima, deixar a vida cheia
 
             danoTxt.gameObject.SetActive(true);
-            Invoke("StatusAtualizados", 2f);
+            speedTxt.gameObject.SetActive(true);
+            Invoke("StatusAtualizados", 4f);
 
            // playerScript.speed= Mathf.Round(stat.strongh * 1.01f);
 
@@ -61,9 +68,6 @@ public class ExpBar : MonoBehaviour {
 
             //Debug.Log("LevelDoPlayer" + stat.Level);
 
-            Debug.Log("Vida maxima atual: " + stat.HP_Max);
-            Debug.Log("Força atual do player : " + stat.strongh);
-            Debug.Log("Velocidade atual do player : " + playerScript.speed);
         }
     }
     public void Experiencia(int xpMin, int xpMax)
@@ -75,5 +79,6 @@ public class ExpBar : MonoBehaviour {
     public void StatusAtualizados()
     {
         danoTxt.gameObject.SetActive(false);
+        speedTxt.gameObject.SetActive(false);
     }
 }

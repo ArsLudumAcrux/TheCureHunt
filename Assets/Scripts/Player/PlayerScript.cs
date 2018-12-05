@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Assertions;
+using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour {
 
@@ -150,7 +151,8 @@ public class PlayerScript : MonoBehaviour {
 
         if(Vidas < 0)
         {
-//GameOver tela//
+            warp.FadeIn();
+            StartCoroutine(CenaGameOver());
         }
 
     
@@ -520,5 +522,11 @@ public class PlayerScript : MonoBehaviour {
         playersprite.enabled = false;
         warp.StartCoroutine(warp.FadeMorreu());
         Vidas--;
+    }
+    IEnumerator CenaGameOver()
+    {
+        yield return new WaitForSeconds(3f);
+        warp.FadeOut();
+        SceneManager.LoadScene(2);
     }
 }

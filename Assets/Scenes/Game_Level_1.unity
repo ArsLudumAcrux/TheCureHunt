@@ -669,7 +669,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 8d1fb89784099824a97b9759765affcc, type: 3}
   - {fileID: 21300000, guid: 933b813d9abdc2f458cee01a264908d7, type: 3}
   - {fileID: 21300000, guid: 76408f239567cf346a7275876aac9159, type: 3}
-  Sword_Damage: 050000000a0000000f00000019000000
+  Sword_Damage: 05000000080000000f00000014000000
   Espadas:
   - {fileID: 457170987}
   - {fileID: 544576471}
@@ -731,11 +731,6 @@ MonoBehaviour:
   levelup: {fileID: 911969970}
   TempoDeJogo: 199.29793
   HpPerdido: 0
-  CopperCoin: {fileID: 0}
-  SilverCoin: {fileID: 0}
-  GoldCoin: {fileID: 0}
-  PearlCoin: {fileID: 0}
-  MithrilCoin: {fileID: 0}
   CoinText: {fileID: 587216509}
   CoinTextMenu: {fileID: 1327396493}
   CoinTextShadow: {fileID: 0}
@@ -7620,9 +7615,6 @@ MonoBehaviour:
   nomeSwrd: 
   EspadasBorradas:
   - {fileID: 224913746}
-  - {fileID: 872649063}
-  - {fileID: 1085452642}
-  - {fileID: 1654264384}
 --- !u!1 &225200958
 GameObject:
   m_ObjectHideFlags: 0
@@ -13432,8 +13424,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -230, y: -105}
-  m_SizeDelta: {x: 1420.2, y: 800}
+  m_AnchoredPosition: {x: -230, y: -222.99977}
+  m_SizeDelta: {x: 1500, y: 850}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &399854145
 MonoBehaviour:
@@ -13475,7 +13467,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.7372549, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -13823,9 +13815,9 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: 5af3fbc08faa32346a9120d41945a5fa, type: 3}
     m_FontSize: 16
     m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 0
-    m_MaxSize: 40
+    m_BestFit: 1
+    m_MinSize: 14
+    m_MaxSize: 20
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -20451,7 +20443,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &650298044
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21202,9 +21194,9 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: 5af3fbc08faa32346a9120d41945a5fa, type: 3}
     m_FontSize: 16
     m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 0
-    m_MaxSize: 40
+    m_BestFit: 1
+    m_MinSize: 14
+    m_MaxSize: 30
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -25217,7 +25209,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'DANO: 25'
+  m_Text: 'DANO: 20'
 --- !u!222 &823259531
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -27330,8 +27322,6 @@ MonoBehaviour:
   EspadasBorradas:
   - {fileID: 224913746}
   - {fileID: 872649063}
-  - {fileID: 1085452642}
-  - {fileID: 1654264384}
 --- !u!1 &873976248
 GameObject:
   m_ObjectHideFlags: 0
@@ -33496,7 +33486,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1063581135
 RectTransform:
   m_ObjectHideFlags: 0
@@ -34696,7 +34686,6 @@ MonoBehaviour:
   - {fileID: 224913746}
   - {fileID: 872649063}
   - {fileID: 1085452642}
-  - {fileID: 1654264384}
 --- !u!1 &1087466028
 GameObject:
   m_ObjectHideFlags: 0
@@ -38297,8 +38286,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -138.7, y: 5.2}
-  m_SizeDelta: {x: 185, y: 187}
+  m_AnchoredPosition: {x: -138.7, y: 4.76}
+  m_SizeDelta: {x: 185, y: 193.21}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1181034471
 MonoBehaviour:
@@ -38323,16 +38312,19 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: 5af3fbc08faa32346a9120d41945a5fa, type: 3}
     m_FontSize: 16
     m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 0
-    m_MaxSize: 40
+    m_BestFit: 1
+    m_MinSize: 14
+    m_MaxSize: 30
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Descricao Espada
+  m_Text: "Espada criada para ser usada em cerimonias, e embora isso seja \xF3bvio,
+    seu poder \xE9 algo que supera a compress\xE3o de um guerreiro que n\xE3o saiba
+    diferenciar uma alabarda de uma lan\xE7a, em outras palavras, \xE9 extremamente
+    poderosa."
 --- !u!222 &1181034472
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -50368,16 +50360,17 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: 5af3fbc08faa32346a9120d41945a5fa, type: 3}
     m_FontSize: 16
     m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 0
-    m_MaxSize: 40
+    m_BestFit: 1
+    m_MinSize: 14
+    m_MaxSize: 30
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Descricao Espada
+  m_Text: "Como o nome sugere, ex\xEDmia l\xE2mina, de forja refinada em ouro com
+    detalhes em rubi, excelente para matar monstros ou crises financeiras."
 --- !u!222 &1587847747
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -54775,7 +54768,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'DANO: 10'
+  m_Text: 'DANO: 8'
 --- !u!222 &1706859489
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -57498,8 +57491,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -201.99916, y: -659.00037}
-  m_SizeDelta: {x: 1420.2, y: 800}
+  m_AnchoredPosition: {x: -201.99916, y: -777}
+  m_SizeDelta: {x: 1500, y: 850}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1795660034
 MonoBehaviour:
@@ -57541,7 +57534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.7372549, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -57553,7 +57546,7 @@ MonoBehaviour:
     m_FontSize: 300
     m_FontStyle: 3
     m_BestFit: 0
-    m_MinSize: 1
+    m_MinSize: 0
     m_MaxSize: 300
     m_Alignment: 4
     m_AlignByGeometry: 0

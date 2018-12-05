@@ -33,13 +33,11 @@ public class AnimatorEspadaBorrada : MonoBehaviour {
     {
         if (playerstats.Level == 1)
         {
-            print("LEVEL1 BORRADA");
             EspadasBorradas[0].Play("Espada_Borrada1_FadeOut");
             yield return new WaitForSecondsRealtime(2f);
             EspadasBorradas[0].Play("Espada_Borrada1_Esconder");
         }else if (playerstats.Level == 2)
         {
-            print("LEVEL2 BORRADA");
             EspadasBorradas[0].Play("Espada_Borrada1_FadeOut");
             EspadasBorradas[1].Play("Espada_Borrada2_FadeOut");
             yield return new WaitForSecondsRealtime(2f);
@@ -47,7 +45,6 @@ public class AnimatorEspadaBorrada : MonoBehaviour {
             EspadasBorradas[1].Play("Espada_Borrada2_Esconder");
         }else if (playerstats.Level == 3)
         {
-            print("LEVEL3 BORRADA");
             EspadasBorradas[0].Play("Espada_Borrada1_FadeOut");
             EspadasBorradas[1].Play("Espada_Borrada2_FadeOut");
             EspadasBorradas[2].Play("Espada_Borrada3_FadeOut");
@@ -57,7 +54,6 @@ public class AnimatorEspadaBorrada : MonoBehaviour {
             EspadasBorradas[2].Play("Espada_Borrada3_Esconder");
         }else if (playerstats.Level == 4)
         {
-            print("LEVEL4 BORRADA");
             EspadasBorradas[0].Play("Espada_Borrada1_FadeOut");
             EspadasBorradas[1].Play("Espada_Borrada2_FadeOut");
             EspadasBorradas[2].Play("Espada_Borrada3_FadeOut");
