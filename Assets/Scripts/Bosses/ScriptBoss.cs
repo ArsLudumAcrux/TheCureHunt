@@ -39,13 +39,27 @@ public class ScriptBoss : MonoBehaviour {
     public int countslime;
 
     bool reverso;
-    bool morreu;
+    public bool morreu;
     Animator anim;
     CoolDown cooldown;
+
+    public GameObject[] VinhasDireita;
+    public GameObject[] VinhasEsquerda;
 
 	// Use this for initialization
 	void Start () {
         cooldown = GameObject.FindGameObjectWithTag("CoolDown").GetComponent<CoolDown>();
+
+
+        for (int i = 0; i < VinhasDireita.Length; i++)
+        {
+            VinhasDireita[i].SetActive(false);
+        }
+        for (int i = 0; i < VinhasEsquerda.Length; i++)
+        {
+            VinhasEsquerda[i].SetActive(false);
+        }
+
 
 
         count = 0;
@@ -172,7 +186,61 @@ public class ScriptBoss : MonoBehaviour {
     {
         anim.SetTrigger("spell");
         count = count + 1;
-        StartCoroutine(ComecarCoroutine(2f));
+        Invoke("VinhasEsquerdaAtaque1x", 1f);
+    }
+    public void VinhasDireitaAtaque1x()
+    {
+        anim.SetTrigger("spell");
+        for (int i = 0; i < VinhasDireita.Length; i++)
+        {
+            VinhasDireita[i].SetActive(true);
+        }
+        Invoke("VinhasDireitaDisable", 3.55f);
+        Invoke("VinhasEsquerdaAtaque2x", 3.55f);
+    }
+    public void VinhasDireitaAtaque2x()
+    {
+        anim.SetTrigger("spell");
+        for (int i = 0; i < VinhasDireita.Length; i++)
+        {
+            VinhasDireita[i].SetActive(true);
+        }
+        Invoke("VinhasDireitaDisable", 3.55f);
+        StartCoroutine(ComecarCoroutine(4.2f));
+    }
+    public void VinhasDireitaDisable()
+    {
+        for (int i = 0; i < VinhasDireita.Length; i++)
+        {
+            VinhasDireita[i].SetActive(false);
+        }
+    }
+    public void VinhasEsquerdaAtaque1x()
+    {
+        anim.SetTrigger("spell");
+        for (int i = 0; i < VinhasEsquerda.Length; i++)
+        {
+            VinhasEsquerda[i].SetActive(true);
+        }
+        Invoke("VinhasEsquerdaDisable", 3.55f);
+        Invoke("VinhasDireitaAtaque1x", 3.55f);
+    }
+    public void VinhasEsquerdaAtaque2x()
+    {
+        anim.SetTrigger("spell");
+        for (int i = 0; i < VinhasEsquerda.Length; i++)
+        {
+            VinhasEsquerda[i].SetActive(true);
+        }
+        Invoke("VinhasEsquerdaDisable", 3.55f);
+        Invoke("VinhasDireitaAtaque2x", 3.55f);
+    }
+    public void VinhasEsquerdaDisable()
+    {
+        for (int i = 0; i < VinhasEsquerda.Length; i++)
+        {
+            VinhasEsquerda[i].SetActive(false);
+        }
     }
     public void ORBE()
     {

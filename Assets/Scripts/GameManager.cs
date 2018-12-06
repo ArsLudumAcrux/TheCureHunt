@@ -9,11 +9,13 @@ public class GameManager : MonoBehaviour {
     public int monstrosMortos;
     public int monstrosMortos2;
     public int monstrosMortos3;
+    ScriptBoss boss;
    // public int monstrosMortos4;
     Hud_Menu HudMenu;
 
     void Start()
     {
+        boss = GameObject.FindGameObjectWithTag("Boss").GetComponent<ScriptBoss>();
         spawnMonsters = FindObjectOfType<SpawnMonsters>();
         HudMenu = GameObject.FindGameObjectWithTag("Area").GetComponent<Hud_Menu>();
 
@@ -54,6 +56,10 @@ public class GameManager : MonoBehaviour {
       //     monstrosMortos4 = 0;
       //
       // }
+      if(boss.morreu == true)
+        {
+            Warps[5].GetComponent<BoxCollider2D>().isTrigger = true;
+        }
 
     }
 

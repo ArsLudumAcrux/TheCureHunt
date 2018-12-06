@@ -346,6 +346,7 @@ public class PlayerScript : MonoBehaviour {
             gamemanager.monstrosMortos2 = 0;
             if (mapa2 == false)
             {
+                mapa1 = false;
                 mapa2 = true;
                 UltimoMapa = "mapa2";
                 maincamera.gameObject.SetActive(true);
@@ -359,6 +360,8 @@ public class PlayerScript : MonoBehaviour {
             gamemanager.monstrosMortos3 = 0;
             if (mapa3 == false)
             {
+                mapa1 = false;
+                mapa2 = false;
                 mapa3 = true;
                 UltimoMapa = "mapa3";
                 maincamera.gameObject.SetActive(true);
@@ -370,6 +373,9 @@ public class PlayerScript : MonoBehaviour {
             FindObjectOfType<AreaScript>().ChamarCoroutine("Sala do Chefe");
             if(mapa4 == false)
             {
+                mapa1 = false;
+                mapa2 = false;
+                mapa3 = false;
                 mapa4 = true;
                 UltimoMapa = "mapa4";
                 maincamera.gameObject.SetActive(false);
@@ -384,6 +390,10 @@ public class PlayerScript : MonoBehaviour {
             gamemanager.monstrosMortos = 0;
             if (mapa5 == false)
             {
+                mapa1 = false;
+                mapa2 = false;
+                mapa3 = false;
+                mapa4 = false;
                 mapa5 = true;
                 UltimoMapa = "mapa5";
                 maincamera.gameObject.SetActive(true);

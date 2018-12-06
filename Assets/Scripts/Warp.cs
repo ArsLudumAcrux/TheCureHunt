@@ -131,36 +131,37 @@ public class Warp : MonoBehaviour
         area.StartCoroutine(area.Morreu(morreu));
         yield return new WaitForSeconds(fadeTime);
         GameObject.FindGameObjectWithTag("Content").GetComponent<HealthBar>().HPFull();
+        player.playersprite.enabled = true;
 
 
         if (player.UltimoMapa == "mapa1")
         {
             player.player.transform.position = player.Respawn1.transform.position;
-            player.playersprite.enabled = true;
+            
             FadeOut();
         }
         else if (player.UltimoMapa == "mapa2")
         {
             player.transform.position = player.Respawn2.transform.position;
-            player.player.SetActive(true);
+            // player.player.SetActive(true);
             FadeOut();
         }
         else if (player.UltimoMapa == "mapa3")
         {
             player.transform.position = player.Respawn3.transform.position;
-            player.player.SetActive(true);
+            //player.player.SetActive(true);
             FadeOut();
         }
         else if (player.UltimoMapa == "mapa4")
         {
             player.transform.position = player.Respawn4.transform.position;
-            player.player.SetActive(true);
+            //player.player.SetActive(true);
             FadeOut();
         }
        else if (player.UltimoMapa == "mapa5")
        {
            player.transform.position = player.Respawn5.transform.position;
-           player.player.SetActive(true);
+           //player.player.SetActive(true);
            FadeOut();
        }
     }
