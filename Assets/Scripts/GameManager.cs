@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour {
     public int monstrosMortos;
     public int monstrosMortos2;
     public int monstrosMortos3;
-    public int monstrosMortos4;
+   // public int monstrosMortos4;
     Hud_Menu HudMenu;
 
     void Start()
@@ -39,19 +39,21 @@ public class GameManager : MonoBehaviour {
             Warps[2].GetComponent<BoxCollider2D>().isTrigger = true;
             Warps[3].GetComponent<BoxCollider2D>().isTrigger = true;
             monstrosMortos2 = 0;
+            HudMenu.Placas[1].SetActive(false);
         }
         if (monstrosMortos3 >= spawnMonsters.maxMonstros3)
         {
             Warps[4].GetComponent<BoxCollider2D>().isTrigger = true;           
             monstrosMortos3 = 0;
+            HudMenu.Placas[2].SetActive(false);
         }
-        if(monstrosMortos4 >= spawnMonsters.maxMonstros4)
-        {
-            Warps[5].GetComponent<BoxCollider2D>().isTrigger = true;
-            Warps[6].GetComponent<BoxCollider2D>().isTrigger = true;
-            monstrosMortos4 = 0;
-
-        }
+      // if(monstrosMortos4 >= spawnMonsters.maxMonstros4)
+      // {
+      //     Warps[5].GetComponent<BoxCollider2D>().isTrigger = true;
+      //     Warps[6].GetComponent<BoxCollider2D>().isTrigger = true;
+      //     monstrosMortos4 = 0;
+      //
+      // }
 
     }
 
