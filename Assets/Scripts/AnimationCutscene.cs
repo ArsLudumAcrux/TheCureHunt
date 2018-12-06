@@ -5,22 +5,23 @@ using UnityEngine.Video;
 
 public class PlayerVideo : MonoBehaviour {
 
-    public Animation cutScene;
+    //public Animator cutScene;
 
-    private void Awake()
+    //private void Awake()
+    //{
+    //    cutScene = GetComponent<Animator>();
+    //}
+    public void PlayAnim()
     {
-        cutScene = GetComponent<Animation>();
+        //cutScene.Play("Cutscene Test 2");
+        Time.timeScale = 1f;
     }
-    public void _Play()
+    public void StopAnim()
     {
-        cutScene.Play();
-    }
-    public void _Stop()
-    {
-        cutScene.Stop();
+        Time.timeScale = 0f;
     }
     public void Button()
     {
-        _Play();
+        PlayAnim();
     }
 }

@@ -511,7 +511,6 @@ GameObject:
   - component: {fileID: 782151927}
   - component: {fileID: 782151930}
   - component: {fileID: 782151929}
-  - component: {fileID: 782151928}
   m_Layer: 5
   m_Name: ContinueButton
   m_TagString: Untagged
@@ -538,18 +537,6 @@ RectTransform:
   m_AnchoredPosition: {x: 513, y: -316}
   m_SizeDelta: {x: 218.29, y: 40.93}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &782151928
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 782151926}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0457930f4592fe34799bda3a7124ce06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _cutScene: {fileID: 0}
 --- !u!114 &782151929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -590,7 +577,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 803526284}
-        m_MethodName: _Play
+        m_MethodName: PlayAnimation
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -986,7 +973,7 @@ GameObject:
   - component: {fileID: 2038366491}
   - component: {fileID: 2038366490}
   m_Layer: 5
-  m_Name: Video Player
+  m_Name: Animation Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
