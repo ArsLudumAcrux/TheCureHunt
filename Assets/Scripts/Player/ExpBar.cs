@@ -12,6 +12,7 @@ public class ExpBar : MonoBehaviour {
     Slime_Stats slime_stats;
     PlayerScript playerScript;
     HealthBar HB;
+    public bool PodeUparNivel;
 
     [Header("Text Status Atualizados")]
     public Text danoTxt;
@@ -19,6 +20,8 @@ public class ExpBar : MonoBehaviour {
 
     public void Start()
     {
+        PodeUparNivel = true;
+
         danoTxt.gameObject.SetActive(false);
         speedTxt.gameObject.SetActive(false);
         //experiencia_img.fillAmount = 0;
@@ -33,40 +36,44 @@ public class ExpBar : MonoBehaviour {
 
 
         if (stat.ExpAtual >= stat.XPToNextLevel)//caso a experiencia atual seja igual xp necessario para o proximo nivel execulta as ações abaixo
-        {        
-            stat.Level = stat.Level + 1;//level atual +1
+        {
+            if (stat.Level <= 10 && PodeUparNivel == true)
+            {
+                stat.Level = stat.Level + 1;//level atual +1
 
-            stat.LevelAtual();
+                stat.LevelAtual();
 
-            stat.XPToNextLevel = Mathf.Round(stat.XPToNextLevel + (stat.XPToNextLevel * 1.20f));//xp necessario para o proximo nivel aumenta
 
-            stat.HP_Max = Mathf.Round(stat.HP_Max * 1.05f);//Vida maxima aumenta 5% a cada nivel do player
+                stat.XPToNextLevel = Mathf.Round(stat.XPToNextLevel + stat.XPToNextLevelFixed);//xp necessario para o proximo nivel aumenta
 
-            stat.strongh = Mathf.Round(stat.strongh * 1.02f);
+                stat.HP_Max = Mathf.Round(stat.HP_Max * 1.10f);//Vida maxima aumenta 10% a cada nivel do player
 
-            danoplayer += 2; // Adiciona +2 de dano ao player
+                stat.strongh = Mathf.Round(stat.strongh * 1.02f);
 
-            playerScript.speed = (playerScript.speed * 1.02f); // Adiciona 2% de velocidade ao player
+                danoplayer += 2; // Adiciona +2 de dano ao player
 
-            HB.HPFull(); // Assim que aumentar a vida maxima, deixar a vida cheia
+                playerScript.speed = (playerScript.speed * 1.04f); // Adiciona 2% de velocidade ao player
 
-            danoTxt.gameObject.SetActive(true);
-            speedTxt.gameObject.SetActive(true);
-            Invoke("StatusAtualizados", 4f);
+                HB.HPFull(); // Assim que aumentar a vida maxima, deixar a vida cheia
 
-           // playerScript.speed= Mathf.Round(stat.strongh * 1.01f);
+                danoTxt.gameObject.SetActive(true);
+                speedTxt.gameObject.SetActive(true);
+                Invoke("StatusAtualizados", 4f);
 
-            //source.PlayOneShot(LevelUp, 1.0f);
+                // playerScript.speed= Mathf.Round(stat.strongh * 1.01f);
 
-            stat.LevelText.text = stat.Level.ToString();//text do cavas atualiza a cada nivel e mostra o nivel atual
+                //source.PlayOneShot(LevelUp, 1.0f);
 
-            stat.ExpAtual = 0; 
+                stat.LevelText.text = stat.Level.ToString();//text do cavas atualiza a cada nivel e mostra o nivel atual
 
-            //Printa o level e vida maxima do player
+                stat.ExpAtual = 0;
 
-            PlayerPrefs.SetInt("LevelDoPlayer", stat.Level);
+                //Printa o level e vida maxima do player
 
-            //Debug.Log("LevelDoPlayer" + stat.Level);
+                PlayerPrefs.SetInt("LevelDoPlayer", stat.Level);
+
+                //Debug.Log("LevelDoPlayer" + stat.Level);
+            }
 
         }
     }

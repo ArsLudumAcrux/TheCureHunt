@@ -15,7 +15,7 @@ MonoBehaviour:
   healthGain: 200
   potionFunction: 0
   potionName: "Po\xE7\xE3o de cura concentrada"
-  potionDescription: "Essa po\xE7\xE3o da 200 de vida ao Arthur, por\xE9m se ele tiver
-    com vida cheia ela n\xE3o poder\xE1 ser usada."
+  potionDescription: "Essa po\xE7\xE3o devolve 200 de vida ao Arthur, por\xE9m se
+    ele estiver com vida cheia ela n\xE3o poder\xE1 ser usada."
   artwork: {fileID: 21300000, guid: 0d739a6ec4f9ace4abdaa099ab658215, type: 3}
   Duration: 1

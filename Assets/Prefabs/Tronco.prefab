@@ -215,8 +215,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Life_Tronco: 45
   morreu: 0
-  xpMin: 6
-  xpMax: 14
+  xpMin: 10
+  xpMax: 15
   inimigo: {fileID: 114303408748286030}
 --- !u!114 &114591675414173704
 MonoBehaviour:

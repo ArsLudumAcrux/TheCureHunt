@@ -180,8 +180,8 @@ MonoBehaviour:
   Life_Slime: 35
   Atk_Slime: 0
   morreu: 0
-  xpMin: 2
-  xpMax: 5
+  xpMin: 8
+  xpMax: 15
   inimigo: {fileID: 114778818476905604}
 --- !u!114 &114778818476905604
 MonoBehaviour:

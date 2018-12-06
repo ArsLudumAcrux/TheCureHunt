@@ -170,6 +170,7 @@ public class ScriptBoss : MonoBehaviour {
     }
     public void Vinhas()
     {
+        anim.SetTrigger("spell");
         count = count + 1;
         StartCoroutine(ComecarCoroutine(2f));
     }
@@ -180,6 +181,7 @@ public class ScriptBoss : MonoBehaviour {
 
         if (countorbe == 1)
         {
+            anim.SetTrigger("spell");
             GameObject tempOrbe = Instantiate(OrbePrefab, OrbeEmitor.position, OrbeRotator.rotation);
             Rigidbody2D tempRB2D = tempOrbe.GetComponent<Rigidbody2D>();
             tempRB2D.AddForce(OrbeEmitor.forward * OrbeSpeed);
@@ -188,6 +190,7 @@ public class ScriptBoss : MonoBehaviour {
         }
         else if (countorbe == 2)
         {
+            anim.SetTrigger("spell");
             GameObject tempOrbe = Instantiate(OrbePrefab, OrbeEmitor.position, OrbeRotator.rotation);
             Rigidbody2D tempRB2D = tempOrbe.GetComponent<Rigidbody2D>();
             tempRB2D.AddForce(OrbeEmitor.forward * OrbeSpeed);
@@ -196,6 +199,7 @@ public class ScriptBoss : MonoBehaviour {
         }
         else if (countorbe >= 3)
         {
+            anim.SetTrigger("spell");
             GameObject tempOrbe = Instantiate(OrbePrefab, OrbeEmitor.position, OrbeRotator.rotation);
             Rigidbody2D tempRB2D = tempOrbe.GetComponent<Rigidbody2D>();
             tempRB2D.AddForce(OrbeEmitor.forward * OrbeSpeed);
@@ -238,7 +242,6 @@ public class ScriptBoss : MonoBehaviour {
 
     public void DeadBoss()
     {
-        magic.DisableGemaBloq();
         disablecollider.gameObject.SetActive(false);
         Escada.gameObject.SetActive(true);
         simbolo.gameObject.SetActive(true);

@@ -44,6 +44,8 @@ public class Hud_Menu : MonoBehaviour
     public bool pausemusic;
 
     Sword sword;
+    [Header("Upando de level")]
+    public Text MensagemAoUpar;
 
     
 
@@ -68,6 +70,8 @@ public class Hud_Menu : MonoBehaviour
         PanelEspadas.SetActive(true);
         PanelInv.SetActive(false);
         PanelMagia.SetActive(false);
+
+
 
     }
     public void Update()
@@ -324,5 +328,10 @@ public class Hud_Menu : MonoBehaviour
         //    yield return new WaitForSecondsRealtime(2f);
         //    anim.Play("Espada_Borrada4_Esconder");
         //}
+    }
+   public IEnumerator DisableMensagem()
+    {
+        yield return new WaitForSeconds(4f);
+        MensagemAoUpar.text = "";
     }
 }

@@ -41,12 +41,12 @@ public class GameOverScript : MonoBehaviour {
     void ComecarRisada()
     {
         risada.Play();
-        Invoke("LoopRisada", 16f);
+        Invoke("LoopRisada", 13f);
     }
     void LoopRisada()
     {
         risada.Play();
-        Invoke("ComecarRisada", 16f);
+        Invoke("ComecarRisada", 13f);
     }
 
 

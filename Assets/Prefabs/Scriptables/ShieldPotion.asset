@@ -15,7 +15,7 @@ MonoBehaviour:
   healthGain: 0
   potionFunction: 1
   potionName: "Po\xE7\xE3o de Escudo"
-  potionDescription: "Essa po\xE7\xE3o d\xE1 um escudo ao Arthur, que diminiu 50%
-    de dano de todos inimigos. Dura\xE7\xE3o: 60 Segundos "
+  potionDescription: "Essa po\xE7\xE3o forma um escudo ao Arthur, reduzindo metade
+    do dano de todos inimigos. Dura\xE7\xE3o: 60 Segundos "
   artwork: {fileID: 21300000, guid: 31592ecc844f29246a76f5d5f76779c8, type: 3}
   Duration: 60

@@ -211,8 +211,8 @@ MonoBehaviour:
   Life_Slime: 75
   Atk_Slime: 0
   morreu: 0
-  xpMin: 8
-  xpMax: 15
+  xpMin: 10
+  xpMax: 18
   inimigo: {fileID: 114560453124340680}
 --- !u!212 &212053220973582090
 SpriteRenderer:

@@ -112,11 +112,19 @@ public class Magic : MonoBehaviour {
     //        Text[i].gameObject.SetActive(false);
     //    }
     //}
-    public void DisableGemaBloq()
+    public void DisableGemaBloq(string magia)
     {
-        GemaFogo.gameObject.SetActive(true);
-        GemaDesbloq = true;
-        PlayerScript player = GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<PlayerScript>();
+        if (magia == "Fogo")
+        {
+            GemaFogo.gameObject.SetActive(true);
+            GemaDesbloq = true;
+            PlayerScript player = GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<PlayerScript>();
+        }else if(magia == "Floresta")
+        {
+            GemaFloresta.gameObject.SetActive(true);
+            GemaDesbloq = true;
+            PlayerScript player = GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<PlayerScript>();
+        }
     }
     public void Gema(string name)
     {
