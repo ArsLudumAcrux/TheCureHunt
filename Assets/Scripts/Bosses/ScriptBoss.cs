@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ScriptBoss : MonoBehaviour {
 
     public int count;
+    public int countorbe;
     public Transform TP;
     public Transform TPAltar;
     [Header("Status do boss")]
@@ -175,21 +176,66 @@ public class ScriptBoss : MonoBehaviour {
     public void ORBE()
     {
         count = count + 1;
+        countorbe = countorbe + 1;
 
+        if (countorbe == 1)
+        {
+            GameObject tempOrbe = Instantiate(OrbePrefab, OrbeEmitor.position, OrbeRotator.rotation);
+            Rigidbody2D tempRB2D = tempOrbe.GetComponent<Rigidbody2D>();
+            tempRB2D.AddForce(OrbeEmitor.forward * OrbeSpeed);
+            tempOrbe.GetComponent<Orbe>().Damage = Damage;
+            StartCoroutine(ComecarCoroutine(2f));
+        }
+        else if (countorbe == 2)
+        {
+            GameObject tempOrbe = Instantiate(OrbePrefab, OrbeEmitor.position, OrbeRotator.rotation);
+            Rigidbody2D tempRB2D = tempOrbe.GetComponent<Rigidbody2D>();
+            tempRB2D.AddForce(OrbeEmitor.forward * OrbeSpeed);
+            tempOrbe.GetComponent<Orbe>().Damage = Damage;
+            Invoke("ORBEx1", 1f);
+        }
+        else if (countorbe >= 3)
+        {
+            GameObject tempOrbe = Instantiate(OrbePrefab, OrbeEmitor.position, OrbeRotator.rotation);
+            Rigidbody2D tempRB2D = tempOrbe.GetComponent<Rigidbody2D>();
+            tempRB2D.AddForce(OrbeEmitor.forward * OrbeSpeed);
+            tempOrbe.GetComponent<Orbe>().Damage = Damage;
+            Invoke("ORBEx2", 1f);
+
+        }
+    }
+    public void ORBEx1()
+    {
         GameObject tempOrbe = Instantiate(OrbePrefab, OrbeEmitor.position, OrbeRotator.rotation);
         Rigidbody2D tempRB2D = tempOrbe.GetComponent<Rigidbody2D>();
         tempRB2D.AddForce(OrbeEmitor.forward * OrbeSpeed);
         tempOrbe.GetComponent<Orbe>().Damage = Damage;
         StartCoroutine(ComecarCoroutine(2f));
     }
-   //public void FindPlayer(Vector3 pos)
-   //{
-   //    
-   //    pos += offset;
-   //    transform.position = pos;
-   //    AttackingBoss();
-   //}
-   
+    public void ORBEx2()
+    {
+        GameObject tempOrbe = Instantiate(OrbePrefab, OrbeEmitor.position, OrbeRotator.rotation);
+        Rigidbody2D tempRB2D = tempOrbe.GetComponent<Rigidbody2D>();
+        tempRB2D.AddForce(OrbeEmitor.forward * OrbeSpeed);
+        tempOrbe.GetComponent<Orbe>().Damage = Damage;
+        Invoke("ORBEx3", 1f);
+    }
+    public void ORBEx3()
+    {
+        GameObject tempOrbe = Instantiate(OrbePrefab, OrbeEmitor.position, OrbeRotator.rotation);
+        Rigidbody2D tempRB2D = tempOrbe.GetComponent<Rigidbody2D>();
+        tempRB2D.AddForce(OrbeEmitor.forward * OrbeSpeed);
+        tempOrbe.GetComponent<Orbe>().Damage = Damage;
+        StartCoroutine(ComecarCoroutine(2f));
+    }
+    //public void FindPlayer(Vector3 pos)
+    //{
+    //    
+    //    pos += offset;
+    //    transform.position = pos;
+    //    AttackingBoss();
+    //}
+
     public void DeadBoss()
     {
         magic.DisableGemaBloq();
