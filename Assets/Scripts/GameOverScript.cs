@@ -29,7 +29,8 @@ public class GameOverScript : MonoBehaviour {
         podeirmenu = false;
         StartCoroutine(ContarTempo());
         Invoke("ComecarRisada", 2f); // Assim que comecar o game over, depois de 2 segundos comeca a risada
-	}
+        Cursor.visible = true;
+    }
 	
 	// Update is called once per frame
 	void Update () {

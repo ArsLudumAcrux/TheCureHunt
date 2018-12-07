@@ -31,6 +31,7 @@ public class PlayerScript : MonoBehaviour {
     CoolDown cooldown;
     ScriptBoss boss;
     UIPotionPrefs uipotions;
+    Hud_Menu hudmenu;
 
     [Space]
     [Header("Cameras")]
@@ -81,7 +82,8 @@ public class PlayerScript : MonoBehaviour {
         cooldown = GameObject.FindGameObjectWithTag("CoolDown").GetComponent<CoolDown>();
         boss = GameObject.FindGameObjectWithTag("Boss").GetComponent<ScriptBoss>();
         warp = GameObject.FindGameObjectWithTag("Warp").GetComponent<Warp>();
-        
+        hudmenu = GameObject.FindGameObjectWithTag("Area").GetComponent<Hud_Menu>();
+
 
         ShieldPotionMult = 1;
         TimePotionMult = 1;
@@ -129,6 +131,8 @@ public class PlayerScript : MonoBehaviour {
 	}
 
 	void Update () {
+
+        print(UsingPotion);
 
         if (Input.GetKey(KeyCode.L))
         {
@@ -263,6 +267,7 @@ public class PlayerScript : MonoBehaviour {
     public void BossPosition()
     {
         FindObjectOfType<ScriptBoss>().TeletransporteReverso(transform.position);
+        boss.GetComponent<Animator>().SetBool("Teleportando", true);
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -331,6 +336,7 @@ public class PlayerScript : MonoBehaviour {
             FindObjectOfType<AreaScript>().ChamarCoroutine("Reserva Florestal");
             GameManager gamemanager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
             gamemanager.monstrosMortos = 0;
+            hudmenu.HUDMAIOR();
             if(mapa1 == false)
             {
                 mapa1 = true;
@@ -344,6 +350,7 @@ public class PlayerScript : MonoBehaviour {
             FindObjectOfType<AreaScript>().ChamarCoroutine("Caverna do Diabo");
             GameManager gamemanager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
             gamemanager.monstrosMortos2 = 0;
+            hudmenu.HUDMAIOR();
             if (mapa2 == false)
             {
                 mapa1 = false;
@@ -358,6 +365,7 @@ public class PlayerScript : MonoBehaviour {
             FindObjectOfType<AreaScript>().ChamarCoroutine("Bosque de Álamos");
             GameManager gamemanager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
             gamemanager.monstrosMortos3 = 0;
+            hudmenu.HUDMAIOR();
             if (mapa3 == false)
             {
                 mapa1 = false;
@@ -371,7 +379,8 @@ public class PlayerScript : MonoBehaviour {
         if (collision.tag == "TriggerChefe")
         {
             FindObjectOfType<AreaScript>().ChamarCoroutine("Sala do Chefe");
-            if(mapa4 == false)
+            hudmenu.HUDMENOR();
+            if (mapa4 == false)
             {
                 mapa1 = false;
                 mapa2 = false;
@@ -388,6 +397,7 @@ public class PlayerScript : MonoBehaviour {
             FindObjectOfType<AreaScript>().ChamarCoroutine("Vale da Morte");
             GameManager gamemanager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
             gamemanager.monstrosMortos = 0;
+            hudmenu.HUDMAIOR();
             if (mapa5 == false)
             {
                 mapa1 = false;
@@ -472,7 +482,6 @@ public class PlayerScript : MonoBehaviour {
         ShieldPotionMult = 1f;
         expfillamount.color = new Color(255, 255, 255);
         UsingPotion = false;
-        print("a");
     }
     public void UseLuckPotion()
     {

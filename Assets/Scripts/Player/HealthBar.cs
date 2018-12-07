@@ -37,7 +37,10 @@ public class HealthBar : MonoBehaviour
         if (HP_Current <= 0 && podemorrer == true)
         {
             podemorrer = false;
-            anim.SetBool("Dead", true);
+            //anim.SetTrigger("Death");
+            //anim.SetBool("Dead", true);
+            //anim.SetBool("Dead", false);
+       
         }
         else
         {
