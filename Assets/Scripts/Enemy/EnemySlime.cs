@@ -239,6 +239,7 @@ public class EnemySlime : MonoBehaviour {
         if(HB.HP_Current <= 0)
         {
             player.GetComponent<Animator>().SetTrigger("Death");
+            player.PlayerMorreu = true;
         }
 
         yield return new WaitForSeconds(2f);

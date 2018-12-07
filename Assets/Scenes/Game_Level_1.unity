@@ -795,6 +795,12 @@ MonoBehaviour:
   player: {fileID: 15355993}
   playersprite: {fileID: 15356002}
   Vidas: 3
+  VidasTxt: {fileID: 1047006421}
+  VidasImg:
+  - {fileID: 2128692045}
+  - {fileID: 1073269141}
+  - {fileID: 1202920195}
+  PlayerMorreu: 0
   attackCollider: {fileID: 187470022}
   shadow: {fileID: 589923943}
   InitialMap: {fileID: 1444772994}
@@ -10611,7 +10617,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 2c90d994952be0049b584eb9a7374253, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fdb191511ced3bf4eb19a6000b812757, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -14280,7 +14286,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -399.2, y: 221.3}
-  m_SizeDelta: {x: 55, y: 55}
+  m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &400299538
 MonoBehaviour:
@@ -14302,7 +14308,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 2c90d994952be0049b584eb9a7374253, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fdb191511ced3bf4eb19a6000b812757, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -21501,7 +21507,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 2c90d994952be0049b584eb9a7374253, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fdb191511ced3bf4eb19a6000b812757, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -28029,14 +28035,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.61877, g: 0.9716981, b: 0.6624047, a: 1}
+  m_Color: {r: 0.6462264, g: 1, b: 0.6894654, a: 1}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: f9075ee408e0ed14681180c9a3fab36b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 144c8941af4e52f4499fb5708e3ec9f5, type: 3}
   m_Type: 3
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -51707,7 +51713,7 @@ MonoBehaviour:
   TP: {fileID: 857857530}
   TPAltar: {fileID: 364169932}
   Damage: 30
-  Life: 750
+  Life: 500
   disablecollider: {fileID: 169493105}
   Escada: {fileID: 36026650}
   simbolo: {fileID: 982153244}

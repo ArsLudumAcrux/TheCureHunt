@@ -29,6 +29,7 @@ public class ScriptBoss : MonoBehaviour {
     PlayerScript player;
     HealthBar HB;
     Magic magic;
+    Slime_Stats Slime;
 
     public Transform OrbeEmitor;
     public GameObject OrbePrefab;
@@ -81,6 +82,7 @@ public class ScriptBoss : MonoBehaviour {
         player = GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<PlayerScript>();
         HB = GameObject.FindGameObjectWithTag("Content").gameObject.GetComponent<HealthBar>();
         magic = GameObject.FindGameObjectWithTag("GameManager").gameObject.GetComponent<Magic>();
+        Slime = GameObject.FindGameObjectWithTag("Slime").gameObject.GetComponent<Slime_Stats>();
 
     }
 
@@ -121,6 +123,7 @@ public class ScriptBoss : MonoBehaviour {
     }
      void OnTriggerEnter2D(Collider2D collision)
     {
+        DropCoin drop = collision.GetComponent<DropCoin>();
         if (collision.CompareTag("Player") && cooldown.EscudosRestante > 0)  // Se o chefe atingir o player e o mesmo estiver com a magia de escudo ativa, ele nao recebera dano
         {
             cooldown.Escudo();
@@ -132,6 +135,17 @@ public class ScriptBoss : MonoBehaviour {
         if (HB.HP_Current <= 0)
         {
             player.GetComponent<Animator>().SetTrigger("Death");
+        }
+        if (collision.CompareTag("Slime"))
+        {
+            Slime_Stats Slime = collision.GetComponent<Slime_Stats>();
+            Slime.Life_Slime -= Damage;
+        }
+        if (Slime.Life_Slime <= 0)
+        {
+            Slime.morreu = true;
+            ExpBar expBar = collision.GetComponent<ExpBar>();
+            drop.ChanceCoinPotion();
         }
     }
     public void iddle1() // Animacao de parado

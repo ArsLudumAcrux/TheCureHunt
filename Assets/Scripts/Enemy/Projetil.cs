@@ -33,6 +33,8 @@ public class Projetil : MonoBehaviour {
         if (HB.HP_Current <= 0)
         {
             player.GetComponent<Animator>().SetTrigger("Death");
+            player.PlayerMorreu = true;
+
         }
 
     }

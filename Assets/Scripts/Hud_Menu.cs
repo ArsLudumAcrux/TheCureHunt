@@ -261,8 +261,8 @@ public class Hud_Menu : MonoBehaviour
         pausemusic = !pausemusic;
         if (pausemusic == true) {
             audiosourceplayer.Pause();
-            AnimatorEspadaBorrada espadaborrada = GameObject.FindGameObjectWithTag("Borrada").GetComponent<AnimatorEspadaBorrada>();
-            espadaborrada.BtnSword();
+          //  AnimatorEspadaBorrada espadaborrada = GameObject.FindGameObjectWithTag("Borrada").GetComponent<AnimatorEspadaBorrada>();
+          //  espadaborrada.BtnSword();
         }
         else if(pausemusic == false){
             audiosourceplayer.UnPause();

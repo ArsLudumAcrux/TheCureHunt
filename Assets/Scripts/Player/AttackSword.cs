@@ -81,6 +81,7 @@ public class AttackSword : MonoBehaviour {
                 if (Tronco.Life_Tronco <= 0)
                 {
                     Tronco.morreu = true;
+                    ExpBar expBar = collision.GetComponent<ExpBar>();
                     drop.ChanceCoinPotion();
                     //expBar.Experiencia(Tronco.xpMin, Tronco.xpMax);
                     GameManager gamemanager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();

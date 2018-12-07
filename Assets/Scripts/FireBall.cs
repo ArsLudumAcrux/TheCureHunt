@@ -29,7 +29,6 @@ public class FireBall : MonoBehaviour {
             {
                 DropCoin drop = collision.GetComponent<DropCoin>();
                 Slime.Life_Slime -= Damage;
-                print(Damage);
                 DestroyFireball();
 
 

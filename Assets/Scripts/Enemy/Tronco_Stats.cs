@@ -9,11 +9,12 @@ public class Tronco_Stats : MonoBehaviour {
     public bool morreu;
     public int xpMin, xpMax;
     public EnemyTronco inimigo;
-
+    ExpBar experiencia;
     // Use this for initialization
     void Start () {
         anim = GetComponent<Animator>();
         inimigo = GetComponent<EnemyTronco>();
+        experiencia = GameObject.FindGameObjectWithTag("ExpBar").GetComponent<ExpBar>();
     }
 	
 	// Update is called once per frame
@@ -28,6 +29,7 @@ public class Tronco_Stats : MonoBehaviour {
     {
 
         inimigo.speed = speed;
+        experiencia.Experiencia(xpMin, xpMax);
         Destroy(gameObject);
 
     }

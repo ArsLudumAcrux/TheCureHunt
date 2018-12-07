@@ -56,7 +56,9 @@ public class PlayerScript : MonoBehaviour {
     public GameObject player;
     public SpriteRenderer playersprite;
     public int Vidas;
-
+    public Text VidasTxt;
+    public Image[] VidasImg;
+    public bool PlayerMorreu;
  
 
 
@@ -100,7 +102,12 @@ public class PlayerScript : MonoBehaviour {
         mapa4 = false;
         mapa5 = false;
 
+        for (int i = 0; i < VidasImg.Length; i++)
+        {
+            VidasImg[i].gameObject.SetActive(true);
+        }
 
+        PlayerMorreu = false;
 
         /*	Fazemos com que a variável "attackCollider" receba o Componente CircleCollider pertencente ao GameObject
 			 do "primeiro filho" do GameObject a qual esse script está inserido (que no caso é o Player).
@@ -132,7 +139,6 @@ public class PlayerScript : MonoBehaviour {
 
 	void Update () {
 
-        print(UsingPotion);
 
         if (Input.GetKey(KeyCode.L))
         {
@@ -158,7 +164,31 @@ public class PlayerScript : MonoBehaviour {
             warp.FadeIn();
             StartCoroutine(CenaGameOver());
         }
+        VidasTxt.text = Vidas.ToString();
 
+        if(Vidas == 3)
+        {
+            for (int i = 0; i < VidasImg.Length; i++)
+            {
+                VidasImg[i].gameObject.SetActive(true);
+            }
+        }else if(Vidas == 2)
+        {
+            VidasImg[0].gameObject.SetActive(true);
+            VidasImg[1].gameObject.SetActive(true);
+            VidasImg[2].gameObject.SetActive(false);
+        }
+        else if( Vidas == 1)
+        {
+            VidasImg[0].gameObject.SetActive(true);
+            VidasImg[1].gameObject.SetActive(false);
+            VidasImg[2].gameObject.SetActive(false);
+        }else if(Vidas == 0)
+        {
+            VidasImg[0].gameObject.SetActive(false);
+            VidasImg[1].gameObject.SetActive(false);
+            VidasImg[2].gameObject.SetActive(false);
+        }
     
 
         
@@ -185,7 +215,7 @@ public class PlayerScript : MonoBehaviour {
 
 
         //Detectamos o Ataque do personagem, o ataque têm prioridade e por isto o código é colocado por último.
-        if ((Input.GetKeyDown("space") && !attacking) || ((Input.GetKeyDown(KeyCode.Mouse0) && !attacking)))
+        if ((Input.GetKeyDown("space") && !attacking && !PlayerMorreu) || ((Input.GetKeyDown(KeyCode.Mouse0) && !attacking && !PlayerMorreu)))
         { /*		-------> Essa linha apenas permite que o jogador
 		realize a animação de ataque caso a tecla espaço for pressionada, e além disso, só permite a execução da
 		animação caso o jogador não esteja com esta animação de ataque sendo executada no exato momento que ele
@@ -433,7 +463,7 @@ public class PlayerScript : MonoBehaviour {
 
                     potions.RemoveAt(i);
 
-                } else if(potionUsed.potionFunction != 0)
+                } else if(potionUsed.potionFunction != 0 && !UsingPotion || potionUsed.potionFunction != 0 && Debuff)
                 {
 
                     CurrentPotion = potionUsed;
@@ -541,6 +571,7 @@ public class PlayerScript : MonoBehaviour {
         playersprite.enabled = false;
         warp.StartCoroutine(warp.FadeMorreu());
         Vidas--;
+        PlayerMorreu = false;
     }
     IEnumerator CenaGameOver()
     {
