@@ -30,7 +30,6 @@ public class Vinhas : MonoBehaviour {
         }
         else if (other.CompareTag("Player") && PodeReceberDano == true)
         {
-            print("RecebeuDano");
             HB.HP_Current -= Mathf.RoundToInt(Damage * player.ShieldPotionMult);
             PodeReceberDano = false;
             Invoke("PodeReceber",1f);

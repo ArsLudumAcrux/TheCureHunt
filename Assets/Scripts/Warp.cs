@@ -125,7 +125,7 @@ public class Warp : MonoBehaviour
 	}
     public IEnumerator FadeMorreu()
     {
-        string morreu = "Morreu, Game Over!";
+        string morreu = "Morreu!";
         FadeIn();
         var area = FindObjectOfType<AreaScript>();
         area.StartCoroutine(area.Morreu(morreu));

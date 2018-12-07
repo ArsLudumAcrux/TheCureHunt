@@ -46,8 +46,20 @@ public class Hud_Menu : MonoBehaviour
     Sword sword;
     [Header("Upando de level")]
     public Text MensagemAoUpar;
+    [Header("Outros Hud")]
+    public GameObject HudMaior;
+    public GameObject HudMenor;
+    //public GameObject BarraVidaMenor;
+    //public GameObject BarraExperienciaMenor;
+    //public GameObject CoinMenor;
+    //public GameObject HudOthersMenor;
+    //
+    //public GameObject BarraVida;
+    //public GameObject BarraExperiencia;
+    //public GameObject Coin;
+    //public GameObject HudOthers;
+    //
 
-    
 
     void Start()
     {
@@ -72,6 +84,16 @@ public class Hud_Menu : MonoBehaviour
         PanelMagia.SetActive(false);
 
 
+        HUDMAIOR();
+       //BarraExperiencia.SetActive(true);
+       //BarraVida.SetActive(true);
+       //Coin.SetActive(true);
+       //HudOthers.SetActive(true);
+       //
+       //BarraExperienciaMenor.SetActive(false);
+       //BarraVidaMenor.SetActive(false);
+       //CoinMenor.SetActive(false);
+       //HudOthersMenor.SetActive(false);
 
     }
     public void Update()
@@ -100,7 +122,7 @@ public class Hud_Menu : MonoBehaviour
         }
 
     }
-    public void UpdateListItens()
+    public void UpdateListItens() // É para colocar os itens no inventario, toda vez que ele abre
     {
         descriptiontext.text = "";
         ClearItemList();
@@ -113,7 +135,7 @@ public class Hud_Menu : MonoBehaviour
             tempItem.GetComponent<UIPotionPrefs>().hudmenu = this;
         }
     }
-    public void ClearItemList()
+    public void ClearItemList() // Ele apaga todos os itens do hud, para quando fechar ele nao duplicar
     {
         for (int i = 0; i < ListaItens.Count; i++)
         {
@@ -248,7 +270,7 @@ public class Hud_Menu : MonoBehaviour
         //Cursor.visible = !Cursor.visible;
 
     }
-    void FecharMenu()
+    void FecharMenu() // Script para fechar o menu
     {
         PanelMenu.SetActive(false);
         paused = false;
@@ -272,12 +294,24 @@ public class Hud_Menu : MonoBehaviour
         //Cursor.visible = false;
     }
 
-    public void NaoPodeUsar()
+    public void NaoPodeUsar() // Se ele nao poder usar a poção, vai dar essa mensagem
     {
         descriptiontext.gameObject.SetActive(false);
         naopodeusar.text = "Desculpe, isso não é possivel!";
         StartCoroutine(apagartexto());
     }
+
+    public void HUDMENOR() //Mudando a scala e a posicao do hud do personagem
+    {
+        HudMaior.transform.localPosition = new Vector3(-300f, 165f, 0f);
+        HudMaior.transform.localScale *= 0.5f;
+    }
+    public void HUDMAIOR() //Mudando a scala e a posicao do hud do personagem
+    {
+        HudMaior.transform.localPosition = new Vector3(0f, 0f, 0f);
+        HudMaior.transform.localScale = new Vector3(1f, 1f, 1f);
+    }
+
     IEnumerator apagartexto()
     {
         yield return new WaitForSecondsRealtime(2f);

@@ -15,6 +15,7 @@ public class Menu : MonoBehaviour {
     void Start () {
         Invoke("ComecarMusica", 1.5f);
         StartCoroutine(Esquerda());
+        Cursor.visible = true;
     }
     void ComecarMusica()
     {

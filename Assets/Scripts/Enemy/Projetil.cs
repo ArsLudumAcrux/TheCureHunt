@@ -19,6 +19,7 @@ public class Projetil : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        PlayerScript player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>();
         if (collision.gameObject.CompareTag("Player") && cooldown.EscudosRestante > 0)
         {
             cooldown.Escudo();
@@ -26,9 +27,12 @@ public class Projetil : MonoBehaviour {
         }
         else if(collision.gameObject.CompareTag("Player"))
         {
-            PlayerScript player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>();
             HB.HP_Current -= Mathf.RoundToInt(Damage * player.ShieldPotionMult);
             DestroyProjetil();
+        }
+        if (HB.HP_Current <= 0)
+        {
+            player.GetComponent<Animator>().SetTrigger("Death");
         }
 
     }

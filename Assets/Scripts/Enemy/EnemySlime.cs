@@ -236,6 +236,11 @@ public class EnemySlime : MonoBehaviour {
         }
         stopAttack = true;
 
+        if(HB.HP_Current <= 0)
+        {
+            player.GetComponent<Animator>().SetTrigger("Death");
+        }
+
         yield return new WaitForSeconds(2f);
         speed = 1;
         stopAttack = false;

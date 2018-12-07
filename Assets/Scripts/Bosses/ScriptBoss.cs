@@ -12,6 +12,7 @@ public class ScriptBoss : MonoBehaviour {
     [Header("Status do boss")]
     public float Damage;
     public float Life;
+    private float LifeMax;
 
     public GameObject disablecollider;
     public GameObject Escada;
@@ -21,7 +22,7 @@ public class ScriptBoss : MonoBehaviour {
     public bool attacking;
 
     //public CircleCollider2D attackCollider;
-    public Slider sliderlife;
+    public Image BarraVida;
 
     public Vector3 offset;
 
@@ -60,7 +61,7 @@ public class ScriptBoss : MonoBehaviour {
             VinhasEsquerda[i].SetActive(false);
         }
 
-
+        LifeMax = Life;
 
         count = 0;
 
@@ -74,8 +75,8 @@ public class ScriptBoss : MonoBehaviour {
        // attacking = false;
        // attackCollider = transform.GetChild(0).GetComponent<CircleCollider2D>();
        // attackCollider.enabled = false;
-        sliderlife.maxValue = Life; // Fazer o slider virar a vida do chefe
-        sliderlife.value = Life; // Fazer o slider virar a vida do chefe
+        BarraVida.fillAmount = Life; // Fazer o fillamount virar a vida do chefe
+       
 
         player = GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<PlayerScript>();
         HB = GameObject.FindGameObjectWithTag("Content").gameObject.GetComponent<HealthBar>();
@@ -109,7 +110,7 @@ public class ScriptBoss : MonoBehaviour {
         }
         if (Life >= 0)
         {
-            sliderlife.value = Life;
+            BarraVida.fillAmount = Life / LifeMax ;
         }
 
         if(Life <= 0) // Se a vida dele chegar a 0, ele morre
@@ -127,6 +128,10 @@ public class ScriptBoss : MonoBehaviour {
         else if (collision.CompareTag("Player")) // Se nao tiver ativa, ele recebera dano
         {
             HB.HP_Current -= Mathf.RoundToInt(Damage * player.ShieldPotionMult);
+        }
+        if (HB.HP_Current <= 0)
+        {
+            player.GetComponent<Animator>().SetTrigger("Death");
         }
     }
     public void iddle1() // Animacao de parado
@@ -336,6 +341,7 @@ public class ScriptBoss : MonoBehaviour {
         {
             position += offset;
             transform.position = position;
+            anim.SetBool("Teleportando", false);
         }else if(reverso == false)
         {
             transform.position = TPAltar.transform.position;
@@ -374,10 +380,12 @@ public class ScriptBoss : MonoBehaviour {
             else if (count == 6)
             {
                 anim.SetTrigger("Teleporte");
+                anim.SetBool("Teleportando", true);
             }
             else if (count == 7)
             {
                 TeletransporteReversoAltar();
+                anim.SetBool("Teleportando", false);
             }
             else if (count == 8)
             {
