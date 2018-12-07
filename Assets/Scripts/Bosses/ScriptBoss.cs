@@ -51,11 +51,11 @@ public class ScriptBoss : MonoBehaviour {
         cooldown = GameObject.FindGameObjectWithTag("CoolDown").GetComponent<CoolDown>();
 
 
-        for (int i = 0; i < VinhasDireita.Length; i++)
+        for (int i = 0; i < VinhasDireita.Length; i++) // Desativar os gameobject das vinhas
         {
             VinhasDireita[i].SetActive(false);
         }
-        for (int i = 0; i < VinhasEsquerda.Length; i++)
+        for (int i = 0; i < VinhasEsquerda.Length; i++) // Desativar os gameobject das vinhas
         {
             VinhasEsquerda[i].SetActive(false);
         }
@@ -66,16 +66,16 @@ public class ScriptBoss : MonoBehaviour {
 
         countslime = 2;
 
-        Escada.gameObject.SetActive(false);
-        simbolo.gameObject.SetActive(false);
+        Escada.gameObject.SetActive(false); // Desativar Escada
+        simbolo.gameObject.SetActive(false); // Desativar Simbolo do altar
 
-        offset = new Vector3(0, 3f);
+        offset = new Vector3(0, 3f); // Colocar o chefe um pouco para cima quando ele teleportar
         anim = gameObject.GetComponent<Animator>();
        // attacking = false;
        // attackCollider = transform.GetChild(0).GetComponent<CircleCollider2D>();
        // attackCollider.enabled = false;
-        sliderlife.maxValue = Life;
-        sliderlife.value = Life;
+        sliderlife.maxValue = Life; // Fazer o slider virar a vida do chefe
+        sliderlife.value = Life; // Fazer o slider virar a vida do chefe
 
         player = GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<PlayerScript>();
         HB = GameObject.FindGameObjectWithTag("Content").gameObject.GetComponent<HealthBar>();
@@ -103,7 +103,7 @@ public class ScriptBoss : MonoBehaviour {
        //
        //    }
        //}
-       if(count > 8)
+       if(count > 8) // Assim que a contagem chegar a 8, zera 
         {
             count = 0;
         }
@@ -112,7 +112,7 @@ public class ScriptBoss : MonoBehaviour {
             sliderlife.value = Life;
         }
 
-        if(Life <= 0)
+        if(Life <= 0) // Se a vida dele chegar a 0, ele morre
         {
             morreu = true;
             anim.SetTrigger("die");
@@ -120,36 +120,36 @@ public class ScriptBoss : MonoBehaviour {
     }
      void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && cooldown.EscudosRestante > 0) 
+        if (collision.CompareTag("Player") && cooldown.EscudosRestante > 0)  // Se o chefe atingir o player e o mesmo estiver com a magia de escudo ativa, ele nao recebera dano
         {
             cooldown.Escudo();
         }
-        else if(collision.CompareTag("Player"))
+        else if (collision.CompareTag("Player")) // Se nao tiver ativa, ele recebera dano
         {
             HB.HP_Current -= Mathf.RoundToInt(Damage * player.ShieldPotionMult);
         }
     }
-    public void iddle1()
+    public void iddle1() // Animacao de parado
     {
         anim.SetTrigger("idle1");
     }
-    public void IdleBoss()
+    public void IdleBoss() // Animacao de parado
     {
         anim.SetTrigger("idle");
         count = count + 1;
         StartCoroutine(ComecarCoroutine(4.5f));
     }
-    public void AttackingBoss()
+    public void AttackingBoss() // Animacao de ataque
     {
         anim.SetTrigger("attack");
         count = count + 1;
         // attacking = !attacking;
         StartCoroutine(ComecarCoroutine(2f));
     }
-    public void SpellBoss()
+    public void SpellBoss() // Animacao de "Usar magia"
     {
         anim.SetTrigger("spell");
-        for (int i = 0; i < countslime; i++)
+        for (int i = 0; i < countslime; i++) // Invocar 2 slimes no mapa do chefe
         {
             int intposicao = i;
             Instantiate(PrefabSlime, PosicoesSlime[intposicao].transform.position, Quaternion.identity);
@@ -158,13 +158,13 @@ public class ScriptBoss : MonoBehaviour {
         StartCoroutine(ComecarCoroutine(1.5f));
     }
 
-    public void Teletransporte()
+    public void Teletransporte() // Fazer o chefe teleportar para fora do mapa
     {
         transform.position = TP.transform.position;
         count = count + 1;
         StartCoroutine(ComecarCoroutine(2f));
     }
-    public void TeletransporteReverso(Vector3 pos)
+    public void TeletransporteReverso(Vector3 pos) // Fazer o chefe teleportar para a posicao do player, só que um pouco para cima
     {
         anim.SetTrigger("TeleporteReverso");
         reverso = true;
@@ -173,7 +173,7 @@ public class ScriptBoss : MonoBehaviour {
         count = count + 1;
         StartCoroutine(ComecarCoroutine(2f));
     }
-    public void TeletransporteReversoAltar()
+    public void TeletransporteReversoAltar() // Fazer o chefe teleportar para o altar novamente para usar ataque la
     {
         anim.SetTrigger("TeleporteReversoAltar");
         reverso = false;
@@ -182,13 +182,13 @@ public class ScriptBoss : MonoBehaviour {
         count = count + 1;
         StartCoroutine(ComecarCoroutine(2f));
     }
-    public void Vinhas()
+    public void Vinhas() // Animacao das vinhas, que é o ataque especial do chefe
     {
         anim.SetTrigger("spell");
         count = count + 1;
         Invoke("VinhasEsquerdaAtaque1x", 1f);
     }
-    public void VinhasDireitaAtaque1x()
+    public void VinhasDireitaAtaque1x() // Animacao das vinhas da direita
     {
         anim.SetTrigger("spell");
         for (int i = 0; i < VinhasDireita.Length; i++)
@@ -198,7 +198,7 @@ public class ScriptBoss : MonoBehaviour {
         Invoke("VinhasDireitaDisable", 3.55f);
         Invoke("VinhasEsquerdaAtaque2x", 3.55f);
     }
-    public void VinhasDireitaAtaque2x()
+    public void VinhasDireitaAtaque2x() // Animacao das vinhas da direita
     {
         anim.SetTrigger("spell");
         for (int i = 0; i < VinhasDireita.Length; i++)
@@ -208,14 +208,14 @@ public class ScriptBoss : MonoBehaviour {
         Invoke("VinhasDireitaDisable", 3.55f);
         StartCoroutine(ComecarCoroutine(4.2f));
     }
-    public void VinhasDireitaDisable()
+    public void VinhasDireitaDisable() // Desabilitar as vinhas da direita
     {
         for (int i = 0; i < VinhasDireita.Length; i++)
         {
             VinhasDireita[i].SetActive(false);
         }
     }
-    public void VinhasEsquerdaAtaque1x()
+    public void VinhasEsquerdaAtaque1x() // Animacao das vinhas da esquerda
     {
         anim.SetTrigger("spell");
         for (int i = 0; i < VinhasEsquerda.Length; i++)
@@ -225,7 +225,7 @@ public class ScriptBoss : MonoBehaviour {
         Invoke("VinhasEsquerdaDisable", 3.55f);
         Invoke("VinhasDireitaAtaque1x", 3.55f);
     }
-    public void VinhasEsquerdaAtaque2x()
+    public void VinhasEsquerdaAtaque2x() // Animacao das vinhas da esquerda
     {
         anim.SetTrigger("spell");
         for (int i = 0; i < VinhasEsquerda.Length; i++)
@@ -235,17 +235,17 @@ public class ScriptBoss : MonoBehaviour {
         Invoke("VinhasEsquerdaDisable", 3.55f);
         Invoke("VinhasDireitaAtaque2x", 3.55f);
     }
-    public void VinhasEsquerdaDisable()
+    public void VinhasEsquerdaDisable() // Desativar as vinhas da esquerda
     {
         for (int i = 0; i < VinhasEsquerda.Length; i++)
         {
             VinhasEsquerda[i].SetActive(false);
         }
     }
-    public void ORBE()
+    public void ORBE() // Ataque Orbe
     {
         count = count + 1;
-        countorbe = countorbe + 1;
+        countorbe = countorbe + 1; // A cada ataque de orbe, acrescenta um ataque ao chefe, no maximo 3
 
         if (countorbe == 1)
         {
@@ -308,7 +308,7 @@ public class ScriptBoss : MonoBehaviour {
     //    AttackingBoss();
     //}
 
-    public void DeadBoss()
+    public void DeadBoss() //Animacao de morte do chefe
     {
         disablecollider.gameObject.SetActive(false);
         Escada.gameObject.SetActive(true);

@@ -35,13 +35,13 @@ public class ExpBar : MonoBehaviour {
         experiencia_img.fillAmount = stat.ExpAtual / stat.XPToNextLevel ;
 
 
-        if (stat.ExpAtual >= stat.XPToNextLevel)//caso a experiencia atual seja igual xp necessario para o proximo nivel execulta as ações abaixo
+        if (stat.ExpAtual >= stat.XPToNextLevel)//caso a experiencia atual seja igual xp necessario para o proximo nivel executa as ações abaixo
         {
-            if (stat.Level <= 10 && PodeUparNivel == true)
+            if (stat.Level <= 10 && PodeUparNivel == true) // Isso é um limitador, para que o level nao ultrapasse o maximo, que é 10 
             {
                 stat.Level = stat.Level + 1;//level atual +1
 
-                stat.LevelAtual();
+                stat.LevelAtual(); // Aparecer para o jogador que o arthur upou de nivel
 
 
                 stat.XPToNextLevel = Mathf.Round(stat.XPToNextLevel + stat.XPToNextLevelFixed);//xp necessario para o proximo nivel aumenta
@@ -52,13 +52,13 @@ public class ExpBar : MonoBehaviour {
 
                 danoplayer += 2; // Adiciona +2 de dano ao player
 
-                playerScript.speed = (playerScript.speed * 1.04f); // Adiciona 2% de velocidade ao player
+                playerScript.speed = (playerScript.speed * 1.04f); // Adiciona 4% de velocidade ao player
 
                 HB.HPFull(); // Assim que aumentar a vida maxima, deixar a vida cheia
 
-                danoTxt.gameObject.SetActive(true);
-                speedTxt.gameObject.SetActive(true);
-                Invoke("StatusAtualizados", 4f);
+                danoTxt.gameObject.SetActive(true); //Mostrar o dano recebido
+                speedTxt.gameObject.SetActive(true); //Mostrar a velocidade recebida
+                Invoke("StatusAtualizados", 4f); //Desativar os Txt de cima
 
                 // playerScript.speed= Mathf.Round(stat.strongh * 1.01f);
 
@@ -66,7 +66,7 @@ public class ExpBar : MonoBehaviour {
 
                 stat.LevelText.text = stat.Level.ToString();//text do cavas atualiza a cada nivel e mostra o nivel atual
 
-                stat.ExpAtual = 0;
+                stat.ExpAtual = 0; // Zerar a experiencia do arthur
 
                 //Printa o level e vida maxima do player
 
@@ -79,7 +79,7 @@ public class ExpBar : MonoBehaviour {
     }
     public void Experiencia(int xpMin, int xpMax)
     {
-        int Exp = Random.Range(xpMin, xpMax);
+        int Exp = Random.Range(xpMin, xpMax); //Pegar o valor minimo e maximo, e pegar um valor randomico deles, e colocar na experiencia do arthur
         stat.ExpAtual += Exp;
         //experiencia_img.fillAmount = stat.ExpAtual / stat.ExpAtual;
     }

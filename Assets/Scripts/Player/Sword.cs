@@ -36,15 +36,15 @@ public class Sword : MonoBehaviour {
         //Swords[0] = false;
         for (int i = 0; i < DescricaoEspadaImg.Length; i++)
         {
-            DescricaoEspadaImg[i].gameObject.SetActive(false);
+            DescricaoEspadaImg[i].gameObject.SetActive(false); // Desativar imagem
         }
         for (int i = 0; i < TxtDescricaoEspada.Length; i++)
         {
-            TxtDescricaoEspada[i].gameObject.SetActive(false);
+            TxtDescricaoEspada[i].gameObject.SetActive(false); // Desativar texto
         }
         for (int i = 0; i < BordaEspada.Length; i++)
         {
-            BordaEspada[i].gameObject.SetActive(false);
+            BordaEspada[i].gameObject.SetActive(false); // Desativar imagem
         }
 	}
 	
@@ -55,7 +55,7 @@ public class Sword : MonoBehaviour {
     // Essa void, serve para o jogador poder escolher qual espada ele quer jogar dar 4 opçoes, cada uma com seu dano diferente (podemos colocar o alcance maior em cada uma tambem) //
     public void SwordEscolhida(string Sword)
     {
-        if (Sword == "Sword1")
+        if (Sword == "Sword1") // Se o jogador escolher a espada 1, vai aparecer uma borda nela e atualizara o dano para a mesma
         {
             BordaEspada[0].gameObject.SetActive(true);
             BordaEspada[1].gameObject.SetActive(false);
@@ -65,7 +65,7 @@ public class Sword : MonoBehaviour {
             Sword_Current = 0;
             SwordCurrentCriticoChance = SwordCriticoChance[0];
         }
-        if (Sword == "Sword2")
+        if (Sword == "Sword2") // Se o jogador escolher a espada 2, vai aparecer uma borda nela e atualizara o dano para a mesma
         {
             BordaEspada[0].gameObject.SetActive(false);
             BordaEspada[1].gameObject.SetActive(true);
@@ -75,7 +75,7 @@ public class Sword : MonoBehaviour {
             Sword_Current = 1;
             SwordCurrentCriticoChance = SwordCriticoChance[1];
         }
-        if (Sword == "Sword3")
+        if (Sword == "Sword3") // Se o jogador escolher a espada 3, vai aparecer uma borda nela e atualizara o dano para a mesma
         {
             BordaEspada[0].gameObject.SetActive(false);
             BordaEspada[1].gameObject.SetActive(false);
@@ -85,7 +85,7 @@ public class Sword : MonoBehaviour {
             Sword_Current = 2;
             SwordCurrentCriticoChance = SwordCriticoChance[2];
         }
-        if (Sword == "Sword4")
+        if (Sword == "Sword4") // Se o jogador escolher a espada 4, vai aparecer uma borda nela e atualizara o dano para a mesma
         {
             BordaEspada[0].gameObject.SetActive(false);
             BordaEspada[1].gameObject.SetActive(false);
@@ -98,7 +98,7 @@ public class Sword : MonoBehaviour {
     }
     public void UpdateDescriptionImage(int numero)
     {
-        if (numero == 1)
+        if (numero == 1) // Quando o jogador colocar o mouse em cima da espada, aparecera a descrição dela
         {
             DescricaoEspadaImg[0].gameObject.SetActive(true);
             DescricaoEspadaImg[1].gameObject.SetActive(false);
@@ -110,7 +110,7 @@ public class Sword : MonoBehaviour {
             TxtDescricaoEspada[2].gameObject.SetActive(false);
             TxtDescricaoEspada[3].gameObject.SetActive(false);
         }
-        else if (numero == 2)
+        else if (numero == 2) // Quando o jogador colocar o mouse em cima da espada, aparecera a descrição dela
         {
             DescricaoEspadaImg[0].gameObject.SetActive(false);
             DescricaoEspadaImg[1].gameObject.SetActive(true);
@@ -122,7 +122,7 @@ public class Sword : MonoBehaviour {
             TxtDescricaoEspada[2].gameObject.SetActive(false);
             TxtDescricaoEspada[3].gameObject.SetActive(false);
         }
-        else if (numero == 3)
+        else if (numero == 3) // Quando o jogador colocar o mouse em cima da espada, aparecera a descrição dela
         {
             DescricaoEspadaImg[0].gameObject.SetActive(false);
             DescricaoEspadaImg[1].gameObject.SetActive(false);
@@ -134,7 +134,7 @@ public class Sword : MonoBehaviour {
             TxtDescricaoEspada[2].gameObject.SetActive(true);
             TxtDescricaoEspada[3].gameObject.SetActive(false);
         }
-        else if (numero == 4)
+        else if (numero == 4) // Quando o jogador colocar o mouse em cima da espada, aparecera a descrição dela
         {
             DescricaoEspadaImg[0].gameObject.SetActive(false);
             DescricaoEspadaImg[1].gameObject.SetActive(false);

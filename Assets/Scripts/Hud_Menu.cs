@@ -100,7 +100,6 @@ public class Hud_Menu : MonoBehaviour
         }
 
     }
-
     public void UpdateListItens()
     {
         descriptiontext.text = "";

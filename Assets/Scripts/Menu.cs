@@ -30,13 +30,13 @@ public class Menu : MonoBehaviour {
 
     void Update()
     {
-        if (posicao == true)
+        if (posicao == true) // Fazer a slime andar para a direita
         {
            slime.transform.Translate(Vector2.right * Vel * Time.deltaTime);
             anim.SetFloat("MovY", TranformWayPoint.position.y);
 
         }
-        if (posicao == false)
+        if (posicao == false) // Fazer a slime andar para a esquerda
         {
             slime.transform.Translate(Vector2.left * Vel * Time.deltaTime);
             anim.SetFloat("MovY", -TranformWayPoint.position.y);
@@ -45,14 +45,14 @@ public class Menu : MonoBehaviour {
 
 
 
-    IEnumerator Direita()
+    IEnumerator Direita() // Tempo para mudar direcao
     {
         posicao = true;
         yield return new WaitForSeconds(12f);
         StartCoroutine(Esquerda());
     }
 
-    IEnumerator Esquerda()
+    IEnumerator Esquerda() // Tempo para mudar direcao
     {
         posicao = false;
         yield return new WaitForSeconds(12f);

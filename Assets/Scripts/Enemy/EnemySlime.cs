@@ -110,7 +110,7 @@ public class EnemySlime : MonoBehaviour {
         distance = Vector2.Distance(transform.position, ObjectPlayer.transform.position);
 
 
-        if(distance <= attackRadius && !stopAttack)
+        if(distance <= attackRadius && !stopAttack) // Se a distancia do player for menor que o range de ataque, ele atacará
         {
             StartCoroutine(Attack_CR());
         }

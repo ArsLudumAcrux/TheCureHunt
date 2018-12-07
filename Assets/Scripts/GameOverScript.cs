@@ -28,14 +28,14 @@ public class GameOverScript : MonoBehaviour {
         continuarimg.enabled = false;
         podeirmenu = false;
         StartCoroutine(ContarTempo());
-        Invoke("ComecarRisada", 2f);
+        Invoke("ComecarRisada", 2f); // Assim que comecar o game over, depois de 2 segundos comeca a risada
 	}
 	
 	// Update is called once per frame
 	void Update () {
         if (Input.anyKey && podeirmenu)
         {
-            FadeIn();
+            FadeIn(); 
         }
 	}
     void ComecarRisada()
@@ -85,7 +85,7 @@ public class GameOverScript : MonoBehaviour {
         }
 
     }
-    public void FadeIn()
+    public void FadeIn() // Fazer a tela escurecer por breve periodo
     {
         start = true;
         isFadeIn = true;
@@ -93,19 +93,19 @@ public class GameOverScript : MonoBehaviour {
     }
 
     //método para desativar a transição.
-    public void FadeOut()
+    public void FadeOut() // Fazer a tela voltar ao normal 
     {
         
         isFadeIn = false;
         SceneManager.LoadScene(0);
     }
 
-    IEnumerator FadeTime()
+    IEnumerator FadeTime() // Tempo para a tela voltar ao normal
     {
         yield return new WaitForSeconds(3f);
         FadeOut();
     }
-    IEnumerator ContarTempo()
+    IEnumerator ContarTempo() // Contagem de tempo para poder sair do game over
     {
         yield return new WaitForSeconds(10f);
         podeirmenu = true;
