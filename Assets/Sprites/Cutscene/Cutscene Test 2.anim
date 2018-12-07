@@ -286,42 +286,42 @@ AnimationClip:
   m_GenerateMotionCurves: 0
   m_Events:
   - time: 0
-    functionName: StopAnim
+    functionName: StopAnimation
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 4
-    functionName: StopAnim
+    functionName: StopAnimation
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 8
-    functionName: StopAnim
+    functionName: StopAnimation
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 12
-    functionName: StopAnim
+    functionName: StopAnimation
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 16
-    functionName: StopAnim
+    functionName: StopAnimation
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 20
-    functionName: StopAnim
+    functionName: StopAnimation
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

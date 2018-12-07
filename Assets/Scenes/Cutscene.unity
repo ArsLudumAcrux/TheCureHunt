@@ -620,10 +620,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 803526283}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0457930f4592fe34799bda3a7124ce06, type: 3}
+  m_Script: {fileID: 11500000, guid: 7af0cb91e6c467743b71dcbcc33a48ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cutScene: {fileID: 0}
+  anim: {fileID: 2038366490}
 --- !u!224 &803526285
 RectTransform:
   m_ObjectHideFlags: 0
@@ -970,8 +970,8 @@ GameObject:
   - component: {fileID: 2038366487}
   - component: {fileID: 2038366489}
   - component: {fileID: 2038366488}
-  - component: {fileID: 2038366491}
   - component: {fileID: 2038366490}
+  - component: {fileID: 2038366491}
   m_Layer: 5
   m_Name: Animation Player
   m_TagString: Untagged
@@ -1083,7 +1083,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2038366486}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0457930f4592fe34799bda3a7124ce06, type: 3}
+  m_Script: {fileID: 11500000, guid: 7af0cb91e6c467743b71dcbcc33a48ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cutScene: {fileID: 2038366490}
+  anim: {fileID: 2038366490}
