@@ -33,7 +33,7 @@ public class MiniMapCamera : MonoBehaviour
     void Start()
     {
         //Forçar a resolução da tela em um valor fixo de 1280x720 e em tela cheia.
-        Screen.SetResolution(300, 300, true);
+       // Screen.SetResolution(300, 300, true);
         MapaAtual = GameObject.FindObjectOfType<PlayerScript>().InitialMap.name;
 
     }
@@ -41,10 +41,10 @@ public class MiniMapCamera : MonoBehaviour
     private void FixedUpdate()
     {
         //Forçar a resolução caso ela não seja quadrada em tela cheia.
-        if (!Screen.fullScreen || miniMapCan.aspect != 1)
-        {
-            Screen.SetResolution(300, 300, true);
-        }
+       // if (!Screen.fullScreen || miniMapCan.aspect != 1)
+       // {
+       //     Screen.SetResolution(300, 300, true);
+       // }
         //Permitir encerrar o jogo caso for pressionada a tecla ESC.
 
         if (Input.GetKey("escape")) Application.Quit();

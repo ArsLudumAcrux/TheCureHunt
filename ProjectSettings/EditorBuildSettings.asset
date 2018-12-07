@@ -14,10 +14,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 4259da9bfb8c311428c1db2bc67c961a
-  - enabled: 1
-    path: Assets/Scenes/NaoSei1.unity
-    guid: ae8ee15e3911e904cbe983dec218881d
-  - enabled: 1
-    path: Assets/Scenes/NaoSei2.unity
-    guid: 70c663e7af40dc943bd410a156237f36
   m_configObjects: {}
