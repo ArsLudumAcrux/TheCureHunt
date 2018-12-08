@@ -9,7 +9,7 @@ public class FixDepth : MonoBehaviour {
     MeshRenderer meshRender;
 
 	void Start () {
-		//spr = GetComponent<SpriteRenderer>();
+		spr = GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>();
         //meshRender = GetComponent<MeshRenderer>();
         //spr.sortingLayerName = "Player";
        //spr.sortingOrder = Mathf.RoundToInt(-transform.position.y * 100);
@@ -26,7 +26,7 @@ public class FixDepth : MonoBehaviour {
 
 	void Update () {
 		if (fixEveryFrame) {
-            //spr.sortingOrder = Mathf.RoundToInt(-transform.position.y * 100);
+            spr.sortingOrder = Mathf.RoundToInt(-transform.position.y * 100);
            //meshRender.sortingOrder = Mathf.RoundToInt(-transform.position.y * 100);
         }
 	}

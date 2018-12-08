@@ -642,7 +642,6 @@ GameObject:
   - component: {fileID: 15356004}
   - component: {fileID: 15355997}
   - component: {fileID: 15355994}
-  - component: {fileID: 15355996}
   - component: {fileID: 15355995}
   m_Layer: 0
   m_Name: Player
@@ -743,19 +742,6 @@ MonoBehaviour:
   espada: {fileID: 15355994}
   dropcoin: {fileID: 0}
   HB: {fileID: 855728401}
---- !u!114 &15355996
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114855764759324922, guid: c5cb0cd77590ef74fb60cd1eaf05ee2d,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 15355993}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50f66c2029d985345b7634db02c103c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fixEveryFrame: 1
 --- !u!114 &15355997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -913,7 +899,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.003685303, y: -0.082439885}
+  m_Offset: {x: -0.00037224148, y: -0.01463256}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -924,7 +910,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.036154114, y: 0.14464316}
+  m_Size: {x: 0.0030186963, y: 0.28025782}
   m_EdgeRadius: 0.3
 --- !u!50 &15356000
 Rigidbody2D:
@@ -1490,7 +1476,6 @@ GameObject:
   - component: {fileID: 39126907}
   - component: {fileID: 39126906}
   - component: {fileID: 39126905}
-  - component: {fileID: 39126908}
   m_Layer: 0
   m_Name: Outside_B
   m_TagString: Untagged
@@ -1557,9 +1542,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 15
+  m_SortingLayerID: 16464409
+  m_SortingLayer: 3
+  m_SortingOrder: 31
 --- !u!33 &39126907
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1568,19 +1553,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 39126903}
   m_Mesh: {fileID: 4300000, guid: 532895db2c3e18f469c2452ed429e595, type: 3}
---- !u!114 &39126908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114057725000304492, guid: e66cfb8b0344956449722e2e67b375f0,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 39126903}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50f66c2029d985345b7634db02c103c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fixEveryFrame: 0
 --- !u!1 &39211525
 GameObject:
   m_ObjectHideFlags: 0
@@ -6882,9 +6854,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.19229373, y: 0}
+  m_Offset: {x: 0.23066673, y: 0}
   serializedVersion: 2
-  m_Radius: 0.28396043
+  m_Radius: 0.32233343
 --- !u!114 &187470023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8927,7 +8899,6 @@ GameObject:
   - component: {fileID: 256090666}
   - component: {fileID: 256090665}
   - component: {fileID: 256090664}
-  - component: {fileID: 256090667}
   m_Layer: 0
   m_Name: O_A5_Forest
   m_TagString: Untagged
@@ -8994,9 +8965,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 11
+  m_SortingLayerID: 16464409
+  m_SortingLayer: 3
+  m_SortingOrder: 30
 --- !u!33 &256090666
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -9005,19 +8976,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 256090662}
   m_Mesh: {fileID: 4300000, guid: c2d0d48851fd31043b55e109dd61d312, type: 3}
---- !u!114 &256090667
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114300713209291886, guid: e66cfb8b0344956449722e2e67b375f0,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 256090662}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50f66c2029d985345b7634db02c103c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fixEveryFrame: 0
 --- !u!1 &260853717
 GameObject:
   m_ObjectHideFlags: 0
@@ -11667,7 +11625,6 @@ GameObject:
   - component: {fileID: 329010100}
   - component: {fileID: 329010099}
   - component: {fileID: 329010098}
-  - component: {fileID: 329010101}
   m_Layer: 0
   m_Name: Dungeon_B
   m_TagString: Untagged
@@ -11736,7 +11693,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 16464409
   m_SortingLayer: 3
-  m_SortingOrder: 10
+  m_SortingOrder: 30
 --- !u!33 &329010100
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -11745,19 +11702,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 329010096}
   m_Mesh: {fileID: 4300000, guid: dedd9a69bb2bf314db3a1baa4d5f288d, type: 3}
---- !u!114 &329010101
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114616407582219972, guid: e66cfb8b0344956449722e2e67b375f0,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 329010096}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50f66c2029d985345b7634db02c103c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fixEveryFrame: 0
 --- !u!1 &331864277
 GameObject:
   m_ObjectHideFlags: 0
@@ -12050,6 +11994,59 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 333842339}
   m_CullTransparentMesh: 0
+--- !u!1 &335216123
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 335216124}
+  - component: {fileID: 335216125}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &335216124
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 335216123}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 38.44, y: -29.63, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1789710497}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!68 &335216125
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 335216123}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.47416306, y: 0.13565445}
+  - {x: -0.395504, y: 0.050323486}
+  - {x: -0.13442612, y: -0.12786102}
+  - {x: 0.30046463, y: 0.17288017}
+  - {x: 0.07368088, y: 0.6785679}
+  - {x: -0.20099258, y: 0.8270283}
+  - {x: -0.6043129, y: 0.6035137}
+  - {x: -0.65112686, y: 0.28163147}
+  - {x: -0.35268784, y: 0.02584076}
 --- !u!1 &339459627
 GameObject:
   m_ObjectHideFlags: 0
@@ -13681,7 +13678,6 @@ GameObject:
   - component: {fileID: 389489304}
   - component: {fileID: 389489303}
   - component: {fileID: 389489302}
-  - component: {fileID: 389489305}
   m_Layer: 0
   m_Name: Outside_B
   m_TagString: Untagged
@@ -13748,9 +13744,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingLayerID: 16464409
+  m_SortingLayer: 3
+  m_SortingOrder: 28
 --- !u!33 &389489304
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -13759,18 +13755,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 389489300}
   m_Mesh: {fileID: 4300000, guid: 8ec6777343f540e44bbe36c4c9380fe4, type: 3}
---- !u!114 &389489305
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 389489300}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50f66c2029d985345b7634db02c103c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fixEveryFrame: 0
 --- !u!1 &389662679
 GameObject:
   m_ObjectHideFlags: 0
@@ -21542,7 +21526,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &650298044
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22325,7 +22309,6 @@ GameObject:
   - component: {fileID: 673093941}
   - component: {fileID: 673093940}
   - component: {fileID: 673093939}
-  - component: {fileID: 673093942}
   m_Layer: 0
   m_Name: O_A5_Forest
   m_TagString: Untagged
@@ -22392,9 +22375,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 13
+  m_SortingLayerID: 16464409
+  m_SortingLayer: 3
+  m_SortingOrder: 32
 --- !u!33 &673093941
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -22403,19 +22386,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 673093937}
   m_Mesh: {fileID: 4300000, guid: 0efb0e0164d2db245926522dfefe2d65, type: 3}
---- !u!114 &673093942
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114226256270546256, guid: e66cfb8b0344956449722e2e67b375f0,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 673093937}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50f66c2029d985345b7634db02c103c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fixEveryFrame: 0
 --- !u!1 &673948429
 GameObject:
   m_ObjectHideFlags: 0
@@ -30519,7 +30489,6 @@ GameObject:
   - component: {fileID: 951009097}
   - component: {fileID: 951009096}
   - component: {fileID: 951009095}
-  - component: {fileID: 951009098}
   m_Layer: 0
   m_Name: Outside_B
   m_TagString: Untagged
@@ -30586,9 +30555,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 11
+  m_SortingLayerID: 16464409
+  m_SortingLayer: 3
+  m_SortingOrder: 30
 --- !u!33 &951009097
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -30597,19 +30566,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 951009093}
   m_Mesh: {fileID: 4300000, guid: 7224cdf810d7b4f44b43750c0da79b15, type: 3}
---- !u!114 &951009098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114869898555792444, guid: e66cfb8b0344956449722e2e67b375f0,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 951009093}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50f66c2029d985345b7634db02c103c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fixEveryFrame: 0
 --- !u!1 &956113714
 GameObject:
   m_ObjectHideFlags: 0
@@ -47895,7 +47851,6 @@ GameObject:
   - component: {fileID: 1472565739}
   - component: {fileID: 1472565738}
   - component: {fileID: 1472565737}
-  - component: {fileID: 1472565740}
   m_Layer: 0
   m_Name: O_A5_Forest
   m_TagString: Untagged
@@ -47962,9 +47917,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 14
+  m_SortingLayerID: 16464409
+  m_SortingLayer: 3
+  m_SortingOrder: 30
 --- !u!33 &1472565739
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -47973,19 +47928,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1472565735}
   m_Mesh: {fileID: 4300000, guid: 59d0c88c81678614fb5551667d3c8973, type: 3}
---- !u!114 &1472565740
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114478760222614876, guid: e66cfb8b0344956449722e2e67b375f0,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1472565735}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50f66c2029d985345b7634db02c103c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fixEveryFrame: 0
 --- !u!1 &1474483336
 GameObject:
   m_ObjectHideFlags: 0
@@ -52226,9 +52168,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 11
+  m_SortingLayerID: 16464409
+  m_SortingLayer: 3
+  m_SortingOrder: 30
 --- !u!33 &1588421129
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -53212,7 +53154,6 @@ GameObject:
   - component: {fileID: 1617767707}
   - component: {fileID: 1617767706}
   - component: {fileID: 1617767705}
-  - component: {fileID: 1617767708}
   m_Layer: 0
   m_Name: Outside_B
   m_TagString: Untagged
@@ -53279,9 +53220,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 13
+  m_SortingLayerID: 16464409
+  m_SortingLayer: 3
+  m_SortingOrder: 32
 --- !u!33 &1617767707
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -53290,19 +53231,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1617767703}
   m_Mesh: {fileID: 4300000, guid: 56b95007fc67d244eb2da2ef35608d3b, type: 3}
---- !u!114 &1617767708
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114941715818336420, guid: e66cfb8b0344956449722e2e67b375f0,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1617767703}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50f66c2029d985345b7634db02c103c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fixEveryFrame: 0
 --- !u!1 &1624115590
 GameObject:
   m_ObjectHideFlags: 0
@@ -54384,7 +54312,6 @@ GameObject:
   - component: {fileID: 1649141744}
   - component: {fileID: 1649141743}
   - component: {fileID: 1649141742}
-  - component: {fileID: 1649141745}
   m_Layer: 0
   m_Name: O_A5_Forest
   m_TagString: Untagged
@@ -54451,9 +54378,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingLayerID: 16464409
+  m_SortingLayer: 3
+  m_SortingOrder: 30
 --- !u!33 &1649141744
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -54462,19 +54389,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1649141740}
   m_Mesh: {fileID: 4300000, guid: 4ec70c1ebbb7b994db45e0d30027b18a, type: 3}
---- !u!114 &1649141745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114406133447338692, guid: e66cfb8b0344956449722e2e67b375f0,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1649141740}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50f66c2029d985345b7634db02c103c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fixEveryFrame: 0
 --- !u!1 &1650614714
 GameObject:
   m_ObjectHideFlags: 0
@@ -59216,7 +59130,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 335216124}
   m_Father: {fileID: 1904532880}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -61736,7 +61651,6 @@ GameObject:
   - component: {fileID: 1839753418}
   - component: {fileID: 1839753417}
   - component: {fileID: 1839753416}
-  - component: {fileID: 1839753419}
   m_Layer: 0
   m_Name: O_A5_Forest
   m_TagString: Untagged
@@ -61803,9 +61717,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 12
+  m_SortingLayerID: 16464409
+  m_SortingLayer: 3
+  m_SortingOrder: 32
 --- !u!33 &1839753418
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -61814,19 +61728,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1839753414}
   m_Mesh: {fileID: 4300000, guid: 7343200c0089bba4b87ec0ba33fd0006, type: 3}
---- !u!114 &1839753419
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114848214215929360, guid: e66cfb8b0344956449722e2e67b375f0,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1839753414}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50f66c2029d985345b7634db02c103c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fixEveryFrame: 0
 --- !u!1 &1839869258
 GameObject:
   m_ObjectHideFlags: 0
@@ -62169,7 +62070,6 @@ GameObject:
   - component: {fileID: 1848720816}
   - component: {fileID: 1848720815}
   - component: {fileID: 1848720814}
-  - component: {fileID: 1848720817}
   m_Layer: 0
   m_Name: O_A5_Forest
   m_TagString: Untagged
@@ -62236,9 +62136,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 15
+  m_SortingLayerID: 16464409
+  m_SortingLayer: 3
+  m_SortingOrder: 31
 --- !u!33 &1848720816
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -62247,19 +62147,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1848720812}
   m_Mesh: {fileID: 4300000, guid: e921f3092c774bf4280b66db51e2d2b0, type: 3}
---- !u!114 &1848720817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114392865345548144, guid: e66cfb8b0344956449722e2e67b375f0,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1848720812}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50f66c2029d985345b7634db02c103c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fixEveryFrame: 0
 --- !u!1 &1849263758
 GameObject:
   m_ObjectHideFlags: 0
@@ -74711,7 +74598,6 @@ GameObject:
   - component: {fileID: 2097242003}
   - component: {fileID: 2097242002}
   - component: {fileID: 2097242001}
-  - component: {fileID: 2097242004}
   m_Layer: 0
   m_Name: Outside_B
   m_TagString: Untagged
@@ -74778,9 +74664,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 14
+  m_SortingLayerID: 16464409
+  m_SortingLayer: 3
+  m_SortingOrder: 30
 --- !u!33 &2097242003
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -74789,19 +74675,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2097241999}
   m_Mesh: {fileID: 4300000, guid: e77d390766e678d4ca4d910ac61076bf, type: 3}
---- !u!114 &2097242004
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114032604980422978, guid: e66cfb8b0344956449722e2e67b375f0,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2097241999}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50f66c2029d985345b7634db02c103c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fixEveryFrame: 0
 --- !u!1 &2098139356
 GameObject:
   m_ObjectHideFlags: 0
