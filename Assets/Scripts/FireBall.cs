@@ -16,7 +16,7 @@ public class FireBall : MonoBehaviour {
         Invoke("DestroyFireball", 3f);
         expbar = GameObject.FindGameObjectWithTag("ExpBar").GetComponent<ExpBar>();
 
-        //boss = GameObject.FindGameObjectWithTag("Boss").GetComponent<ScriptBoss>();
+        boss = GameObject.FindGameObjectWithTag("Boss").GetComponent<ScriptBoss>();
     }
 
     public void OnTriggerEnter2D(Collider2D collision)

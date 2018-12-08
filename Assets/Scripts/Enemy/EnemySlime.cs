@@ -57,7 +57,7 @@ public class EnemySlime : MonoBehaviour {
 	public GameObject Moeda3;
 	public GameObject Moeda4;
 	public GameObject Moeda5;
-
+    Slime_Stats slimestats;
 
 
 
@@ -83,7 +83,7 @@ public class EnemySlime : MonoBehaviour {
 
 
     void Start () {
-
+        slimestats = GetComponent<Slime_Stats>();
 
         // Guarda a posicao inicial da slime
         initialPosition = transform.position;
@@ -110,7 +110,7 @@ public class EnemySlime : MonoBehaviour {
         distance = Vector2.Distance(transform.position, ObjectPlayer.transform.position);
 
 
-        if(distance <= attackRadius && !stopAttack) // Se a distancia do player for menor que o range de ataque, ele atacará
+        if(distance <= attackRadius && !stopAttack && !slimestats.morreu) // Se a distancia do player for menor que o range de ataque, ele atacará, e se ele morrer ele nao pode atacar
         {
             StartCoroutine(Attack_CR());
         }
@@ -168,9 +168,7 @@ public class EnemySlime : MonoBehaviour {
 
             // Se o player estiver no alcance, a slime para e ataca
             if (target != initialPosition && distance < attackRadius)
-            {
-
-                // Aqui seria para atacar, mas por hora movimentamos a slime
+            {          
                 anim.SetFloat("MovX", dir.x);
                 anim.SetFloat("MovY", dir.y); 
                 //anim.Play("Enemy_Walk", -1, 0);  // Congela a animacao de andar
@@ -219,7 +217,7 @@ public class EnemySlime : MonoBehaviour {
     //    }
     //}
 
-    IEnumerator Attack_CR()
+    IEnumerator Attack_CR() //IEnumerator para acionar o ataque da slime
     {
         anim.SetTrigger("Attacking");
         speed = 0;

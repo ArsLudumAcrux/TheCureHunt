@@ -4631,8 +4631,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 16464409
+  m_SortingLayer: 3
   m_SortingOrder: 20
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4872,8 +4872,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 16464409
+  m_SortingLayer: 3
   m_SortingOrder: 20
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -20585,8 +20585,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 16464409
+  m_SortingLayer: 3
   m_SortingOrder: 20
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -20961,8 +20961,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 16464409
+  m_SortingLayer: 3
   m_SortingOrder: 20
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -28905,9 +28905,8 @@ MonoBehaviour:
   FireballEmitor: {fileID: 634039415}
   FireballPrefab: {fileID: 1212595698663198, guid: 3f72d0a295393314aae492f8e3c72d36,
     type: 2}
-  FireballSpeed: 200
+  FireballSpeed: 350
   FireballRotator: {fileID: 190081570}
-  DamageFireball: 5
   EscudoImage:
   - {fileID: 1753953665}
   - {fileID: 990843395}
@@ -40901,8 +40900,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 16464409
+  m_SortingLayer: 3
   m_SortingOrder: 20
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -51655,7 +51654,7 @@ MonoBehaviour:
   TP: {fileID: 857857530}
   TPAltar: {fileID: 364169932}
   Damage: 30
-  Life: 500
+  Life: 1750
   disablecollider: {fileID: 169493105}
   Escada: {fileID: 36026650}
   simbolo: {fileID: 982153244}
@@ -51664,7 +51663,7 @@ MonoBehaviour:
   offset: {x: 0, y: 0, z: 0}
   OrbeEmitor: {fileID: 1747520359}
   OrbePrefab: {fileID: 1715297564448538, guid: f7b4a91948f58d54e815158a6b225609, type: 2}
-  OrbeSpeed: 1000
+  OrbeSpeed: 1250
   OrbeRotator: {fileID: 1768993470}
   PrefabSlime: {fileID: 1630921049894386, guid: 19dacc5a190adcc44be391b5c5e30a41,
     type: 2}
@@ -51694,7 +51693,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00040265918, y: -0.040315717}
+  m_Offset: {x: -0.011839867, y: -0.11122483}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -51705,7 +51704,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6413769, y: 1.5917842}
+  m_Size: {x: 0.6642513, y: 1.3767599}
   m_EdgeRadius: 0
 --- !u!50 &1576221258
 Rigidbody2D:
@@ -51908,8 +51907,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 16464409
+  m_SortingLayer: 3
   m_SortingOrder: 20
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -53970,8 +53969,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 16464409
+  m_SortingLayer: 3
   m_SortingOrder: 20
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

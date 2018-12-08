@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Orbe : MonoBehaviour
 {
-
+    CoolDown cooldown;
     public float Damage;
 
     public HealthBar HB;
@@ -13,11 +13,16 @@ public class Orbe : MonoBehaviour
     {
         Invoke("DestroyOrbe", 3f);
         HB = GameObject.FindGameObjectWithTag("Content").GetComponent<HealthBar>();
+        cooldown = GameObject.FindGameObjectWithTag("CoolDown").GetComponent<CoolDown>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && cooldown.EscudosRestante > 0)
+        {
+            cooldown.Escudo();
+        }
+        else if (collision.gameObject.CompareTag("Player"))
         {
             PlayerScript player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>();
             HB.HP_Current -= Mathf.RoundToInt(Damage * player.ShieldPotionMult);

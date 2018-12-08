@@ -138,15 +138,19 @@ public class ScriptBoss : MonoBehaviour {
         }
         if (collision.CompareTag("Slime"))
         {
-            Slime_Stats Slime = collision.GetComponent<Slime_Stats>();
-            Slime.Life_Slime -= Damage;
+            if (Slime.morreu == false)
+            {
+                Slime_Stats Slime = collision.GetComponent<Slime_Stats>();
+                Slime.Life_Slime -= Damage;
+            }
+            if (Slime.Life_Slime <= 0)
+            {
+                Slime.morreu = true;
+                ExpBar expBar = collision.GetComponent<ExpBar>();
+                drop.ChanceCoinPotion();
+            }
         }
-        if (Slime.Life_Slime <= 0)
-        {
-            Slime.morreu = true;
-            ExpBar expBar = collision.GetComponent<ExpBar>();
-            drop.ChanceCoinPotion();
-        }
+        
     }
     public void iddle1() // Animacao de parado
     {
@@ -214,8 +218,8 @@ public class ScriptBoss : MonoBehaviour {
         {
             VinhasDireita[i].SetActive(true);
         }
-        Invoke("VinhasDireitaDisable", 3.55f);
-        Invoke("VinhasEsquerdaAtaque2x", 3.55f);
+        Invoke("VinhasDireitaDisable", 3.30f);
+        Invoke("VinhasEsquerdaAtaque2x", 3.30f);
     }
     public void VinhasDireitaAtaque2x() // Animacao das vinhas da direita
     {
@@ -224,8 +228,8 @@ public class ScriptBoss : MonoBehaviour {
         {
             VinhasDireita[i].SetActive(true);
         }
-        Invoke("VinhasDireitaDisable", 3.55f);
-        StartCoroutine(ComecarCoroutine(4.2f));
+        Invoke("VinhasDireitaDisable", 3.30f);
+        StartCoroutine(ComecarCoroutine(3.8f));
     }
     public void VinhasDireitaDisable() // Desabilitar as vinhas da direita
     {
@@ -241,8 +245,8 @@ public class ScriptBoss : MonoBehaviour {
         {
             VinhasEsquerda[i].SetActive(true);
         }
-        Invoke("VinhasEsquerdaDisable", 3.55f);
-        Invoke("VinhasDireitaAtaque1x", 3.55f);
+        Invoke("VinhasEsquerdaDisable", 3.30f);
+        Invoke("VinhasDireitaAtaque1x", 3.30f);
     }
     public void VinhasEsquerdaAtaque2x() // Animacao das vinhas da esquerda
     {
@@ -251,8 +255,8 @@ public class ScriptBoss : MonoBehaviour {
         {
             VinhasEsquerda[i].SetActive(true);
         }
-        Invoke("VinhasEsquerdaDisable", 3.55f);
-        Invoke("VinhasDireitaAtaque2x", 3.55f);
+        Invoke("VinhasEsquerdaDisable", 3.30f);
+        Invoke("VinhasDireitaAtaque2x", 3.30f);
     }
     public void VinhasEsquerdaDisable() // Desativar as vinhas da esquerda
     {

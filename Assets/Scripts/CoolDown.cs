@@ -17,7 +17,7 @@ public class CoolDown : MonoBehaviour {
     public GameObject FireballPrefab;
     public float FireballSpeed;
     public Transform FireballRotator;
-    public float DamageFireball;
+    float DamageFireball;
     [Header("Escudo Config")]
     public Image[] EscudoImage;
     public int EscudosRestante;
@@ -27,7 +27,7 @@ public class CoolDown : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+        DamageFireball = 30f;
         playerscript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>();
         TempoCoolDown = 15.0f;
         PodeUsar = true;
@@ -69,14 +69,14 @@ public class CoolDown : MonoBehaviour {
     // Update is called once per frame
     public void CoolDownMagia(string magiaAtual)
     {
-        if (magiaAtual == "Fogo")
+        if (magiaAtual == "Fogo" && PodeUsar)
         {
             GameObject tempFireball = Instantiate(FireballPrefab, FireballEmitor.position, FireballRotator.rotation);
             Rigidbody2D tempRB2D = tempFireball.GetComponent<Rigidbody2D>();
             tempRB2D.AddForce(FireballEmitor.forward * FireballSpeed);
             tempFireball.GetComponent<FireBall>().Damage = DamageFireball;
 
-        } else if (magiaAtual == "Floresta")
+        } else if (magiaAtual == "Floresta" && PodeUsar)
         {
             EscudosRestante = 3;
 

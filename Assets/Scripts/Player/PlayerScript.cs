@@ -140,7 +140,7 @@ public class PlayerScript : MonoBehaviour {
 	void Update () {
 
 
-        if (Input.GetKey(KeyCode.L))
+        if (Input.GetKey(KeyCode.RightShift) && Input.GetKey(KeyCode.B))
         {
             transform.position = new Vector3(-16.12f, 142.1f, -0.042225f);
         }
@@ -281,7 +281,6 @@ public class PlayerScript : MonoBehaviour {
             {
                 
                 cooldown.CoolDownMagia("Fogo");
-                
 
             }
             else if (magic.MagiaAtual == "Floresta" && cooldown.EscudosRestante <= 0)
@@ -380,6 +379,7 @@ public class PlayerScript : MonoBehaviour {
             FindObjectOfType<AreaScript>().ChamarCoroutine("Caverna do Diabo");
             GameManager gamemanager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
             gamemanager.monstrosMortos2 = 0;
+            gamemanager.monstrosMortos3 = 0;
             hudmenu.HUDMAIOR();
             if (mapa2 == false)
             {

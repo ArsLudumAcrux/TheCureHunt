@@ -9,7 +9,6 @@ public class Vinhas : MonoBehaviour {
     CoolDown cooldown;
     Slime_Stats Slime;
     public int Damage;
-    bool PodeReceberDano;
 
 
     public void Start()
@@ -18,24 +17,18 @@ public class Vinhas : MonoBehaviour {
         HB = GameObject.FindGameObjectWithTag("Content").gameObject.GetComponent<HealthBar>();
         cooldown = GameObject.FindGameObjectWithTag("CoolDown").gameObject.GetComponent<CoolDown>();
         Slime = GameObject.FindGameObjectWithTag("Slime").gameObject.GetComponent<Slime_Stats>();
-
-        PodeReceberDano = true;
     }
 
-    public void OnTriggerStay2D(Collider2D other)
+    public void OnTriggerEnter2D(Collider2D other)
     {
         DropCoin drop = other.GetComponent<DropCoin>();
-        if (other.CompareTag("Player") && cooldown.EscudosRestante > 0 && PodeReceberDano == true)
+        if (other.CompareTag("Player") && cooldown.EscudosRestante > 0)
         {
             cooldown.Escudo();
-            PodeReceberDano = false;
-            Invoke("PodeReceber", 1f);
         }
-        else if (other.CompareTag("Player") && PodeReceberDano == true)
+        else if (other.CompareTag("Player"))
         {
             HB.HP_Current -= Mathf.RoundToInt(Damage * player.ShieldPotionMult);
-            PodeReceberDano = false;
-            Invoke("PodeReceber", 1f);
         }
         if (HB.HP_Current <= 0)
         {
@@ -44,19 +37,18 @@ public class Vinhas : MonoBehaviour {
         }
         if (other.CompareTag("Slime"))
         {
-            Slime_Stats Slime = other.GetComponent<Slime_Stats>();
-            Slime.Life_Slime -= Damage;
-            print(Slime.Life_Slime -= Damage);
+            if (Slime.morreu == false)
+            {
+                Slime_Stats Slime = other.GetComponent<Slime_Stats>();
+                Slime.Life_Slime -= Damage;
+            }
+            if (Slime.Life_Slime <= 0)
+            {
+                Slime.morreu = true;
+                ExpBar expBar = other.GetComponent<ExpBar>();
+                drop.ChanceCoinPotion();
+            }
         }
-        if (Slime.Life_Slime <= 0)
-        {
-            Slime.morreu = true;
-            ExpBar expBar = other.GetComponent<ExpBar>();
-            drop.ChanceCoinPotion();
-        }
-    }
-    public void PodeReceber()
-    {
-        PodeReceberDano = true;
     }
 }
+

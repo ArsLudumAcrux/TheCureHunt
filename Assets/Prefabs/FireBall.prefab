@@ -77,9 +77,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.000000011271195, y: -0.09454964}
+  m_Offset: {x: -0.0036869145, y: -0.08348625}
   serializedVersion: 2
-  m_Radius: 0.07940004
+  m_Radius: 0.0757132
 --- !u!82 &82539885695345346
 AudioSource:
   m_ObjectHideFlags: 1
@@ -204,7 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5e9199aec1428e4caabb806d1415578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 30
+  Damage: 0
 --- !u!212 &212498483137122786
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -237,8 +237,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 16464409
+  m_SortingLayer: 3
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 006a90741adf39b40a966561186101e7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
