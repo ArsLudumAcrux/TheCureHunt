@@ -10,12 +10,14 @@ public class Menu : MonoBehaviour {
     public GameObject slime;
     public Animator anim;
     public Transform TranformWayPoint;
+    public bool SlimeMorreu;
 
     // Use this for initialization
     void Start () {
         Invoke("ComecarMusica", 1.5f);
         StartCoroutine(Esquerda());
         Cursor.visible = true;
+        SlimeMorreu = false;
     }
     void ComecarMusica()
     {
@@ -42,10 +44,22 @@ public class Menu : MonoBehaviour {
             slime.transform.Translate(Vector2.left * Vel * Time.deltaTime);
             anim.SetFloat("MovY", -TranformWayPoint.position.y);
         }
+        if (Input.GetKeyDown(KeyCode.Mouse0) && SlimeMorreu == false)
+        {
+            ApertarSlime();
+            SlimeMorreu = true;
+        }
     }
 
-
-
+    public void ApertarSlime()
+    {
+        anim.SetTrigger("Attacking");
+        Invoke("Tempo",2.5f);
+    }
+    public void Tempo()
+    {
+        SlimeMorreu = false;
+    }
     IEnumerator Direita() // Tempo para mudar direcao
     {
         posicao = true;

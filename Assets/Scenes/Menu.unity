@@ -710,6 +710,7 @@ MonoBehaviour:
   slime: {fileID: 7034343}
   anim: {fileID: 7034350}
   TranformWayPoint: {fileID: 572183022}
+  SlimeMorreu: 0
 --- !u!1 &393198890
 GameObject:
   m_ObjectHideFlags: 0
