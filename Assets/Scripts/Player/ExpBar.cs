@@ -54,8 +54,6 @@ public class ExpBar : MonoBehaviour {
 
                 playerScript.speed = (playerScript.speed * 1.04f); // Adiciona 4% de velocidade ao player
 
-                HB.HPFull(); // Assim que aumentar a vida maxima, deixar a vida cheia
-
                 danoTxt.gameObject.SetActive(true); //Mostrar o dano recebido
                 speedTxt.gameObject.SetActive(true); //Mostrar a velocidade recebida
                 Invoke("StatusAtualizados", 4f); //Desativar os Txt de cima

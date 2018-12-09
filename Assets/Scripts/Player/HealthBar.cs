@@ -53,4 +53,8 @@ public class HealthBar : MonoBehaviour
     {
         HP_Current = stats.HP_Max;
     }
+    public void HPRecuperation()
+    {
+        HP_Current += stats.HP_Max * 0.08f; // Toda vez que essa void é chamada, cura 8% de vida, baseado na vida atual e maxima
+    }
 }
