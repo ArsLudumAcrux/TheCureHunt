@@ -160,7 +160,7 @@ MonoBehaviour:
   visionRadius: 5
   attackRadius: 1
   speed: 1.2
-  damage: 10
+  damage: 18
   stats: {fileID: 114962193705891500}
   ObjectPlayer: {fileID: 0}
   EnemyType: 1
@@ -208,7 +208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57fbf5aba80935642b8015dd6bd6b39f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Life_Slime: 75
+  Life_Slime: 100
   Atk_Slime: 0
   morreu: 0
   xpMin: 10

@@ -7,6 +7,7 @@ public class Hud_Menu : MonoBehaviour
 {
     Animator anim;
     string Borrada;
+    public bool PodePassarMenu;
     [Header("Paneis")]
     public GameObject PanelMenu;
     public GameObject PanelEspadas;
@@ -85,15 +86,9 @@ public class Hud_Menu : MonoBehaviour
 
 
         HUDMAIOR();
-       //BarraExperiencia.SetActive(true);
-       //BarraVida.SetActive(true);
-       //Coin.SetActive(true);
-       //HudOthers.SetActive(true);
-       //
-       //BarraExperienciaMenor.SetActive(false);
-       //BarraVidaMenor.SetActive(false);
-       //CoinMenor.SetActive(false);
-       //HudOthersMenor.SetActive(false);
+
+        PodePassarMenu = false;
+        Invoke("Tutorial", 5f);
 
     }
     public void Update()
@@ -116,7 +111,7 @@ public class Hud_Menu : MonoBehaviour
         //    Time.timeScale = 1;
         //}
 
-        if (Input.anyKeyDown && PanelTutorial.activeInHierarchy)
+        if (Input.anyKeyDown && PanelTutorial.activeInHierarchy && PodePassarMenu)
         {
             PanelTutorial.SetActive(false);
         }
@@ -361,6 +356,10 @@ public class Hud_Menu : MonoBehaviour
         //    yield return new WaitForSecondsRealtime(2f);
         //    anim.Play("Espada_Borrada4_Esconder");
         //}
+    }
+    public void Tutorial()
+    {
+        PodePassarMenu = true;
     }
    public IEnumerator DisableMensagem()
     {

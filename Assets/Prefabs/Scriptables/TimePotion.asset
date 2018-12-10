@@ -15,7 +15,7 @@ MonoBehaviour:
   healthGain: 0
   potionFunction: 3
   potionName: "Po\xE7\xE3o de Tempo"
-  potionDescription: "Essa po\xE7\xE3o tem a fun\xE7\xE3o de cooldown, ela tira 30%
-    do tempo de espera das magias. Dura\xE7\xE3o: 30 Segundos "
+  potionDescription: "Essa po\xE7\xE3o tem a fun\xE7\xE3o de cooldown, ela tira 40%
+    do tempo de espera das magias. Dura\xE7\xE3o: 40 Segundos "
   artwork: {fileID: 21300000, guid: 35bb746007562e742858b4ff65de3d4f, type: 3}
-  Duration: 30
+  Duration: 40

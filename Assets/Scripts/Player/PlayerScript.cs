@@ -139,6 +139,10 @@ public class PlayerScript : MonoBehaviour {
 
 	void Update () {
 
+        if (hudmenu.PodePassarMenu != true)
+        {
+            return;
+        }
 
         if (Input.GetKey(KeyCode.RightShift) && Input.GetKey(KeyCode.B))
         {
@@ -537,7 +541,7 @@ public class PlayerScript : MonoBehaviour {
     }
     public void UseTimePotion()
     {
-        TimePotionMult = 0.7f;
+        TimePotionMult = 0.6f;
         expfillamount.color = new Color(255, 235, 0);
         RunTimePotion = CurrentPotion.Duration + Time.time;
         UsingPotion = true;
@@ -562,6 +566,7 @@ public class PlayerScript : MonoBehaviour {
 
     void FixedUpdate () {
 
+        if(!PlayerMorreu)
 		rb2d.MovePosition(rb2d.position + Mov * (speed * LuckPotionMult) * Time.deltaTime);
 	}
 

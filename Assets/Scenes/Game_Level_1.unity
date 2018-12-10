@@ -635,8 +635,8 @@ GameObject:
   m_Component:
   - component: {fileID: 15356003}
   - component: {fileID: 15356002}
-  - component: {fileID: 15356001}
   - component: {fileID: 15356000}
+  - component: {fileID: 15356001}
   - component: {fileID: 15355999}
   - component: {fileID: 15355998}
   - component: {fileID: 15356004}
@@ -4954,7 +4954,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af744e14ada9e1e449b005c28bc996bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 30
+  Damage: 100
 --- !u!1 &136801837
 GameObject:
   m_ObjectHideFlags: 0
@@ -5195,7 +5195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af744e14ada9e1e449b005c28bc996bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 30
+  Damage: 100
 --- !u!1 &139463960
 GameObject:
   m_ObjectHideFlags: 0
@@ -18109,6 +18109,7 @@ MonoBehaviour:
   maxMonstros2: 20
   maxMonstros3: 25
   maxMonstros4: 15
+  monstrosChild: {fileID: 1477615108}
 --- !u!4 &538181738
 Transform:
   m_ObjectHideFlags: 0
@@ -21093,7 +21094,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af744e14ada9e1e449b005c28bc996bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 30
+  Damage: 100
 --- !u!1 &617648271
 GameObject:
   m_ObjectHideFlags: 0
@@ -21469,7 +21470,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af744e14ada9e1e449b005c28bc996bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 30
+  Damage: 100
 --- !u!1 &634039414
 GameObject:
   m_ObjectHideFlags: 0
@@ -21505,7 +21506,8 @@ Transform:
 --- !u!114 &634039416
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 114404571975359228, guid: c5cb0cd77590ef74fb60cd1eaf05ee2d,
+    type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 634039414}
   m_Enabled: 1
@@ -30946,7 +30948,8 @@ MonoBehaviour:
 --- !u!1 &931109640
 GameObject:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 1582916998794664, guid: c5cb0cd77590ef74fb60cd1eaf05ee2d,
+    type: 2}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 6
   m_Component:
@@ -30961,7 +30964,8 @@ GameObject:
 --- !u!4 &931109641
 Transform:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 4863671410273436, guid: c5cb0cd77590ef74fb60cd1eaf05ee2d,
+    type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 931109640}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -41794,7 +41798,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af744e14ada9e1e449b005c28bc996bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 30
+  Damage: 100
 --- !u!1 &1223092291
 GameObject:
   m_ObjectHideFlags: 0
@@ -49085,6 +49089,34 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1476393578}
   m_CullTransparentMesh: 0
+--- !u!1 &1477615107
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1477615108}
+  m_Layer: 0
+  m_Name: Monstros
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1477615108
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1477615107}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -19.369999, y: -84.7, z: -0.042225}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1480477749
 GameObject:
   m_ObjectHideFlags: 0
@@ -52646,8 +52678,9 @@ MonoBehaviour:
   countorbe: 0
   TP: {fileID: 857857530}
   TPAltar: {fileID: 364169932}
-  Damage: 30
-  Life: 1750
+  Damage: 150
+  DamageOrbe: 0
+  Life: 1000
   disablecollider: {fileID: 169493105}
   Escada: {fileID: 36026650}
   simbolo: {fileID: 982153244}
@@ -52656,7 +52689,7 @@ MonoBehaviour:
   offset: {x: 0, y: 0, z: 0}
   OrbeEmitor: {fileID: 1747520359}
   OrbePrefab: {fileID: 1715297564448538, guid: f7b4a91948f58d54e815158a6b225609, type: 2}
-  OrbeSpeed: 1250
+  OrbeSpeed: 1500
   OrbeRotator: {fileID: 1768993470}
   PrefabSlime: {fileID: 1630921049894386, guid: 19dacc5a190adcc44be391b5c5e30a41,
     type: 2}
@@ -52960,7 +52993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af744e14ada9e1e449b005c28bc996bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 30
+  Damage: 100
 --- !u!1 &1587847744
 GameObject:
   m_ObjectHideFlags: 0
@@ -55022,7 +55055,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af744e14ada9e1e449b005c28bc996bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 30
+  Damage: 100
 --- !u!1 &1644430793
 GameObject:
   m_ObjectHideFlags: 0
@@ -59064,7 +59097,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9d0816a93122ec489a41e6a483ad5fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotateSpeed: 5
+  RotateSpeed: 25
 --- !u!1 &1747644401
 GameObject:
   m_ObjectHideFlags: 0
@@ -61501,7 +61534,8 @@ RectTransform:
 --- !u!114 &1815312944
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 114400816161511066, guid: c5cb0cd77590ef74fb60cd1eaf05ee2d,
+    type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1815312942}
   m_Enabled: 1

@@ -6,7 +6,7 @@ public class Orbe : MonoBehaviour
 {
     CoolDown cooldown;
     public float Damage;
-
+    PlayerScript player;
     public HealthBar HB;
     // Use this for initialization
     void Start()
@@ -14,6 +14,7 @@ public class Orbe : MonoBehaviour
         Invoke("DestroyOrbe", 3f);
         HB = GameObject.FindGameObjectWithTag("Content").GetComponent<HealthBar>();
         cooldown = GameObject.FindGameObjectWithTag("CoolDown").GetComponent<CoolDown>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -25,8 +26,12 @@ public class Orbe : MonoBehaviour
         else if (collision.gameObject.CompareTag("Player"))
         {
             PlayerScript player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>();
-            HB.HP_Current -= Mathf.RoundToInt(Damage * player.ShieldPotionMult);
+            HB.HP_Current -= Mathf.RoundToInt(Damage); //* player.ShieldPotionMult);
             DestroyOrbe();
+        }
+        if (HB.HP_Current <= 0)
+        {
+            player.GetComponent<Animator>().SetTrigger("Death");
         }
 
     }

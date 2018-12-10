@@ -36,9 +36,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4457543312499686}
-  - component: {fileID: 114783825537851298}
+  - component: {fileID: 114404571975359228}
   m_Layer: 0
-  m_Name: MagiaEmitor
+  m_Name: FireballEmitor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53,7 +53,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4427781297784376}
   m_Layer: 0
-  m_Name: MagiaRotator
+  m_Name: FireballRotator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -144,6 +144,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1582916998794664
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4863671410273436}
+  m_Layer: 0
+  m_Name: Target
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1583849421556192
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,6 +204,7 @@ GameObject:
   - component: {fileID: 222517566692171920}
   - component: {fileID: 114164127307797392}
   - component: {fileID: 114324520911681380}
+  - component: {fileID: 114400816161511066}
   m_Layer: 5
   m_Name: TextArm
   m_TagString: Untagged
@@ -212,7 +228,6 @@ GameObject:
   - component: {fileID: 81538986941534842}
   - component: {fileID: 114768554281157006}
   - component: {fileID: 114978660710338050}
-  - component: {fileID: 114855764759324922}
   - component: {fileID: 114588268279734566}
   m_Layer: 0
   m_Name: Player
@@ -283,13 +298,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1113444678133244}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4457543312499686}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!4 &4457543312499686
 Transform:
   m_ObjectHideFlags: 1
@@ -321,8 +336,22 @@ Transform:
   - {fileID: 224993526492611340}
   - {fileID: 224376648251153236}
   - {fileID: 4457543312499686}
+  - {fileID: 4863671410273436}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4863671410273436
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1582916998794664}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.91, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4818115767446872}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &20021008942730928
 Camera:
@@ -395,7 +424,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 200
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -416,9 +445,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.19229373, y: 0}
+  m_Offset: {x: 0.23066673, y: 0}
   serializedVersion: 2
-  m_Radius: 0.28396043
+  m_Radius: 0.32233343
 --- !u!61 &61591283925839276
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -431,7 +460,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.003685303, y: -0.082439885}
+  m_Offset: {x: -0.00037224148, y: -0.01463256}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -442,7 +471,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.036154114, y: 0.14464316}
+  m_Size: {x: 0.0030186963, y: 0.28025782}
   m_EdgeRadius: 0.3
 --- !u!81 &81538986941534842
 AudioListener:
@@ -462,7 +491,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 30261397fc9d4994b8467c0726b4e15d, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.4
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -626,6 +655,34 @@ MonoBehaviour:
   stats: {fileID: 114588268279734566}
   critico: 0
   calculo: 0
+--- !u!114 &114400816161511066
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1766858418314320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 0.5, y: 0.5}
+  m_UseGraphicAlpha: 1
+--- !u!114 &114404571975359228
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1062209904790510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eed32000ea0e9504cab15aef0b562d51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target: {fileID: 4863671410273436}
+  RotateSpeed: 50
+  player: {fileID: 4818115767446872}
 --- !u!114 &114473406826147238
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -670,17 +727,13 @@ MonoBehaviour:
   Exp: 0
   ExpAtual: 0
   XPToNextLevel: 10
+  XPToNextLevelFixed: 0
   Gold: 0
   strongh: 0
   LevelText: {fileID: 0}
   levelup: {fileID: 114473406826147238}
   TempoDeJogo: 199.29793
   HpPerdido: 0
-  CopperCoin: {fileID: 0}
-  SilverCoin: {fileID: 0}
-  GoldCoin: {fileID: 0}
-  PearlCoin: {fileID: 0}
-  MithrilCoin: {fileID: 0}
   CoinText: {fileID: 0}
   CoinTextMenu: {fileID: 0}
   CoinTextShadow: {fileID: 0}
@@ -758,46 +811,24 @@ MonoBehaviour:
   mapa2: 0
   mapa3: 0
   mapa4: 0
+  mapa5: 0
   Respawn1: {fileID: 0}
   Respawn2: {fileID: 0}
   Respawn3: {fileID: 0}
   Respawn4: {fileID: 0}
+  Respawn5: {fileID: 0}
   player: {fileID: 1815769798826862}
+  playersprite: {fileID: 212905913245899488}
   Vidas: 3
-  audiolistener: {fileID: 81538986941534842}
-  FireballEmitor: {fileID: 4457543312499686}
-  FireballPrefab: {fileID: 1212595698663198, guid: 3f72d0a295393314aae492f8e3c72d36,
-    type: 2}
-  FireballSpeed: 50
-  FireballRotator: {fileID: 4427781297784376}
-  DamageFireball: 25
+  VidasTxt: {fileID: 0}
+  VidasImg:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  PlayerMorreu: 0
   attackCollider: {fileID: 58157819509399138}
   shadow: {fileID: 212164268107580110}
   InitialMap: {fileID: 0}
---- !u!114 &114783825537851298
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1062209904790510}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9d0816a93122ec489a41e6a483ad5fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotateSpeed: 0
---- !u!114 &114855764759324922
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1815769798826862}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50f66c2029d985345b7634db02c103c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fixEveryFrame: 1
 --- !u!114 &114928925094832888
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -810,7 +841,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9811321, g: 0.84343815, b: 0.6247775, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -836,13 +867,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4d2f2255eabdfa4ca63cab704463edc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sword_CurrentDamage: 500
+  Sword_CurrentDamage: 0
   Swords:
   - {fileID: 21300000, guid: a8c3ac0c36e02744c9f35ed38ce6d0a5, type: 3}
   - {fileID: 21300000, guid: 8d1fb89784099824a97b9759765affcc, type: 3}
   - {fileID: 21300000, guid: 933b813d9abdc2f458cee01a264908d7, type: 3}
   - {fileID: 21300000, guid: 76408f239567cf346a7275876aac9159, type: 3}
-  Sword_Damage: 050000000a0000000f00000019000000
+  Sword_Damage: 05000000080000000f00000014000000
   Espadas:
   - {fileID: 0}
   - {fileID: 0}
@@ -5552,7 +5583,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.03773582, g: 0.03773582, b: 0.03773582, a: 0.6}
+  m_Color: {r: 0.03773582, g: 0.03773582, b: 0.03773582, a: 0.5686275}
   m_FlipX: 1
   m_FlipY: 1
   m_DrawMode: 0
@@ -5735,7 +5766,7 @@ RectTransform:
   m_GameObject: {fileID: 1766858418314320}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2648, y: 1.2648, z: 1.2648}
   m_Children: []
   m_Father: {fileID: 224699011074169270}
   m_RootOrder: 0
@@ -5782,7 +5813,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 350, y: 300}
+  m_SizeDelta: {x: 450, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224845488390098510
 RectTransform:

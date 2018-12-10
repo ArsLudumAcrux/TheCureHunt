@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57fbf5aba80935642b8015dd6bd6b39f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Life_Slime: 55
+  Life_Slime: 95
   Atk_Slime: 0
   morreu: 0
   xpMin: 20
@@ -197,7 +197,7 @@ MonoBehaviour:
   visionRadius: 10
   attackRadius: 1
   speed: 1
-  damage: 5
+  damage: 15
   stats: {fileID: 114700528413436676}
   ObjectPlayer: {fileID: 0}
   EnemyType: 1

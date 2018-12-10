@@ -65,7 +65,7 @@ public class Magic : MonoBehaviour {
             MagiaDescription.text = "Essa magia lhe concede um escudo, que absorve 3 ataques de inimigos, ela tem um tempo de recarga de 20 segundos.";
         }else if(numero == 2)
         {
-            MagiaDescription.text = "Essa magia lhe concede uma bola de fogo, que da 20 de dano se colidir com um inimigo, ela tem um tempo de recarga de 20 segundos.";
+            MagiaDescription.text = "Essa magia lhe concede uma bola de fogo, que da 30 de dano se colidir com um inimigo, ela tem um tempo de recarga de 10 segundos.";
         }
     }
 

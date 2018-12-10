@@ -11,6 +11,7 @@ public class ScriptBoss : MonoBehaviour {
     public Transform TPAltar;
     [Header("Status do boss")]
     public float Damage;
+    public float DamageOrbe;
     public float Life;
     private float LifeMax;
 
@@ -276,7 +277,7 @@ public class ScriptBoss : MonoBehaviour {
             GameObject tempOrbe = Instantiate(OrbePrefab, OrbeEmitor.position, OrbeRotator.rotation);
             Rigidbody2D tempRB2D = tempOrbe.GetComponent<Rigidbody2D>();
             tempRB2D.AddForce(OrbeEmitor.forward * OrbeSpeed);
-            tempOrbe.GetComponent<Orbe>().Damage = Damage;
+            DamageOrbe = tempOrbe.GetComponent<Orbe>().Damage;
             StartCoroutine(ComecarCoroutine(2f));
         }
         else if (countorbe == 2)
@@ -285,7 +286,7 @@ public class ScriptBoss : MonoBehaviour {
             GameObject tempOrbe = Instantiate(OrbePrefab, OrbeEmitor.position, OrbeRotator.rotation);
             Rigidbody2D tempRB2D = tempOrbe.GetComponent<Rigidbody2D>();
             tempRB2D.AddForce(OrbeEmitor.forward * OrbeSpeed);
-            tempOrbe.GetComponent<Orbe>().Damage = Damage;
+            DamageOrbe = tempOrbe.GetComponent<Orbe>().Damage;
             Invoke("ORBEx1", 1f);
         }
         else if (countorbe >= 3)
@@ -294,7 +295,7 @@ public class ScriptBoss : MonoBehaviour {
             GameObject tempOrbe = Instantiate(OrbePrefab, OrbeEmitor.position, OrbeRotator.rotation);
             Rigidbody2D tempRB2D = tempOrbe.GetComponent<Rigidbody2D>();
             tempRB2D.AddForce(OrbeEmitor.forward * OrbeSpeed);
-            tempOrbe.GetComponent<Orbe>().Damage = Damage;
+            DamageOrbe = tempOrbe.GetComponent<Orbe>().Damage;
             Invoke("ORBEx2", 1f);
 
         }
@@ -304,7 +305,7 @@ public class ScriptBoss : MonoBehaviour {
         GameObject tempOrbe = Instantiate(OrbePrefab, OrbeEmitor.position, OrbeRotator.rotation);
         Rigidbody2D tempRB2D = tempOrbe.GetComponent<Rigidbody2D>();
         tempRB2D.AddForce(OrbeEmitor.forward * OrbeSpeed);
-        tempOrbe.GetComponent<Orbe>().Damage = Damage;
+        DamageOrbe = tempOrbe.GetComponent<Orbe>().Damage;
         StartCoroutine(ComecarCoroutine(2f));
     }
     public void ORBEx2()
@@ -312,7 +313,7 @@ public class ScriptBoss : MonoBehaviour {
         GameObject tempOrbe = Instantiate(OrbePrefab, OrbeEmitor.position, OrbeRotator.rotation);
         Rigidbody2D tempRB2D = tempOrbe.GetComponent<Rigidbody2D>();
         tempRB2D.AddForce(OrbeEmitor.forward * OrbeSpeed);
-        tempOrbe.GetComponent<Orbe>().Damage = Damage;
+        DamageOrbe = tempOrbe.GetComponent<Orbe>().Damage;
         Invoke("ORBEx3", 1f);
     }
     public void ORBEx3()
@@ -320,7 +321,7 @@ public class ScriptBoss : MonoBehaviour {
         GameObject tempOrbe = Instantiate(OrbePrefab, OrbeEmitor.position, OrbeRotator.rotation);
         Rigidbody2D tempRB2D = tempOrbe.GetComponent<Rigidbody2D>();
         tempRB2D.AddForce(OrbeEmitor.forward * OrbeSpeed);
-        tempOrbe.GetComponent<Orbe>().Damage = Damage;
+        DamageOrbe = tempOrbe.GetComponent<Orbe>().Damage;
         StartCoroutine(ComecarCoroutine(2f));
     }
     //public void FindPlayer(Vector3 pos)
