@@ -17,13 +17,20 @@ public class ExpBar : MonoBehaviour {
     [Header("Text Status Atualizados")]
     public Text danoTxt;
     public Text speedTxt;
+    public Text VidaTxt;
+    public Image[] StatusImg;
 
     public void Start()
     {
         PodeUparNivel = true;
-
+        for (int i = 0; i < StatusImg.Length; i++)
+        {
+            StatusImg[i].enabled = false;
+        }
+        
         danoTxt.gameObject.SetActive(false);
         speedTxt.gameObject.SetActive(false);
+        VidaTxt.gameObject.SetActive(false);
         //experiencia_img.fillAmount = 0;
         stat = FindObjectOfType<Statistics>();//pegando o script Statistics
         playerScript = FindObjectOfType<PlayerScript>();
@@ -56,6 +63,12 @@ public class ExpBar : MonoBehaviour {
 
                 danoTxt.gameObject.SetActive(true); //Mostrar o dano recebido
                 speedTxt.gameObject.SetActive(true); //Mostrar a velocidade recebida
+                VidaTxt.gameObject.SetActive(true); //Mostrar a vida recebida
+                for (int i = 0; i < StatusImg.Length; i++)
+                {
+                    StatusImg[i].enabled = true;
+                }
+
                 Invoke("StatusAtualizados", 4f); //Desativar os Txt de cima
 
                 // playerScript.speed= Mathf.Round(stat.strongh * 1.01f);
@@ -85,5 +98,10 @@ public class ExpBar : MonoBehaviour {
     {
         danoTxt.gameObject.SetActive(false);
         speedTxt.gameObject.SetActive(false);
+        VidaTxt.gameObject.SetActive(false);
+        for (int i = 0; i < StatusImg.Length; i++)
+        {
+            StatusImg[i].enabled = false;
+        }
     }
 }

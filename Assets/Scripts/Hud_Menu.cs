@@ -41,15 +41,17 @@ public class Hud_Menu : MonoBehaviour
     public Image descriptionsword;
 
     [Space(50)]
+    [Header("Music")]
+    public AudioSource MusicBoss;
     public AudioSource audiosourceplayer;
     public bool pausemusic;
 
     Sword sword;
     [Header("Upando de level")]
     public Text MensagemAoUpar;
+    public Image MensagemAoUparImg;
     [Header("Outros Hud")]
     public GameObject HudMaior;
-    public GameObject HudMenor;
     //public GameObject BarraVidaMenor;
     //public GameObject BarraExperienciaMenor;
     //public GameObject CoinMenor;
@@ -67,6 +69,7 @@ public class Hud_Menu : MonoBehaviour
         sword = GameObject.FindGameObjectWithTag("Player").GetComponent<Sword>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>();
         audiosourceplayer = GameObject.FindGameObjectWithTag("Player").GetComponent<AudioSource>();
+        MusicBoss = GameObject.FindGameObjectWithTag("MusicBoss").GetComponent<AudioSource>();
 
         anim = GetComponent<Animator>();
         PanelMenu.SetActive(false);
@@ -89,7 +92,7 @@ public class Hud_Menu : MonoBehaviour
 
         PodePassarMenu = false;
         Invoke("Tutorial", 5f);
-
+        MensagemAoUparImg.enabled = false;
     }
     public void Update()
     {
@@ -254,13 +257,21 @@ public class Hud_Menu : MonoBehaviour
         float pause = paused ? 0 : 1;
         Time.timeScale = pause;
         pausemusic = !pausemusic;
-        if (pausemusic == true) {
+        if (pausemusic == true && player.MusicaAtual == false) {
             audiosourceplayer.Pause();
           //  AnimatorEspadaBorrada espadaborrada = GameObject.FindGameObjectWithTag("Borrada").GetComponent<AnimatorEspadaBorrada>();
           //  espadaborrada.BtnSword();
         }
-        else if(pausemusic == false){
+        else if(pausemusic == false && player.MusicaAtual == false)
+        {
             audiosourceplayer.UnPause();
+        }else if(pausemusic == true && player.MusicaAtual == true)
+        {
+            MusicBoss.Pause();
+        }
+        else if (pausemusic == false && player.MusicaAtual == true)
+        {
+            MusicBoss.Play();
         }
         //Cursor.visible = !Cursor.visible;
 
@@ -365,5 +376,6 @@ public class Hud_Menu : MonoBehaviour
     {
         yield return new WaitForSeconds(4f);
         MensagemAoUpar.text = "";
+        MensagemAoUparImg.enabled = false;
     }
 }

@@ -59,7 +59,10 @@ public class PlayerScript : MonoBehaviour {
     public Text VidasTxt;
     public Image[] VidasImg;
     public bool PlayerMorreu;
- 
+    [Header("Music")]
+    public AudioSource MusicGame;
+    public AudioSource MusicBoss;
+    public bool MusicaAtual;
 
 
     [Space]
@@ -95,6 +98,10 @@ public class PlayerScript : MonoBehaviour {
 
         maincamera.gameObject.SetActive(true);
         bosscamera.gameObject.SetActive(false);
+
+        MusicBoss.Pause();
+        MusicGame.Play();
+        MusicaAtual = false;
 
         mapa1 = false;
         mapa2 = false;
@@ -400,6 +407,9 @@ public class PlayerScript : MonoBehaviour {
             GameManager gamemanager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
             gamemanager.monstrosMortos3 = 0;
             hudmenu.HUDMAIOR();
+            MusicBoss.Stop();
+            MusicGame.Play();
+            MusicaAtual = false;
             if (mapa3 == false)
             {
                 mapa1 = false;
@@ -414,6 +424,9 @@ public class PlayerScript : MonoBehaviour {
         {
             FindObjectOfType<AreaScript>().ChamarCoroutine("Sala do Chefe");
             hudmenu.HUDMENOR();
+            MusicBoss.Play();
+            MusicGame.Stop();
+            MusicaAtual = true;
             if (mapa4 == false)
             {
                 mapa1 = false;
@@ -432,6 +445,9 @@ public class PlayerScript : MonoBehaviour {
             GameManager gamemanager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
             gamemanager.monstrosMortos = 0;
             hudmenu.HUDMAIOR();
+            MusicBoss.Stop();
+            MusicGame.Play();
+            MusicaAtual = false;
             if (mapa5 == false)
             {
                 mapa1 = false;

@@ -29,6 +29,7 @@ TagManager:
   - Warp
   - TriggerFogo
   - Borrada
+  - MusicBoss
   layers:
   - Default
   - TransparentFX
